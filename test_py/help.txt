@@ -1,0 +1,27 @@
+201801:
+	0123: 测试代码
+	0124: 
+		py_hbase:	py_hbaseOperate.py -> python操作hbase数据库的简易class类
+		test.py -> 测试代码：添加、遍历、修改hbase操作
+
+	py-hbase.py -> 简易代码：python操作hbase的直接代码
+
+201803:
+	0313:python 测试代码
+	
+	0319:keras模型 测试代码
+    	1.py: RNN递归神经网络
+    	2.py: keras模型测试验证代码
+	
+	0327:数据转下标向量的 转化代码
+		analysisDetail.py:  HanLP模块
+		mk_file2json.py:    构建基础代码，HanLP分词
+		mk_file2json1.py:   初始备份
+		mk_file2json1_1.py: 改进备份
+    	mk_file2json2.py:   jieba分词
+
+201804:
+    0404: python 测试代码
+        1.py
+    0413: python 测试代码
+        1.py: 
