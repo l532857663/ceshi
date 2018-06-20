@@ -1,0 +1,4 @@
+
+create 'phone_timestamp', 'phoneNumber', 'timeInterval'
+
+put 'phone_timestamp', ''
