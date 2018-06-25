@@ -24,8 +24,7 @@ if __name__ == "__main__":
                 "html":"htmlAnalysis",
                 }
         try:
-            doc = eval(case[suffixFile])(fileName)
-            print(doc)
+            eval(case[suffixFile])(fileName)
         except:
             types, value, back = sys.exc_info() # 捕获异常
             print("Unexpected error:", types)

@@ -20,7 +20,7 @@ def excelAnalysis(fname):
         sheet1 = bk.sheet_names()[0]
     except:
          sys.exit("no sheet in {} named Sheet1".format(fname))
-    allSheet = ""
+    allSheet = "{"
     for i in range(bk.nsheets):
         shName = bk.sheet_names()[i]
         sh = bk.sheet_by_name(shName)
@@ -34,12 +34,17 @@ def excelAnalysis(fname):
             #获取第一行第一列数据
             #cell_value = sh.cell_value(0,0)
             #print (cell_value)
-            row_list = []
+            row_list = {}
             #获取各行数据
-            for i in range(0,nrows):
+            row_key = sh.row_values(0)
+            for i in range(1,nrows):
                 row_data = sh.row_values(i)
                 content += "{}\n".format(row_data)
-            allSheet += content
-    return allSheet
-
-
+                for i in range(0,ncols):
+                    row_list[row_key[i]] = row_data[i]
+                    if i > 3:
+                        break
+                str_list = str(row_list)
+                allSheet += str_list + ","
+            allSheet += allSheet[0:len(allSheet)-1] + "}"
+            print (allSheet)
