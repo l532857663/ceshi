@@ -53,7 +53,10 @@ func get_data (row []string, timestamp string) (res string) {
 		return
 }
 
-func main(){
+func create_table (name string) {
+}
+
+func main() {
 
 		loc, err := time.LoadLocation ("Local")
 		if err != nil {
@@ -73,6 +76,11 @@ func main(){
 						continue
 				}
 
+				// 建表
+				cmd_str_0 := "<?xml version=\"1.0\" encoding=\"UTF-8\"?><TableSchema name=\"" + "\"><ColumnSchema name=\"f1\" /></TableSchema>"
+
+
+				// 插入数据
 				cmd_str := "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><CellSet><Row key=\""
 
 				cmd_str += base64.StdEncoding.EncodeToString ([]byte (row[2]))

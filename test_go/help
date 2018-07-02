@@ -1,0 +1,25 @@
+curl -vi -X GET/POST/PUT -H "Accept: text/xml" -H "Content-Type: text/xml" -d '' http://192.168.11.133:9900
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+1: Version
+attr->REST JVM OS Server Jersey
+type->string
+
+<Version name="REST"></Version>
+
+2: TableList
+attr->
+type->
+attr->
+type->
+
+3: 
+
+
+
+attr->
+type->
+attr->
+type->
+
+
+<Scanner><filter>ValueFilter (=, 'binary:63688161')</filter></Scanner>

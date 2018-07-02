@@ -1,3 +1,7 @@
 curl -vi -X PUT -H "Accept: text/xml" -H "Content-Type: text/xml" 'http://192.168.11.133:9900/dxy/fakerow' -d '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><CellSet><Row key="MTUwOTMxOTEzMzk="><Cell column=""></Cell></Row></CellSet>'
 
 {{'对方号码': '53150302', '时长': '5', '本方号码': '15093191339', '本方归属地': '河南郑州', '对方归属地': '北京'},{'对方号码': '15638108549', '时长': '60', '本方号码': '15093191339', '本方归属地': '河南郑州', '对方归属地': '河南郑州'},{'对方号码': '18539938619', '时长': '82', '本方号码': '15093191339', '本方归属地': '河南郑州', '对方归属地': '河南郑州'}}
+
+binary:63688161
+
+scan 'call_phone_number_base:15093191339', {FILTER => "ValueFilter(=,'binary:63688161')"}
