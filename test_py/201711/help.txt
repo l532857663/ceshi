@@ -1,0 +1,30 @@
+1号：
+fanyi.py: python NLTK 词典部分demo
+doText.py: python NLTK 文本处理，自己的文本或者网上的网页
+strMake.py python NLTK 字符串处理
+
+3号：
+huitu.py: python NLTK 制图部分，生成情态动词柱状图展示;
+
+6号：
+tagMake.py: 	python NLTK 词性
+movieReview.py: python NLTK 文档分类
+typeTest.py:   	python NLTK 训练决策树，词性标注
+sentTag.py: 	python NLTK 探索上下文语境 (句子带入，通过前一个词增加分析判断)
+jianduCate.py: 	python NLTK 监督式分类 句子分割
+
+8号：
+probMath.py: 	python NLTK 决策树，熵计算
+sentchage.py: 	python NLTK 句子分块 
+corpusSent.py:	python NLTK 语料测试句子分块
+IOBtext.py:	python NLTK 开发和评估分块
+
+9号：
+ansSql.py: 	python NLTK 把输入语句转化成SQL语句
+demo/
+
+
+
+
+
+

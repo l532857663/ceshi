@@ -1,0 +1,14 @@
+<config>
+	<server>
+		<name>static_web_server</name>
+		<mode>static_web_server</mode>
+		<port>8888</port>
+		<res_path>./www</res_path>
+	</server>
+	<server>
+		<name>wifilz_web_server</name>
+		<mode>wifilz_web_server</mode>
+		<port>8887</port>
+		<res_path>./www</res_path>
+	</server>
+</config>

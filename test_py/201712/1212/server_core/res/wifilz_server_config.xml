@@ -1,0 +1,27 @@
+<config>
+	<server>
+		<name>http_attack</name>
+		<port>4399</port>
+		<max_connect>60</max_connect>
+		<timeout>60</timeout>
+		<mysql_parm>
+			<ip>192.168.11.1</ip>
+			<username>root</username>
+			<password>123456</password>
+			<db_name>wifilz</db_name>
+		</mysql_parm>
+	</server>
+	<server>
+		<name>http_packet</name>
+		<port>439</port>
+		<max_connect>60</max_connect>
+		<timeout>60</timeout>
+		<mysql_parm>
+			<ip>192.168.11.1</ip>
+			<username>root</username>
+			<password>123456</password>
+			<db_name>wifilz</db_name>
+		</mysql_parm>
+		<res_path>/home/duan/fuckyou</res_path>
+	</server>
+</config>

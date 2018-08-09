@@ -1,0 +1,1168 @@
+
+
+
+Language Log » East Asian multilingual pop culture
+ 
+
+		@import url( http://languagelog.ldc.upenn.edu/nll/wp-content/themes/phoenixblue/style.css );
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/languagelog.ldc.upenn.edu\/nll\/wp-includes\/js\/wp-emoji-release.min.js?ver=26f4ce4026c6964c6a8568198d4aae77"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		
+
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+AudioPlayer.setup("http://languagelog.ldc.upenn.edu/nll/wp-content/plugins/audio-player/assets/player.swf?ver=2.0.4.6", {width:"290",animation:"yes",encode:"yes",initialvolume:"60",remaining:"no",noinfo:"no",buffer:"5",checkpolicy:"no",rtl:"no",bg:"f8f8f8",text:"666666",leftbg:"eeeeee",lefticon:"666666",volslider:"666666",voltrack:"FFFFFF",rightbg:"cccccc",rightbghover:"999999",righticon:"666666",righticonhover:"ffffff",track:"FFFFFF",loader:"9FFFB8",border:"666666",tracker:"DDDDDD",skip:"666666",pagebg:"FFFFFF",transparentpagebg:"yes"});
+
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//languagelog.ldc.upenn.edu/nll/?wordfence_lh=1&hid=81F79BC2E03D010F734A4B8F218157B4');
+
+var zoomImagesBase = '/nll/wp-content/plugins/wp-fancyzoom/';
+
+
+
+addDOMLoadEvent(setupZoom);
+
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-46254363-1', 'auto');
+  ga('send', 'pageview');
+
+
+
+
+
+
+
+
+Language Log
+
+
+
+Home
+About
+Comments policy
+
+
+
+
+
+East Asian multilingual pop culture
+ 
+			October 31, 2017 @ 10:26 pm 
+· Filed by Victor Mair under Borrowing, Language and politics, Multilingualism, Neologisms, Slogans
+
+
+
+« previous post | next post » 
+Currently circulating political poster in the PRC:
+
+wèi xīn shídài dǎ call 为新时代打call ("give a shout-out for the New Era")
+When I first saw this appeal, which was all over the place during the time of the recent 19th Congress of the Chinese Communist Party (CCP), it struck me as strange in many respects.
+First of all, the expression "dǎ call 打call" seemed totally unfamiliar, and even improbable, to me.  Literally, it means "strike [a] call", but I had no idea what that might mean.  "Dǎ 打" is what I'm fond of referring to as an "multipurpose verb" in Mandarin.  Here are some of its meanings:  "hit; strike; beat; thrash; spank; fight; attack; make; build; break; smash; wipe; shoot; buy; fetch; tie up; type[write]; [telephone] call " (never mind that it can also be a noun or a preposition).  Even though "dǎ 打" can convey so many different verbal meanings, I just couldn't see how it could make much sense as something you'd do to the noun "call".
+Second, this was another instance of the somber, stuffy, serious CCP attempting to co-opt popular, youth culture for propaganda purposes (as they have done with hip-hop, rap, and so forth).  "Xīn shídài 新时代" is President Xi Jinping's signature political program for PRC development during the coming decades.  It is incongruous for young people to be waving their arms in the air on behalf of Xi's New Era as though he were a rock star.
+On Tuesday the 24th, Party newspaper People’s Daily initiated Weibo hashtag "Wèi xīn shídài dǎ call #为新时代打call#", roughly meaning "give a shout-out to the New Era", as reported by Manya Koetse in What's on Weibo (10/25/17):
+"'Support China’s New Era' Campaign Goes Viral on Chinese Social Media: China’s propaganda machine has been running at full speed this week – now Weibo’s celebrities also pitch in."
+What's on Weibo tells us that "打call" means "give a shout-out".  Not being terribly familiar with youth culture, I had to look up "shout-out":
+Merriam-Webster:  an expression of greeting or praise that is given to someone in the presence of many people
+Wiktionary:  to publicly greet or acknowledge a person, group, or organization
+Note by a graduate student from the PRC:
+Apparently "打call" is one of the most popular buzzwords in China now. It is pervasive to such an extent that I cannot avoid seeing it everywhere….  In the meantime, I have to admit that I have no idea of how the strange combination of verb "打" and English noun "call" so miraculously finds its way into mainstream vocabulary stock. It means to shout/call out as a gesture of support to one's idols or ideals.
+A little research leads me to the discovery that it is a Chinese variation of the Japanese phenomenon Wotagei (ヲタ芸) performed by the group of Otaku (おたく/オタク)*. But they somehow adopt a totally new terminology in Chinese…  Please enlighten me whenever you have a clue to "打call"'s etymology.
+I feel like I am a bit out of fashion in terms of Chinese popular culture now. Neologisms just keep popping out!!
+*[VHM:  For "otaku", see "Nerd, geek, PK: Creeping Romanization (and Englishization), part 2 " (3/5/13)]
+From another PRC graduate student:
+This phrase originated from Japanese pop culture and refers to an audience's cheerful reactions to their idol (singers usually) during a live performance. "Call" refers to the fans calling out their idols' names, waving their glowsticks, and doing it with the flow / beat of the performance. The Japanese phrase is "kōru コール". It has been used by many fan groups in China. Moreover, over the summer there was a very popular TV show called " Zhōngguó yǒu xīhā 中国有嘻哈" ("China has hip-hop"). The show was basically a hip-hop contest for Chinese rappers. Because of this TV show, the phrase "打call", e.g., “wèi mǒumǒu rén fēngkuáng dǎ call 为某某人疯狂打call” ("give a wild shout-out for so-and-so"), became extremely trendy and was widely used in many different ways. Even now many people use this phrase simply to express their support or their fondness for something (and it could be anything). Students can even say that they "wèi Méi jiàoshòu fēngkuáng dǎ call 为梅教授疯狂打call" ("give a wild shout-out for Professor Mair") — to express their support and respect. I think this poster was meant to be recognized and widely liked by the younger generation who would rather be less interested in the 19th Congress. Because of the adoption of such a popular phrase, many young people might think of it as trendy and pay attention to it.
+As with other new expressions we've been looking at recently, in "dǎ call 打call" ("give a shout-out"), we have an amalgam of Mandarin, Japanese, and English:
+
+"'Let's' in Chinese " (10/19/17)
+"Keep on -inging " (10/30/17) — especially on karaoke.
+
+[h.t. Caitlin Schultz; thanks to Yixue Yang and Jinyi Cai]
+ 
+			October 31, 2017 @ 10:26 pm 
+· Filed by Victor Mair under Borrowing, Language and politics, Multilingualism, Neologisms, Slogans
+
+
+Permalink
+
+
+
+
+
+
+	8 Comments		»
+
+
+
+Bathrobe said,
+
+			October 31, 2017 
+			@ 11:25 pm
+
+Japanese uses コール ('call') for a number of things, including a (PA) call to answer the phone, calling for a nurse, touting, calls from the crowd in sports (including booing), calls at parties for a person to drain his/her glass, calls in option trading, etc., etc.
+But there is one call that isn't related to English at all, the シュプレヒコール shupurehi-kōru, which is from German Sprechchor and means 'yelling a slogan in chorus'.
+Perhaps there has been a certain amount of contamination between the two.
+
+
+John Rohsenow said,
+
+			November 1, 2017 
+			@ 3:22 am
+
+A Chinese grad student in the US for last 3 years, who visited home briefly last summer, writes:
+"Pretty much all of this is new to me, except that I knew there was some sort of a rapper contest show going on and it went quite popular. Never heard of the phrase "为某某人疯狂打call" before though.
+  "Pity to see that the CCP is trying so hard appropriating pop culture just to appeal to the younger generation. The thought that many from that younger generation probably were recruited by them just to do write this kind of propaganda is kind of revolting to me."
+
+
+michaelyus said,
+
+			November 1, 2017 
+			@ 4:59 am
+
+One should also note that 打电话 dǎ diànhuà (lit. "to hit the telephone") is the standard way of saying "to telephone, to make a telephone call". It probably derives from the manual action of operating the telephone, and is one of many such constructions across languages: Japanese 電話をかける denwa-o kakeru and Korean 전화를 걸다 jeonhwa-reul geolda, both lit. "to hang the telephone". Not that far removed from French "décrocher le téléphone" and even English "pick up the line". 
+Interestingly, both Japanese and Korean can use more generic verbs 電話する denwa-suru and 전화하다 jeonhwahada "to make/do a telephone [call]", but Chinese generally sticks to 打. Even in the Min topolects of Chinese, which don't make much use of the lexeme 打 but use a different one 拍 or 敲, the action is described as 拍電話 (Taiwanese POJ: phah tiān-ōe) or 敲電話 (khà tiān-ōe).
+Vietnamese on the other hand uses gọi, "to call" (both in the physical "calling out" sense and in the "naming" sense), much like the European sprachbund.
+The concept of "ring" used in this sense is quite interesting I think – a quick search brings up a certain Germanic and Slavic sprachbund bias (with Finnish, Catalan and Romanian also using lexemes referring to the action of causing something to "sound").
+
+
+Victor Mair said,
+
+			November 1, 2017 
+			@ 7:53 am
+
+@michaelyus
+Thanks for that interesting excursion in multilingual telephone terminology.
+For those who do not know hanzi / kanji / hanja, I just want to point out the following (giving only MSM pronunciations):
+pāi 拍 ("shoot; tap; beat; pat; slap; hit; smack; clap [hands]; applaud; flap; take [a photograph / picture]; film")
+qiāo 敲 ("knock; hit; beat; strike; bang; pound; hammer; rap; percuss; extort; overcharge; fleece sb.; ")
+
+
+Coby Lubliner said,
+
+			November 1, 2017 
+			@ 8:41 am
+
+To extend the "excursion in multilingual telephone terminology" from Asia to Europe: the Catalan verb for making a telephone call is trucar, which literally means 'to knock' (as on a door). This came about because the Spanish llamar 'to call' (probably modeled on French appeler) has the additional meaning of 'to knock' (llamar en la puerta), and Catalan has no single verb encompassing the multiple meanings of call, llamar, appeler etc.
+
+
+JK said,
+
+			November 1, 2017 
+			@ 10:34 am
+
+I was similarly surprised at this official party promotion of the phrase "党员idol":
+http://news.china.com/zw/news/13000776/20171012/31565940_all.html
+I assume it has the similar goal of appealing to young people.
+
+
+cameron said,
+
+			November 1, 2017 
+			@ 3:46 pm
+
+@michaelyus
+In French you can refer to a telephone call as a coup de téléphone, or a coup de fil. Lots of languages have multi-purpose verbs like that.
+
+
+cameron said,
+
+			November 1, 2017 
+			@ 3:49 pm
+
+Actually, in regard to my previous comment, I wonder if coup de fil will be seen as old-fashioned in this wireless era, or whether the language will continue to reflect the antique technology.
+
+
+
+RSS feed for comments on this post 
+Leave a Comment
+
+
+
+Name (required)
+
+
+
+E-mail (required, never displayed)
+
+
+
+URI
+
+
+
+
+
+
+
+
+ Notify me of follow-up comments by email. Notify me of new posts by email.
+
+
+
+<!--
+function HideContent(d) {
+document.getElementById(d).style.display = "none";
+}
+function ShowContent(d) {
+document.getElementById(d).style.display = "block";
+}
+function ReverseDisplay(d) {
+if(document.getElementById(d).style.display == "none") { document.getElementById(d).style.display = "block"; }
+else { document.getElementById(d).style.display = "none"; }
+}
+//-->
+
+
+Follow us on Twitter
+
+
+
+
+
+
+
+
+
+ 
+Archives [+/–]
+
+
+
+November 2017
+October 2017
+September 2017
+August 2017
+July 2017
+June 2017
+May 2017
+April 2017
+March 2017
+February 2017
+January 2017
+December 2016
+November 2016
+October 2016
+September 2016
+August 2016
+July 2016
+June 2016
+May 2016
+April 2016
+March 2016
+February 2016
+January 2016
+December 2015
+November 2015
+October 2015
+September 2015
+August 2015
+July 2015
+June 2015
+May 2015
+April 2015
+March 2015
+February 2015
+January 2015
+December 2014
+November 2014
+October 2014
+September 2014
+August 2014
+July 2014
+June 2014
+May 2014
+April 2014
+March 2014
+February 2014
+January 2014
+December 2013
+November 2013
+October 2013
+September 2013
+August 2013
+July 2013
+June 2013
+May 2013
+April 2013
+March 2013
+February 2013
+January 2013
+December 2012
+November 2012
+October 2012
+September 2012
+August 2012
+July 2012
+June 2012
+May 2012
+April 2012
+March 2012
+February 2012
+January 2012
+December 2011
+November 2011
+October 2011
+September 2011
+August 2011
+July 2011
+June 2011
+May 2011
+April 2011
+March 2011
+February 2011
+January 2011
+December 2010
+November 2010
+October 2010
+September 2010
+August 2010
+July 2010
+June 2010
+May 2010
+April 2010
+March 2010
+February 2010
+January 2010
+December 2009
+November 2009
+October 2009
+September 2009
+August 2009
+July 2009
+June 2009
+May 2009
+April 2009
+March 2009
+February 2009
+January 2009
+December 2008
+November 2008
+October 2008
+September 2008
+August 2008
+July 2008
+June 2008
+May 2008
+April 2008
+
+
+
+
+ [Posts before 4/8/2008 are here]
+[Search old posts 
+
+here]
+
+List of authors [+/–]
+
+
+
+Arnold ZwickyBarbara ParteeBen ZimmerBill PoserChris PottsDavid BeaverEric BakovićGeoff NunbergGeoffrey K. PullumHeidi HarleyJason EisnerJohn McWhorterJohn RickfordJulie SedivyKai von FintelMark LibermanMark SeidenbergMelvyn QuincePaul KayPaul PortnerPhilip ResnikRoger ShuySally ThomasonSpencer CaplanSteven BirdSuzanne KemmerVictor Mair
+
+
+Other authors [+/–]
+
+
+
+Adam Albright
+Dan Jurafsky
+Lila Gleitman
+Norma Mendoza-Denton
+Philip Resnik
+
+
+
+
+Blogroll [+/–]
+
+
+
+…And read all over
+A Linguist Goes to Law School
+A Roguish Chrestomathy
+A Walk in the WoRds
+A Way With Words
+Abecedaria
+Alex's phonetic thoughts
+All Things Linguistic
+Anggarrgoon
+Archival Sounds (British Library)
+Arrant Pedantry
+Ask the League of Nerds
+Babel's Dawn (Edmund Blair Bolles)
+Bad Language
+BadLinguistics (Pauline Foster)
+Between the Lines with Edwin Battistella
+Blogamundo
+Bradshaw of the Future
+Bremer sprachblog
+Building Rapport
+Bulbulovo
+Career Linguist
+Child's Play
+Citizen sociolinguistics
+clinicallinguistics
+Coby Lubliner's Blog
+Cognition And Language Lab
+Colorless Green Ideas
+Conjugate Visits
+DCblog (David Crystal)
+Degelka af soomaaliga
+Descriptively Adequate
+dialect blog
+Dictionary Evangelist
+Dictionary Society of North America
+Double-Tongued Dictionary
+Ed Absurdum
+Eggcorn Database
+Endangered Languages and Cultures
+English, Jack
+Epea Pteroenta
+Eternally Stressed Semanticist
+Everything You Know About English Is Wrong
+Evolving English
+Far Outliers
+Found in Translation
+Freemorpheme
+Fritinancy
+Fully (sic)
+Good Reason
+Gordon P. Hemsley
+Greater Blogazonia
+Hanzi Smatter 一知半解
+Harmless Drudgery
+HeadsUp: The Blog
+Idibon
+Isabella Massardo Copy & Translation
+Jabal al-Lughat
+John Wells's Phonetic Blog
+Johnson
+JoshMillard.com
+Keywords
+Langguj Gel
+Language Evolution
+Language Geek
+Language Hat
+Language Is The People's
+Language Jones
+Language Trainers Blog
+Language: A Feminist Guide
+Lathophobic Aphasia
+LAWnLinguistics
+LGSA Fledgelings
+Lingformant
+Lingua Franca
+Linguaphiles
+Linguism
+Linguistics Anonymous
+Linguistrix
+Literal-Minded
+Living Languages
+Logomacy
+Logophilius
+Making Noise and Hearing Things
+Matjjin-nehen
+Mental Floss (language section)
+Metrolingua
+Michael Erard
+Motivated Grammar
+Mr. Verb
+Naked Translations
+Natural Language Processing Blog
+No-sword
+Noncompositional
+NPR code switch
+Office Natural Language Team Blog
+Omniglot – The Blog
+Oxford Etymologist
+Ozarque's Journal
+Paleoglot
+Paperpools
+Peter Harvey, Linguist
+phonoloblog
+Pinyin News
+Podictionary
+Polyglot Conspiracy
+Polyglot Vegetarian
+Polysyllabic (Karl Hagen)
+Popular Linguistics
+Proper Words in Proper Places
+Replicated Typo
+Ryan's linguistics blog
+Sauvage Noble
+Schnaufblog
+Sentence First
+Separated by a Common Language
+Sesquiotica (James Harbeck)
+SLA Blog
+Strong Language
+Stæfcræft & Vyākaraṇa
+Superlinguo
+Talk Wordy to Me
+Talking Brains
+Technologies du Langage
+Tenser, said the Tensor
+That Munanga Linguist
+ThatWhichMatter
+The Babbel Blog
+The Diacritics
+The Engine Room
+The Greenbelt
+The Ideophone
+The Language Guy
+The Lexicographer's Rules
+The Ling Space
+The Lingua FIle
+The Lousy Linguist
+The mashed radish
+The Ramblings of a Proto-linguist
+The Stone and the Shell
+The Virtual Linguist
+The Visual Linguist
+The Web of Language
+The Zero Morpheme
+Throw Grammar From the Train
+Transblawg
+Transient Languages & Cultures
+Translate This!
+Val Systems
+Vocalized/Vocalised (Lauren Hall-Lew)
+Web-Translations
+Wishydig
+Word Jazz
+Word Journal
+Word Porn
+Word Routes
+Wordlustitude
+Wordnik blog
+Words Are Delicious
+Words from Sweden
+Words to the Wise
+You Don't Say
+
+
+
+
+Categories [+/–]
+
+
+
+Abbreviation
+
+Acronyms
+
+Administration
+
+Alphabets
+
+Animal behavior
+
+Animal communication
+
+Announcements
+
+Artificial languages
+
+Awesomeness
+
+Bilingualism
+
+Biology of language
+
+blegs
+
+Books
+
+Borrowing
+
+Changing times
+
+Classification
+
+Code switching
+
+Computational linguistics
+
+Conlanging
+
+Contests
+
+Crash blossoms
+
+Creoles and pidgins
+
+Dialects
+
+Dictionaries
+
+Diglossia and digraphia
+
+Eggcorns
+
+Elephant semifics
+
+Endangered languages
+
+Epigraphy
+
+Errors
+
+Esthetics
+
+Ethics
+
+Etymology
+
+Evolution of language
+
+False friends
+
+Fieldwork
+
+Fillers and pause words
+
+Forgeries
+
+Found in translation
+
+Gender
+
+Gift ideas
+
+Grammar
+
+Headlinese
+
+Historical linguistics
+
+HLT
+
+Honorifics
+
+Humor
+
+Ideography
+
+Idioms
+
+Ignorance of linguistics
+
+Information technology
+
+Insults
+
+Intelligibility
+
+Intonation
+
+Jargon
+
+Kerning
+
+Language acquisition
+
+Language and advertising
+
+Language and archeology
+
+Language and art
+
+Language and biology
+
+Language and business
+
+Language and computers
+
+Language and culture
+
+Language and education
+
+Language and fashion
+
+Language and food
+
+Language and gender
+
+Language and genetics
+
+Language and literature
+
+Language and medicine
+
+Language and music
+
+Language and philosophy
+
+Language and politics
+
+Language and psychology
+
+Language and religion
+
+Language and science
+
+Language and society
+
+Language and sports
+
+Language and technology
+
+Language and the law
+
+Language and the media
+
+Language and tourism
+
+Language and travel
+
+Language attitudes
+
+Language change
+
+Language contact
+
+Language disorders
+
+Language exotification
+
+Language extinction
+
+Language in the movies
+
+Language loss
+
+Language of science
+
+Language on the internets
+
+Language play
+
+Language preservation
+
+Language reform
+
+Language teaching and learning
+
+Languages
+
+Lexicalization
+
+Lexicon and lexicography
+
+Linguistic history
+
+Linguistics as a discipline
+
+Linguistics in the comics
+
+Linguistics in the news
+
+Links
+
+Literacy
+
+Logic
+
+Lost in translation
+
+Mannerisms
+
+Manuscripts
+
+Metaphors
+
+Mishearing
+
+Misnegation
+
+Morphology
+
+Inflection
+
+
+
+Multilingualism
+
+Names
+
+Neologisms
+
+Nerdview
+
+Nonverbal communication
+
+Numbers
+
+Obituaries
+
+Onomatopoeia
+
+Open Access
+
+Orality
+
+Orthography
+
+Parsing
+
+Pedagogy
+
+Peeving
+
+People
+
+Philology
+
+Philosophy of Language
+
+Phonetics and phonology
+
+Politics of language
+
+Pragmatics
+
+Prescriptivist poppycock
+
+Prescriptivist non-poppycock
+
+
+
+Pronunciation
+
+Prosody
+
+Proverbs
+
+Psycholinguistics
+
+Psychology of language
+
+Punctuation
+
+Puns
+
+Questions
+
+Quizzes
+
+Reading
+
+Recitation
+
+Reconstructions
+
+Research tools
+
+Resources
+
+Rhetoric
+
+Second language
+
+Semantics
+
+Sign language
+
+Signs
+
+Silliness
+
+Slang
+
+Slogans
+
+Snowclones
+
+Sociolinguistics
+
+Speech technology
+
+Speech-acts
+
+Spelling
+
+Standard language
+
+Style and register
+
+Subtitles
+
+Swear words
+
+Syntax
+
+adjectives
+
+agreement
+
+ambiguity
+
+coordination
+
+negation
+
+passives
+
+prepositions
+
+relative clauses
+
+singular "they"
+
+
+
+Taboo vocabulary
+
+The academic scene
+
+The language of science
+
+This blogging life
+
+Tones
+
+Topolects
+
+Transcription
+
+Translatese
+
+translation
+
+Typography
+
+Uncategorized
+
+Usage
+
+Usage advice
+
+Variation
+
+Verb formation
+
+Vernacular
+
+Words words words
+
+World language
+
+Writing
+
+Writing systems
+
+WTF
+
+
+
+
+
+
+Meta
+
+Log in
+RSS 2.0
+Atom
+WordPress
+
+
+
+
+
+Powered By WordPress
+
+
+
+
+
+
+
+
+
+
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:5.4',blog:'3459292',post:'35216',tz:'-5',srv:'languagelog.ldc.upenn.edu'} ]);
+	_stq.push([ 'clickTrackerInit', '3459292', '35216' ]);
+
+
+
