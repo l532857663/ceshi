@@ -31,3 +31,10 @@
 
 201806:
 	解析excel文件
+
+201807:
+	python_server:
+		编写python的http server 接口，进行http通信
+		还有语义解析，情感分类
+201808:
+	线程，进程
