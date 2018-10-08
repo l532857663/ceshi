@@ -15,9 +15,9 @@ async def create_pool (loop, **kw):
 	__pool = await aiomysql.create_pool(
 		host = kw.get('host', 'localhost'),
 		port = kw.get('port', 3306),
-		user = kw['sss_root'],
-		passowrd = kw['123456'],
-		db = kw['web_page'],
+		user = kw['user'],
+		password = kw['password'],
+		db = kw['db'],
 		charset = kw.get('charset', 'utf8'),
 		autocommit = kw.get('autocommit', True),
 		maxsize = kw.get('maxsize', 10),
@@ -73,12 +73,26 @@ class Field():
 		return '<%s, %s:%s>' % (self.__class__.__name__, self.column_type, self.name)
 
 class StringField(Field):
-
-	def __init__(self, name=None, primary_key=False, default=None, ddl='varchar(100)')
+	def __init__(self, name=None, primary_key=False, default=None, ddl='varchar(100)'):
 		super().__init__(name, ddl, primary_key, default)
 
-class ModelMetaclass(type):
+class BooleanField(Field):
+	def __init__(self, name=None,  default=False):
+		super().__init__(name, 'boolean', False, default)
 
+class IntegerField(Field):
+	def __init__(self, name=None, primary_key=False, default=0):
+		super().__init__(name, 'bigint', primary_key, default)
+
+class FloatField(Field):
+	def __init__(self, name=None, primary_key=False, default=0.0):
+		super().__init__(name, 'real', primary_key, default)
+
+class TextField(Field):
+	def __init__(self, name=None, default=None):
+		super().__init__(name, 'text', False, default)
+
+class ModelMetaclass(type):
 	def __new__(cls, name, bases, attrs):
 		#排除Model类本身
 		if name == 'Model':
@@ -110,18 +124,17 @@ class ModelMetaclass(type):
 		attrs['__mappings__'] = mappings
 		attrs['__table__'] = tableName
 		#主键属性名
-		attrs['__primary_key__'] = primary_key
+		attrs['__primary_key__'] = primaryKey
 		#除主键外的属性名
-		attrs['__fileds__'] = fields
+		attrs['__fields__'] = fields
 		#构造默认的SELECT，INSERT，UPDATE和DELETE语句
 		attrs['__select__'] = 'select `%s`, %s from `%s`' % (primaryKey, ', '.join(escaped_fields), tableName)
-		attrs['__insert__'] = 'insert into `%s` (%s, `%s`) values (%s)' % (tableName, ', '.join(escaped_fields), primaryKey, create_args_string(len(escaped_fields) + 1)
+		attrs['__insert__'] = 'insert into `%s` (%s, `%s`) values (%s)' % (tableName, ', '.join(escaped_fields), primaryKey, create_args_string(len(escaped_fields) + 1))
 		attrs['__update__'] = 'update `%s` set %s where `%s`=?' % (tableName, ', '.join(map(lambda f: '`%s`=?' % (mappings.get(f).name or f), fields)), primaryKey)
 		attrs['__delete__'] = 'delete from `%s` where `%s`=?' % (tableName, primaryKey)
 		return type.__new__(cls, name, bases, attrs)
 
 class Model(dict, metaclass=ModelMetaclass):
-
 	def __init__(self, **kw):
 		super(Model, self).__init__(**kw)
 	
@@ -195,6 +208,7 @@ class Model(dict, metaclass=ModelMetaclass):
 		return cls(**rs[0])
 
 	async def save(self):
+		print("asdasdasdasd-----------")
 		args = list(map(self.getValueOrDefault, self.__fields__))
 		args.append(self.getValueOrDefault(self.__primary_key__))
 		rows = await execute(self.__insert__, args)
