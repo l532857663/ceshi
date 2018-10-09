@@ -73,7 +73,7 @@ class Field():
 		return '<%s, %s:%s>' % (self.__class__.__name__, self.column_type, self.name)
 
 class StringField(Field):
-	def __init__(self, name=None, primary_key=False, default=None, ddl='varchar(100)'):
+	def __init__(self, name=None, primary_key=False, default=None, ddl='varchar(200)'):
 		super().__init__(name, ddl, primary_key, default)
 
 class BooleanField(Field):
@@ -81,16 +81,16 @@ class BooleanField(Field):
 		super().__init__(name, 'boolean', False, default)
 
 class IntegerField(Field):
-	def __init__(self, name=None, primary_key=False, default=0):
-		super().__init__(name, 'bigint', primary_key, default)
+	def __init__(self, name=None, primary_key=False, default=0, ddl='int(10)'):
+		super().__init__(name, ddl, primary_key, default)
 
 class FloatField(Field):
 	def __init__(self, name=None, primary_key=False, default=0.0):
 		super().__init__(name, 'real', primary_key, default)
 
 class TextField(Field):
-	def __init__(self, name=None, default=None):
-		super().__init__(name, 'text', False, default)
+	def __init__(self, name=None, default=None, ddl='text'):
+		super().__init__(name, ddl, False, default)
 
 class ModelMetaclass(type):
 	def __new__(cls, name, bases, attrs):

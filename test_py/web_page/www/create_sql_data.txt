@@ -1,0 +1,46 @@
+
+create database data_analysis_web_server;
+
+create table `users` (
+`user_id` VARCHAR(50) UNSIGNED AUTO_INCREMENT,
+`username` VARCHAR(20) NOT NULL,
+`password` VARCHAR(50) NOT NULL,
+`role_number` INT(10) NOT NULL,
+`role_level` INT(1) NOT NULL,
+`unit_identification` VARCHAR(50) NOT NULL,
+`department_identification` VARCHAR(50) NOT NULL,
+`employee_identification` VARCHAR(50) NOT NULL,
+PRIMARY KEY ( `user_id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table `roles` (
+`roles_id` VARCHAR(50) UNSIGNED AUTO_INCREMENT,
+`role_number` INT(10) NOT NULL,
+`roles_name` VARCHAR(20) NOT NULL,
+`roles_description` VARCHAR(200),
+`roles_level` INT(1) NOT NULL,
+PRIMARY KEY ( `role_id` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+create table `modules` (
+`modules_id` VARCHAR(50) UNSIGNED AUTO_INCREMENT,
+`modules_number` INT(10) NOT NULL,
+`modules_name` VARCHAR(20) NOT NULL,
+PRIMARY KEY ( `modules_id` ),
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+###
+CRUD 
+1增加 -> 0001
+2读取 -> 0010
+4修改 -> 0100
+8删除 -> 1000
+
+create table `role_modules` (
+`rm_id` VARCHAR(50) UNSIGNED AUTO_INCREMENT,
+`roles_number` INT(10) NOT NULL,
+`modules_number` INT(10) NOT NULL,
+`rm_crud` INT(4) NOT NULL,
+PRIMARY KEY ( `modules_id` ),
+UNIQUE KEY ( `roles_number`,`modules_number` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
