@@ -2,39 +2,46 @@
 create database data_analysis_web_server;
 
 ###用户表：用户的个人信息
-create table `users` (
+create table `data_analysis_web_server_users` (
 `users_id` INT(10) UNSIGNED AUTO_INCREMENT,
-`users_number` VARCHAR(50) NOT NULL UNIQUE,
+`users_number` VARCHAR(256) NOT NULL UNIQUE,
 `users_username` VARCHAR(20) NOT NULL UNIQUE,
-`users_password` VARCHAR(50) NOT NULL,
+`users_password` VARCHAR(256) NOT NULL,
 `users_name` VARCHAR(50) NOT NULL,
-`roles_number` INT(10) NOT NULL,
-`roles_level` INT(1) NOT NULL,
+`roles_number` VARCHAR(256) NOT NULL,
+`roles_level` VARCHAR(6) NOT NULL,
 `unit_identification` VARCHAR(50) NOT NULL,
 `department_identification` VARCHAR(50) NOT NULL,
 `employee_identification` VARCHAR(50) NOT NULL,
-PRIMARY KEY ( `user_id` )
+PRIMARY KEY ( `users_id` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into data_analysis_web_server_users (users_number,users_username,users_password,users_name,roles_number,roles_level,unit_identification,department_identification,employee_identification) values (password("admin"),"admin",password("123456"),"Administartor",password("s00001"),"s00001","DC","ZGB","ZJL");
 
 ***********************************************************
 
 ###角色表：用户的角色信息，什么身份对应什么权限
-create table `roles` (
+create table `data_analysis_web_server_roles` (
 `roles_id` INT(10) UNSIGNED AUTO_INCREMENT,
-`roles_number` INT(10) NOT NULL UNIQUE,
+`roles_number` VARCHAR(256) NOT NULL UNIQUE,
 `roles_name` VARCHAR(20) NOT NULL,
 `roles_description` VARCHAR(200),
-`roles_level` INT(1) NOT NULL,
-PRIMARY KEY ( `role_id` )
+`roles_level` VARCHAR(6) NOT NULL,
+PRIMARY KEY ( `roles_id` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+insert into data_analysis_web_server_roles (roles_number,roles_name,roles_description,roles_level) values (password("s00001"),"经理","公司经理级别人员","s00001");
+insert into data_analysis_web_server_roles (roles_number,roles_name,roles_description,roles_level) values (password("a00001"),"组长","公司组长级别人员","a00001");
+
 ###模块表：server的各个模块信息
-create table `modules` (
+create table `data_analysis_web_server_modules` (
 `modules_id` INT(10) UNSIGNED AUTO_INCREMENT,
 `modules_number` INT(10) NOT NULL UNIQUE,
 `modules_name` VARCHAR(20) NOT NULL,
-PRIMARY KEY ( `modules_id` ),
+PRIMARY KEY ( `modules_id` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into data_analysis_web_server_modules (modules_number,modules_name) values ("1","收藏"),("2","对比"),("3","生成图表"),("4","用户设置"),("5","用户设置");
 
 ###
 CRUD 
@@ -44,31 +51,33 @@ CRUD
 4修改 	-> 0100
 8删除 	-> 1000
 角色和模块的对应权限关系
-create table `role_modules` (
+create table `data_analysis_web_server_role_modules` (
 `rm_id` INT(10) UNSIGNED AUTO_INCREMENT,
-`roles_number` INT(10) NOT NULL,
+`roles_number` VARCHAR(256) NOT NULL,
 `modules_number` INT(10) NOT NULL,
 `rm_crud` INT(4) NOT NULL,
-PRIMARY KEY ( `modules_id` ),
+PRIMARY KEY ( `rm_id` ),
 UNIQUE KEY ( `roles_number`,`modules_number` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into data_analysis_web_server_role_modules (roles_number,modules_number,rm_crud) values (password("s00001"),"1","1111"), (password("s00001"),"2","1111"), (password("s00001"),"3","1111"), (password("s00001"),"4","1111"), (password("s00001"),"5","0000");
 
 ************************************************************
 
 ###案件管理表：案件相关信息
-create table `cases_management` (
+create table `data_analysis_web_server_cases_management` (
 `cases_id` INT(10) UNSIGNED AUTO_INCREMENT,
 `cases_number` VARCHAR(50) NOT NULL UNIQUE,
-`cases_name` VARCHAR(50) NOT NULL,
 `cases_title` VARCHAR(200) NOT NULL,
-`cases_author` VARCHAR(50) NOT NULL,
+`cases_content` TEXT NOT NULL,
+`cases_author` VARCHAR(256) NOT NULL,
 PRIMARY KEY ( `cases_id` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ###文件管理表：文件相关信息
-create table `files_management` (
+create table `data_analysis_web_server_files_management` (
 `files_id` INT(10) UNSIGNED AUTO_INCREMENT,
-`files_number` VARCHAR(50) NOT NULL UNIQUE,
+`files_number` VARCHAR(256) NOT NULL UNIQUE,
 `files_source_name` VARCHAR(200) NOT NULL,
 `files_save_name` VARCHAR(200) NOT NULL,
 `files_save_path` TEXT NOT NULL,
@@ -78,22 +87,22 @@ PRIMARY KEY ( `files_id` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ###用户<=>案件表<=>上传文件：用户和案件和文件对应关系
-create table `user_case_file` (
+create table `data_analysis_web_server_user_case_file` (
 `ucf_id` INT(10) UNSIGNED AUTO_INCREMENT,
-`users_number` VARCHAR(50) NOT NULL,
+`users_number` VARCHAR(256) NOT NULL,
 `cases_number` VARCHAR(50) NOT NULL,
-`files_number` VARCHAR(50) NOT NULL,
+`files_number` VARCHAR(256) NOT NULL,
 `users_name` VARCHAR(50) NOT NULL,
 `cases_name` VARCHAR(50) NOT NULL,
 `files_source_name` VARCHAR(50) NOT NULL,
-PRIMARY KEY ( `uc_id` ),
-UNIQUE KEY ( `user_number`,`cases_number`,`files_number` )
+PRIMARY KEY ( `ucf_id` ),
+UNIQUE KEY ( `users_number`,`cases_number`,`files_number` )
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ************************************************************
 
 <table>			<row_key>								<family>:<column>  		
-users			'users_'+users_username				   *userinfo:users_number
+users			'users_'+timestamp+'_'+users_username  *userinfo:users_number
 														userinfo:users_username
 														userinfo:users_password
 														userinfo:users_name
@@ -116,13 +125,13 @@ role_module 	'rm_'+roles_number+'_'+modules_number  *rminfo:roles_number
 														rminfo:rm_crud
 														...
                 
-cases			'cases_'+cases_number				   *caseinfo:cases_number
+cases			'cases_'+timestamp+'_'+cases_number	   *caseinfo:cases_number
 														caseinfo:cases_name
 														caseinfo:cases_title
 														caseinfo:cases_author
 														...
                 
-files			'files_'+files_number				   *fileinfo:files_number
+files			'files_'+timestamp+'_'+files_number	   *fileinfo:files_number
 														fileinfo:files_source_name
 														fileinfo:files_save_name
 														fileinfo:files_save_path
@@ -130,8 +139,7 @@ files			'files_'+files_number				   *fileinfo:files_number
 														fileinfo:files_creation_time
 														...
 
-user_case_file	'ucf_'+users_number+'_'+cases_number+'_'+files_number
-													   *ucfinfo:users_number
+user_case_file	'ucf_'+timestamp					   *ucfinfo:users_number
 													   *ucfinfo:cases_number
 													   *ucfinfo:files_number
 														ucfinfo:users_name

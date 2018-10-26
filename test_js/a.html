@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>ceshi</title>
+<meta charset="utf-8"></meta>
+</head>
+<body>
+<button onclick="ceshi()">测试
+</button>
+<a id="aaa" target="_blank">test</a>
+<script>
+function ceshi() {
+	var a = "<html>qweqweqweqweasdasd</html>";
+	downloadFile("ceshi.html", a);
+}
+function downloadFile(fileName, content){
+	console.log("content:",content)
+    // var aLink = document.createElement('a');
+	aLink = document.getElementById ("aaa");
+    var blob = new Blob([content],{'type':'text/html'});
+	aLink.target = "_Blank";
+//	aLink.download = fileName;
+	aLink.href = URL.createObjectURL(blob);
+	console.log(aLink)
+	aLink.click();
+}
+</script>
+</body>
+</html>
