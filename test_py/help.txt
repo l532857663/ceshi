@@ -37,4 +37,10 @@
 		编写python的http server 接口，进行http通信
 		还有语义解析，情感分类
 201808:
-	线程，进程
+	0815:
+		线程，进程
+	0825:
+		ssh爆破链接
+201809:
+	distributed_process:分布式进程
+	python_nlps:	模拟发送数据请求
