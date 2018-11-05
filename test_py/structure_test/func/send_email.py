@@ -18,6 +18,8 @@ class Send_email:
 
 	def _format_addr(self, s):
 		name, addr = parseaddr(s)
+		print("name:", name)
+		print("addr:", addr)
 		return formataddr((Header(name, 'utf-8').encode(), addr))
 
 	def send_email(self, _content, _type="plain", _charset="utf-8"):
@@ -30,5 +32,5 @@ class Send_email:
 		server = smtplib.SMTP(self.smtp_server, 25)
 		server.set_debuglevel(1)
 		server.login(self.from_addr, self.password)
-		server.sendmail(self.from_addr, self.to_addr_arr, msg.as_string())
+#		server.sendmail(self.from_addr, self.to_addr_arr, msg.as_string())
 		server.quit()

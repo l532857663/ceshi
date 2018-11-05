@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
+import sys
+
 import data.send_email as Ds_email
 import func.send_email as Fs_email
+
+from email.utils import parseaddr, formataddr
 
 def create_info():
 	# 输入Email地址和口令:
@@ -15,8 +19,15 @@ def create_info():
 	content = input('Send content: ')
 	return from_addr, password, to_addr, smtp_server, content
 
+def ceshi():
+	name, addr = parseaddr("ceshih <%s>" % "ceasahoiuef")
+	print("name:", name)
+	print("addr:", addr)
+	sys.exit("END")
+
 if __name__ == "__main__" :
 	print("Start")
+	ceshi()
 
 	#获取数据
 #	from_addr, password, to_addr, smtp_server, content = create_info()
