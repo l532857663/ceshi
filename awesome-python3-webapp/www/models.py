@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-'''Model for user,blog,comment'''
+'''Models for user,blog,comment'''
 
 import time ,uuid
 from orm import Model,StringField.BooleanField,FloatField,TextField
