@@ -1,0 +1,188 @@
+命名空间:Namespace
+curl -vi -X GET \ || curl -vi -X POST \ || curl -vi -X PUT \ || curl -vi -X DELETE \
+-H "Accept: text/xml" \
+
+/namespaces
+(GET:列出所有名称空间)
+"http://example.com:8000/namespaces/"
+
+/namespaces/namespace
+(GET:描述特定的命名空间
+POST:创建一个新的命名空间
+PUT:更改现有命名空间\目前尚未使用
+DELETE:删除命名空间\命名空间必须为空)
+"http://example.com:8000/namespaces/special_ns"
+
+/namespaces/namespace/tables
+(GET:列出特定命名空间中的所有表)
+"http://example.com:8000/namespaces/special_ns/tables"
+
+	-------------------------------------------------------------------------------
+表:Table
+curl -vi -X GET \ || curl -vi -X POST \ || curl -vi -X PUT \ || curl -vi -X DELETE \
+-H "Accept: text/xml" \
+-H "Content-Type: text/xml" \
+
+/table/schema
+(GET:描述指定表的架构
+POST:创建新表，或替换现有表的架构
+PUT:使用提供的架构片段更新现有表
+DELETE:删除表格. 必须使用/table/schemaendpoint，而不仅仅是/table/
+)
+"http://example.com:8000/users/schema"
+
+POST:
+-d '<?xml version="1.0" encoding="UTF-8"?><TableSchema name="users"><ColumnSchema name="userinfo" /></TableSchema>' \
+PUT:
+-d '<?xml version="1.0" encoding="UTF-8"?><TableSchema name="users"><ColumnSchema name="userinfo" KEEP_DELETED_CELLS="true" /></TableSchema>' \
+
+/table/regions
+(GET:列出表区域)
+"http://example.com:8000/users/regions"
+
+	-------------------------------------------------------------------------------
+获取数据操作:Get Operations
+curl -vi -X GET \
+-H "Accept: text/xml" \
+(值为Base-64编码,这需要“Accept”请求标头,其类型可以包含多个列,如xml，json或protobuf)
+
+/table/row (获取单行的所有列.)
+"http://example.com:8000/users/row1"
+
+/table/row/column:qualifier
+/table/row/column:qualifier/timestamp(获取单个列的值。)
+"http://example.com:8000/users/row1/cf:a/1458586888395"
+
+/table/row/column:qualifier/?v=number_of_versions
+"http://example.com:8000/users/row1/cf:a?v=2"
+
+	-------------------------------------------------------------------------------
+扫描:Scan Operations 
+获取Scanner对象,将批处理参数调整为扫描应在批处理中返回的行数。
+
+/table/scanner/
+curl -vi -X PUT \
+-H "Accept: text/xml" \
+-H "Content-Type: text/xml" \
+-d '<Scanner batch ="100"> <filter> {"type":"PrefixFilter","value":"u123"} </filter> </Scanner>'
+"http://example.com:8000/users/scanner/"
+
+/table/scanner/scanner-id (上边的返回结果)如果扫描仪已耗尽，则返回HTTP状态204。
+curl -vi -X GET \
+-H "Accept: text/xml" \
+"http://example.com:8000/users/scanner/145869072824375522207"
+
+curl -vi -X DELETE \ (删除扫描仪并释放它使用的资源)
+-H "Accept: text/xml" \
+"http://example.com:8000/users/scanner/145869072824375522207"
+
+	-------------------------------------------------------------------------------
+添加操作:Put Operations
+在表中写一行. 行,列限定符和值必须均为Base-64编码
+/users/fakerow 值是占位符
+通过将多行添加到<CellSet>元素来插入多行
+还可以将要插入的数据保存到文件中，并使用-d @filename.txt
+
+curl -vi -X PUT \
+-H "Accept: text/xml" \
+-H "Content-Type: text/xml" \
+-d '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><CellSet><Row key="cm93NQo="><Cell column="Y2Y6ZQo=">dmFsdWU1Cg==</Cell></Row></CellSet>' \
+"http://example.com:8000/users/fakerow"
+
+-H "Content-Type: text/json" \
+-d '{"Row":[{"key":"cm93NQo=", "Cell": [{"column":"Y2Y6ZQo=", "$":"dmFsdWU1Cg=="}]}]}'' \
+
+
+----------------------------------------------------------------------------------
+schema:
+----element: 
+	----complexType: <Version>
+
+	----complexType: <TableList>
+
+	----complexType: <TableInfo>
+
+	----complexType: <TableSchema>
+
+	----complexType: <CellSet> type="tns:CellSet"
+		----sequence\element:
+			<row> 	type="tns:Row"
+	----complexType: <Row> type="tns:Row"
+		----sequence\element:
+			(key) 	type="base64Binary"
+			<cell> 	type="tns:Cell"
+
+	----complexType: <Cell> type="tns:Cell"
+		----sequence\element:
+			----simpleType: value base="base64Binary"
+		----attribute:
+			(column) type="base64Binary"
+			(timestamp) type="int"
+
+	----complexType: <Scanner> type="tns:Scanner"
+		----sequence\element:
+			<column>	type="base64Binary"
+			<filter>	type="string"
+		----attribute:
+			(startRow)	type="base64Binary"
+			(endRow)	type="base64Binary"
+			(batch)		type="int"
+			(startTime)	type="int"
+			(endTime)	type="int"
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CellSet>
+	<Row key="cm93NQo=">
+		<Cell column="Y2Y6ZQo=">
+			dmFsdWU1Cg==
+		</Cell>
+	</Row>
+</Cellset>
+
+<Scanner startRow="cm93MDE=" endRow="cm93MDg=" batch="100">
+	<filter>
+	{"type":"PrefixFilter","value":"u123"}
+	{
+		"type":"SingleColumnValueFilter",
+		"latestVersion":true,
+		"ifMissing":true, 
+		"qualifier":"Y29sMQ==",
+		"family":"ZmFtaWx5",
+		"op":"EQUAL",
+		"comparator":{"value":"MQ==","type":"BinaryComparator"}
+	}
+	</filter>
+</Scanner>
+
+过滤器
+Filter:
+RowFilter(筛选出匹配的所有的行)
+PrefixFilter(筛选出具有特定前缀的行键的数据)
+ColumnPrefixFilter(按照列名的前缀来筛选单元格的)
+ValueFilter(按照具体的值来筛选单元格的过滤器)
+KeyOnlyFilter(这个过滤器唯一的功能就是只返回每行的行键，值全部为空)
+
+RandomRowFilter(本过滤器的作用就是按照一定的几率（<=0会过滤掉所有的行，>=1会包含所有的行）来返回随机的结果集，对于同样的数据集，多次使用同一个RandomRowFilter会返回不通的结果集)
+FirstKeyOnlyFilter(返回的结果集中只包含第一列的数据,它在找到每行的第一列之后会停止扫描)
+ColumnCountGetFilter(这个过滤器来返回每行最多返回多少列，并在遇到一行的列数超过我们所设置的限制值的时候，结束扫描操作)
+SingleColumnValueFilter(用一列的值决定这一行的数据是否被过滤)
+
+scan "users_test",FILTER=>"PrefixFilter ('users_qwe')"
+<Scanner batch="3" startRow="" endRow="">
+<filter>{
+"type":"PrefixFilter",
+"value":"dXNlcnNfcXdl",
+}</filter>
+</Scanner>
+
+scan "users_test",FILTER=>"ValueFilter (=,'binary:admin')"
+<Scanner batch="3" startRow="" endRow="">
+<filter>{
+"type":"ValueFilter",
+"op":"EQUAL",
+"comparator":{
+	"type":"BinaryComparator",
+	"value":"YWRtaW4="
+	}
+}</filter>
+</Scanner>

@@ -27,7 +27,7 @@ def ceshi():
 
 if __name__ == "__main__" :
 	print("Start")
-	ceshi()
+	#ceshi()
 
 	#获取数据
 #	from_addr, password, to_addr, smtp_server, content = create_info()

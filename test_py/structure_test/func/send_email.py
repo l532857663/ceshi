@@ -32,5 +32,5 @@ class Send_email:
 		server = smtplib.SMTP(self.smtp_server, 25)
 		server.set_debuglevel(1)
 		server.login(self.from_addr, self.password)
-#		server.sendmail(self.from_addr, self.to_addr_arr, msg.as_string())
+		server.sendmail(self.from_addr, self.to_addr_arr, msg.as_string())
 		server.quit()
