@@ -1,6 +1,9 @@
 #! /bin/bash
 
-while [ 1 ]
-do
-    curl 192.168.11.139:8889;
-done
+SYS_DT="$(date +%F-%T)"
+
+echo $SYS_DT
+
+cat > ceshi <<EOF
+hahahah	$SYS_DT
+EOF
