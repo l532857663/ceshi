@@ -44,3 +44,12 @@
 201809:
 	distributed_process:分布式进程
 	python_nlps:	模拟发送数据请求
+
+structure_test:
+	conf:	对应配置文件
+	data:	对应数据文件
+	func:	对应方法文件
+	
+	ceshi.py:	测试文件
+	mysql_conn.py:	数据库操作
+	send_email.py:	邮件SMTP发送(QQ邮箱)
