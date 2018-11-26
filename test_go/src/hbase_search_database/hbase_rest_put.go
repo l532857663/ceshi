@@ -5,8 +5,10 @@
 package hbase_search_database
 
 import (
-//	"fmt"
+	"fmt"
 	"strings"
+	"encoding/xml"
+	"encoding/json"
 )
 
 func (self *Hbase_rest) Set_url_put () (ok bool) {
@@ -30,11 +32,32 @@ func (self *Hbase_rest) Set_url_put () (ok bool) {
 	return
 }
 
-func (self *Hbase_rest) Set_data_put (data_arr []map[string]interface{}) (ok bool) {
-
-	insert_data := new (Hbase_insert_config)
-	for _, val := data_arr {
-		config_map := val["configs"].(map[string]string)
-		data_map := val["datas"].(map[string]string)
+func (self *Hbase_rest) Set_data_put (data_str string) (ok bool) {
+	//string to obj
+	put_data := new (Hbase_insert_json)
+	err := json.Unmarshal([]byte(data_str), &put_data)
+	if err != nil {
+		fmt.Println("json Marshal error:", err)
+		ok = false
+		return
 	}
+
+	data_arr := put_data
+	insert_data := new (Hbase_insert_config)
+	for _, data_map := range data_arr.Datas {
+		tmp_row := Map2xml (data_arr.Configs, data_map)
+		insert_data.Row = append(insert_data.Row, *tmp_row)
+	}
+	fmt.Println("all:", insert_data)
+	put_body_byte, err := xml.Marshal(insert_data)
+	if err != nil {
+		fmt.Println("xml Marshal error:", err)
+		ok = false
+		return
+	}
+	fmt.Println("all str:", string(put_body_byte))
+	self.Body = string(put_body_byte)
+
+	ok = true
+	return
 }

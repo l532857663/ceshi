@@ -1,0 +1,65 @@
+/**
+ *	文件功能：把数据存入hbase数据库
+ */
+
+package hbase_search_database
+
+import (
+	"fmt"
+	"strings"
+	"encoding/xml"
+	"encoding/json"
+	"encoding/base64"
+)
+
+func (self *Hbase_rest) Set_url_scanner () (ok bool) {
+	self.Mutex.Lock ()
+    *self.Flag = 1
+    self.Mutex.Unlock ()
+
+	url := self.Addr + "/"
+
+	url_config := (self.Url_config).(*Hbase_url_config)
+
+	if strings.Compare(url_config.Tablename, "") == 0 {
+		ok = false
+		return
+	}
+	url += url_config.Tablename + "/scanner"
+
+	self.Url = url
+
+	ok = true
+	return
+}
+
+func (self *Hbase_rest) Set_data_scanner (data_str string) (ok bool) {
+	//string to obj
+	scanner_data := new (Hbase_scanner_json)
+	err := json.Unmarshal([]byte(data_str), &scanner_data)
+	if err != nil {
+		fmt.Println("json Marshal error:", err)
+		ok = false
+		return
+	}
+
+	//obj to xml
+	scan_obj := new(Scanner_config)
+	scan_obj.Batch = scanner_data.Batch
+	scan_obj.StartRow = base64.StdEncoding.EncodeToString ([]byte (scanner_data.Begin_row))
+	scan_obj.EndRow = base64.StdEncoding.EncodeToString ([]byte (scanner_data.End_row))
+	scan_obj.Filter = scanner_data.Filter
+
+	fmt.Println("all:", scan_obj)
+	scanner_body_byte, err := xml.Marshal(scan_obj)
+	if err != nil {
+		fmt.Println("xml Marshal error:", err)
+		ok = false
+		return
+	}
+	fmt.Println("all str:", string(scanner_body_byte))
+	self.Body = string(scanner_body_byte)
+
+	ok = true
+	return
+}

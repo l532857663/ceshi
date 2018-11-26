@@ -14,8 +14,8 @@ func Test_Fuck (t *testing.T) {
 	Hrest := New_hbase_rest ("http://192.168.201.112:9900", &mutex, &flag)
 
 //	Put_func (Hrest)
-//	Get_func (Hrest)
-	Scan_func (Hrest)
+	Get_func (Hrest)
+//	Scan_func (Hrest)
 }
 
 func Put_func (Hrest *Hbase_rest) {

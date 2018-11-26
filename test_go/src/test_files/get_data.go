@@ -1,12 +1,14 @@
-package test_file
+package test_files
 
 import (
 	"fmt"
-	"hbase_search_database/test_file"
+
+	"strings"
+	"hbase_search_database"
 )
 
-func Get_test_func(Hrest *Hbase_rest) {
-	url_config := new (Hbase_url_config)
+func Get_test_func(Hrest *hbase_search_database.Hbase_rest) {
+	url_config := new (hbase_search_database.Hbase_url_config)
 //	url_config.Namespace = "default"
 	url_config.Tablename = "users_test"
 	url_config.Row = "users_admin"
@@ -25,7 +27,7 @@ func Get_test_func(Hrest *Hbase_rest) {
 	Hrest.Set_method_get()
 	fmt.Println("get method:", Hrest.Method)
 
-	res_data := new (Hbase_resp_row)
+	res_data := new (hbase_search_database.Hbase_resp_row)
 	err := Hrest.Start(res_data)
 	if strings.Compare(err, "error") == 0 {
 		fmt.Println("get database error")
@@ -34,8 +36,10 @@ func Get_test_func(Hrest *Hbase_rest) {
 		fmt.Println("get database empty")
 		return
 	}
+	fmt.Println(err)
 
 	fmt.Println("res_data:", res_data)
-	fmt.Println(res_data.Row[0].Key)
+	res_data.Xml_base642str()
+	fmt.Println("res_data str:", res_data)
 }
 

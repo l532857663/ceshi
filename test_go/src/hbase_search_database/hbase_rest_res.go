@@ -32,7 +32,13 @@ type Cell_config struct {
 	Timestamp_int64 int64
 }
 
-//插入数据框架
+//插入数据json框架-------------------------
+type Hbase_insert_json struct {
+	Configs []map[string]string `json:"configs"`
+	Datas []map[string]string `json:"datas"`
+}
+
+//插入数据xml框架 ------------------------
 type Hbase_insert_config struct {
 	XMLName xml.Name `xml:"CellSet"`
 	Row []Row_set `xml:"Row"`
@@ -57,6 +63,14 @@ type Hbase_url_config struct {
 	Family string
 	Column string
 	Value string
+}
+
+//scanner Json ----------------------------
+type Hbase_scanner_json struct {
+	Batch string `json:"batch,omitempty"`
+	Begin_row string `json:"begin_row,omitempty"`
+	End_row string `json:"end_row,omitempty"`
+	Filter string `json:"filter,omitempty"`
 }
 
 //scanner XML ------------------------------
