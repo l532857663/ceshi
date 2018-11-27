@@ -129,7 +129,7 @@ func (self *Hbase_resp_row) Xml_base642str () {
 			rowkey_str = row_obj.Key
 		}
 		rowkey_str = string(rowkey_byte)
-		fmt.Println("Key:",rowkey_str)
+//		fmt.Println("Key:",rowkey_str)
 		row_obj.Key = rowkey_str
 
 		for k, cell_obj := range row_obj.Cell {

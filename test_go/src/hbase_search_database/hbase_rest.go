@@ -21,6 +21,7 @@ type Hbase_rest struct {
 	Body string
 	Url string
 	Method string
+	Ask_type string
 
 	Url_config interface{}
 
@@ -85,7 +86,7 @@ func (self *Hbase_rest) Start (res interface{}) (err_str string) {
 
 	fmt.Println ("hbase data_res_str: ", string (data_str))
 	//scan扫描，第一次返回结果集
-	if strings.Compare(res.(string), "Scanner") == 0 {
+	if strings.Compare(self.Ask_type, "Scanner") == 0 {
 		fmt.Println("the type is Scanner")
 		err_str = resp.Header["Location"][0]
 		return
@@ -93,7 +94,7 @@ func (self *Hbase_rest) Start (res interface{}) (err_str string) {
 
 	//插入数据成功返回空
 	if strings.Compare (string (data_str), "") == 0 {
-		fmt.Println ("data_str not found")
+		fmt.Println ("data_str is null")
 		err_str = "empty"
 		return
 	}

@@ -57,12 +57,12 @@ type Cell_set struct {
 
 //操作url结构------------------------------
 type Hbase_url_config struct {
-	Namespace string
-	Tablename string
-	Row string
-	Family string
-	Column string
-	Value string
+	Namespace string `json:"namespace,omitempty"`
+	Tablename string `json:"tablename,omitempty"`
+	Row string `json:"row,omitempty"`
+	Family string `json:"family,omitempty"`
+	Column string `json:"column,omitempty"`
+	Value string `json:"value,omitempty"`
 }
 
 //scanner Json ----------------------------
