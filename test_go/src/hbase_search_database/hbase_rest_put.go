@@ -8,9 +8,11 @@ import (
 	"fmt"
 	"strings"
 	"encoding/xml"
-	"encoding/json"
 )
 
+/**
+ * 方法功能：设置rest请求的url
+ */
 func (self *Hbase_rest) Set_url_put () (ok bool) {
 	self.Mutex.Lock ()
     *self.Flag = 1
@@ -32,17 +34,10 @@ func (self *Hbase_rest) Set_url_put () (ok bool) {
 	return
 }
 
-func (self *Hbase_rest) Set_data_put (data_str string) (ok bool) {
-	//string to obj
-	put_data := new (Hbase_insert_json)
-	err := json.Unmarshal([]byte(data_str), &put_data)
-	if err != nil {
-		fmt.Println("json Marshal error:", err)
-		ok = false
-		return
-	}
-
-	data_arr := put_data
+/**
+ * 方法功能：设置rest请求插入数据的xml内容
+ */
+func (self *Hbase_rest) Set_data_put (data_arr *Hbase_insert_json) (ok bool) {
 	insert_data := new (Hbase_insert_config)
 	for _, data_map := range data_arr.Datas {
 		tmp_row := Map2xml (data_arr.Configs, data_map)

@@ -32,7 +32,7 @@ func Scan_test_func(Hrest *hbase_search_database.Hbase_rest) {
 	fmt.Println("data:", scanner)
 	res = Hrest.Set_data_scanner(scanner)
 	if !res {
-		fmt.Println("put data set error!")
+		fmt.Println("scanner data set error!")
 		return
 	}
 
@@ -47,39 +47,11 @@ func Scan_test_func(Hrest *hbase_search_database.Hbase_rest) {
 		return
 	}
 	fmt.Println(err)
-	Scanner_get_func(Hrest, err)
-}
-
-func Scanner_get_func(Hrest *hbase_search_database.Hbase_rest, url string) {
-	//用扫描器返回数据
-	Hrest.Url = url
-	fmt.Println("scan url:", Hrest.Url)
-
-	Hrest.Set_method_get()
-	fmt.Println("scan method:", Hrest.Method)
-
-	Hrest.Ask_type = ""
-	Hrest.Body = ""
-
-	res_data := new (hbase_search_database.Hbase_resp_row)
-	for {
-		res_row := new (hbase_search_database.Hbase_resp_row)
-		err := Hrest.Start(res_row)
-		if strings.Compare(err, "error") == 0 {
-			fmt.Println("get database error")
-			break
-		}else if strings.Compare(err, "empty") == 0 {
-			fmt.Println("get scanner database over")
-			break
-		}
-		fmt.Println(err)
-
-		fmt.Println("res_row:", res_row)
-		for _, row := range res_row.Row {
-			res_data.Row = append(res_data.Row, row)
-		}
+//	Scanner_get_func(Hrest, err)
+	res_data, res = Hrest.Get_data_scan(err)
+	if !res {
+		fmt.Println("get scanner data error!")
+		return
 	}
-
-	res_data.Xml_base642str()
-	fmt.Println("res_data str:", res_data)
+	fmt.Println("all res_data:", res_data)
 }

@@ -5,26 +5,15 @@ import (
 
 	"strings"
 	"hbase_search_database"
+
+	"encoding/json"
 )
 
-func Put_test_func(Hrest *hbase_search_database.Hbase_rest) {
-	url_config := new (hbase_search_database.Hbase_url_config)
-	url_config.Tablename = "users_test"
+var put_data string
 
-	var res bool
-	Hrest.Url_config = url_config
-	res = Hrest.Set_url_put ()
-	if !res {
-		fmt.Println("put url set error!")
-		return
-	}
-	fmt.Println("put url:", Hrest.Url)
-
-	Hrest.Set_method_put()
-	fmt.Println("put method:", Hrest.Method)
-
+func init() {
 	//插入数据
-	Put_data := `{
+	put_data = `{
 		"configs" : [
 			{"direct":"users"},
 			{"indirect":"userinfo:users_username"}
@@ -52,9 +41,32 @@ func Put_test_func(Hrest *hbase_search_database.Hbase_rest) {
 			}
 		]
 	}`
+}
 
-	fmt.Println("data:", Put_data)
-	res = Hrest.Set_data_put(Put_data)
+func Put_test_func(Hrest *hbase_search_database.Hbase_rest) {
+	url_config := new (hbase_search_database.Hbase_url_config)
+	url_config.Tablename = "users_test"
+
+	var res bool
+	Hrest.Url_config = url_config
+	res = Hrest.Set_url_put ()
+	if !res {
+		fmt.Println("put url set error!")
+		return
+	}
+	fmt.Println("put url:", Hrest.Url)
+
+	Hrest.Set_method_put()
+	fmt.Println("put method:", Hrest.Method)
+
+	put_data_json := new (Hbase_insert_json)
+	err := json.Unmarshal([]byte(put_data), &put_data_json)
+	if err != nil {
+		fmt.Println("json Marshal error:", err)
+		ok = false
+		return
+	}
+	res = Hrest.Set_data_put(put_data_json)
 	if !res {
 		fmt.Println("put data set error!")
 		return

@@ -1,5 +1,5 @@
 /**
- *	文件功能：把数据存入hbase数据库
+ *	文件功能：用检索条件查scanner扫描器
  */
 
 package hbase_search_database
@@ -33,7 +33,7 @@ func (self *Hbase_rest) Set_url_scanner () (ok bool) {
 	return
 }
 
-func (self *Hbase_rest) Set_data_scanner (data_str string) (ok bool) {
+func (self *Hbase_rest) Set_data_scanner (scanner_data *Hbase_scanner_json) (ok bool) {
 	//string to obj
 	scanner_data := new (Hbase_scanner_json)
 	err := json.Unmarshal([]byte(data_str), &scanner_data)
