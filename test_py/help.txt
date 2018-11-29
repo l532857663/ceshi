@@ -45,6 +45,9 @@
 	distributed_process:分布式进程
 	python_nlps:	模拟发送数据请求
 
+201811:
+	zhengze.py: 正则测试代码
+
 structure_test:
 	conf:	对应配置文件
 	data:	对应数据文件
