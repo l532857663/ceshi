@@ -1,11 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><Scanner batch="100"><filter>{
-			"type": "SingleColumnValueFilter", 
-			"op": "EQUAL", 
-			"ifMissing": true, 
-			"family": "aW5mbw==", 
-			"qualifier": "dGFsa190aW1l", 
-			"comparator": {
-				"type": "BinaryComparator", 
-				"value": "NjM2ODgxNjE=" 
-			}
-		}</filter></Scanner>
+<?xml version="1.0" encoding="UTF-8"?>
+<Scanner batch="30">
+<filter>{"type":"PrefixFilter","value":"dXNlcnNfcWF6","comparator":{}}</filter>
+<column></column>
+</Scanner>

@@ -50,6 +50,7 @@ type Scanner_config struct {
 	StartRow string `xml:"startRow,attr"`
 	EndRow string `xml:"endRow,attr"`
 
+	Column []string `xml:column`
 	Filter string `xml:"filter"`
 }
 

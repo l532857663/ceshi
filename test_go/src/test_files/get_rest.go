@@ -7,16 +7,8 @@ import (
 	"hbase_search_database"
 )
 
-func Get_test_func(Hrest *hbase_search_database.Hbase_rest) {
-	url_config := new (hbase_search_database.Hbase_url_config)
-//	url_config.Namespace = "default"
-	url_config.Tablename = "users_test"
-	url_config.Row = "users_admin"
-//	url_config.Family = "userinfo"
-//	url_config.Column = "users_name"
-
+func Get_rest_func(Hrest *hbase_search_database.Hbase_rest) {
 	var res bool
-	Hrest.Url_config = url_config
 	res = Hrest.Set_url_get ()
 	if !res {
 		fmt.Println("get url set error!")

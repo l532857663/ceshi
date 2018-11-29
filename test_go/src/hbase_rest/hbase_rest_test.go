@@ -14,8 +14,8 @@ func Test_Fuck (t *testing.T) {
 	Hrest := New_hbase_rest ("http://192.168.201.112:9900", &mutex, &flag)
 
 //	Put_func (Hrest)
-	Get_func (Hrest)
-//	Scan_func (Hrest)
+//	Get_func (Hrest)
+	Scan_func (Hrest)
 }
 
 func Put_func (Hrest *Hbase_rest) {
@@ -68,9 +68,9 @@ func Scan_func (Hrest *Hbase_rest) {
 	fmt.Println("filter_str:",filter_str)
 
 	var columns_arr []string
-//	columns_arr = append(columns_arr, "userinfo:user_username")
+	columns_arr = append(columns_arr, "userinfo:user_username")
 
-	scan_url, ok := Hrest.Scan_row ("users_test", "2", "", "", columns_arr, filter_str)
+	scan_url, ok := Hrest.Scan_row ("users_test", "3", "", "", columns_arr, filter_str)
 	if !ok {
 		return
 	}

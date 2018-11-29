@@ -1,0 +1,46 @@
+创建表
+create "users","userinfo"
+
+curl -vi -X POST \
+-H "Accept: text/xml" \
+-H "Content-Type: text/xml" \
+"http://192.168.11.133:9900/users/schema" \
+-d '<?xml version="1.0" encoding="UTF-8"?><TableSchema name="users"><ColumnSchema name="userinfo" /></TableSchema>'
+
+删除表
+disable "users";delete "users"
+
+curl -vi -X DELETE \
+-H "Accept: text/xml" \
+"http://192.168.11.133:9900/users/schema"
+
+插入数据
+put "users","users_admin","userinfo:users_username","admin"
+put "users","users_admin","userinfo:users_password","123456"
+put "users","users_admin","userinfo:users_name","Administartor"
+
+curl -vi -X PUT \
+-H "Accept: text/xml" \
+-H "Content-Type: text/xml" \
+-d '<?xml version="1.0" encoding="UTF-8"?><CellSet><Row key="dXNlcnNfYWRtaW4="><Cell column="dXNlcmluZm8lM0F1c2Vyc191c2VybmFtZQ==">YWRtaW4=</Cell><Cell column="dXNlcmluZm8lM0F1c2Vyc19wYXNzd29yZA==">MTIzNDU2</Cell><Cell column="dXNlcmluZm8lM0F1c2Vyc19uYW1l">QWRtaW5pc3RhcnRvcg==</Cell></Row></CellSet>' \
+"http://192.168.11.133:9900/users/fakerow"
+
+curl -vi -X PUT \
+-H "Accept: text/xml" \
+-H "Content-Type: text/xml" \
+-d '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><CellSet><Row key="dXNlcnNfYWRtaW4="><Cell column="dXNlcmluZm8lM0F1c2Vyc19wYXNzd29yZA==">MTIzNDU2</Cell></Row></CellSet>' \
+"http://192.168.11.133:9900/users/fakerow"
+
+-d '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><CellSet><Row key="cm93NQo="><Cell column="Y2Y6ZQo=">dmFsdWU1Cg==</Cell></Row></CellSet>' \
+-d '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><CellSet><Row key="dXNlcnNfYWRtaW4="><Cell column="dXNlcmluZm8lM0F1c2Vyc191c2VybmFtZQ==">YWRtaW4=</Cell></Row></CellSet>' \
+
+//查询
+curl -vi -X GET \
+-H "Accept: text/xml" \
+"http://192.168.11.133:9900/users/users_admin"
+"http://192.168.11.133:9900/users/users_admin/userinfo:users_password"
+
+curl -vi -X GET \
+-H "Accept: text/xml" \
+-d '<Scanner batch="100"><filter>{"type":"PrefixFilter","value":"users_"}</filter></Scanner>' \
+"http://192.168.11.133:9900/users/scanner/"

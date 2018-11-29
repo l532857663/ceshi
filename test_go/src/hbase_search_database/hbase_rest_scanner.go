@@ -8,7 +8,6 @@ import (
 	"fmt"
 	"strings"
 	"encoding/xml"
-	"encoding/json"
 	"encoding/base64"
 )
 
@@ -34,15 +33,6 @@ func (self *Hbase_rest) Set_url_scanner () (ok bool) {
 }
 
 func (self *Hbase_rest) Set_data_scanner (scanner_data *Hbase_scanner_json) (ok bool) {
-	//string to obj
-	scanner_data := new (Hbase_scanner_json)
-	err := json.Unmarshal([]byte(data_str), &scanner_data)
-	if err != nil {
-		fmt.Println("json Marshal error:", err)
-		ok = false
-		return
-	}
-
 	//obj to xml
 	scan_obj := new(Scanner_config)
 	scan_obj.Batch = scanner_data.Batch

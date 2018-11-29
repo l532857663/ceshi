@@ -17,6 +17,10 @@ func (self *Hbase_rest) Scan_row (table_name string, batch string, begin_row str
 	scan_obj.Batch = batch
 	scan_obj.StartRow = base64.StdEncoding.EncodeToString ([]byte (begin_row))
 	scan_obj.EndRow = base64.StdEncoding.EncodeToString ([]byte (end_row))
+	for k,v := range columns {
+		columns[k] = base64.StdEncoding.EncodeToString ([]byte (v))
+	}
+	scan_obj.Column = columns
 	scan_obj.Filter = filter_str
 
 	scan_byte, err := xml.Marshal(scan_obj)
