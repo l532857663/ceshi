@@ -1,64 +1,72 @@
-package test_files
+/**
+ *	文件功能：用检索条件查scanner扫描器
+ */
+
+package hbase_search_database
 
 import (
 	"fmt"
 
 	"strings"
-	"hbase_search_database"
 	"encoding/json"
 )
 
-func Scan_rest_func(Hrest *hbase_search_database.Hbase_rest) {
+func (self *Hbase_rest) Scanner_data_api(scanner string, filter_json map[string]string, columns []string) (ok bool) {
 	var res bool
-	res = Hrest.Set_url_scanner ()
+	res = self.Set_url_scanner ()
 	if !res {
 		fmt.Println("scan url set error!")
+		ok = false
 		return
 	}
-	fmt.Println("scan url:", Hrest.Url)
+	fmt.Println("scan url:", self.Url)
 
-	Hrest.Set_method_put()
-	fmt.Println("scan method:", Hrest.Method)
+	self.Set_method_put()
+	fmt.Println("scan method:", self.Method)
 
 	//扫描条件
-	scanner := `{
-		"batch" : "6"
-	}`
-	filter_str := hbase_search_database.Get_filter_str(Test_json)
+	filter_str := Get_filter_str(filter_json)
 	fmt.Println("filter_str:", filter_str)
 
 	//string to obj
-	scanner_data := new (hbase_search_database.Hbase_scanner_json)
+	scanner_data := new (Hbase_scanner_json)
 	err := json.Unmarshal([]byte(scanner), &scanner_data)
 	if err != nil {
 		fmt.Println("json Marshal error:", err)
+		ok = false
 		return
 	}
-	scanner_data.Columns = Column_find
+	scanner_data.Columns = columns
 	scanner_data.Filter = filter_str
 
 	fmt.Println("data obj:", scanner_data)
-	res = Hrest.Set_data_scanner(scanner_data)
+	res = self.Set_data_scanner(scanner_data)
 	if !res {
 		fmt.Println("scanner data set error!")
+		ok = false
 		return
 	}
 
-	Hrest.Ask_type = "Scanner"
-	res_data := new (hbase_search_database.Hbase_resp_row)
-	res_str := Hrest.Start(res_data)
+	self.Ask_type = "Scanner"
+	res_data := new (Hbase_resp_row)
+	res_str := self.Start(res_data)
 	if strings.Compare(res_str, "error") == 0 {
 		fmt.Println("get database error")
+		ok = false
 		return
 	}else if strings.Compare(res_str, "empty") == 0 {
 		fmt.Println("get database empty")
+		ok = false
 		return
 	}
 	fmt.Println(res_str)
-	res_data, res = Hrest.Get_data_scan(res_str)
+	res_data, res = self.Get_data_scan(res_str)
 	if !res {
 		fmt.Println("get scanner data error!")
+		ok = false
 		return
 	}
 	fmt.Println("all res_data:", res_data)
+	ok = true
+	return
 }

@@ -10,7 +10,9 @@ import (
 )
 
 var Put_data string
+var Scan_data string
 var Test_json map[string]string
+var Column_find []string
 
 func Test_get_data (t *testing.T) {
 	var mutex sync.Mutex
@@ -28,9 +30,10 @@ func Test_get_data (t *testing.T) {
 
 //	Get_rest_func(Hrest)
 //	Put_rest_func(Hrest)
-	Scan_rest_func(Hrest)
+//	Scan_rest_func(Hrest)
 
 //	Put_api_func(Hrest)
+	Scan_api_func(Hrest)
 }
 
 func Get_data() {
@@ -64,6 +67,10 @@ func Get_data() {
 		]
 	}`
 	//Scan_row
+	Scan_data = `{
+		"batch" : "6"
+	}`
+	/*
 	Test_json = map[string]string {
 		"Type" : "ValueFilter",
 		"Op" : "EQUAL",
@@ -79,5 +86,6 @@ func Get_data() {
 		"Type" : "PrefixFilter",
 		"Value" : "users_qaz",
 	}
-
+	Column_find = append(Column_find, "userinfo:users_username")
+*/
 }

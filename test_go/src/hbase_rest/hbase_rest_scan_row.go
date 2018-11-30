@@ -20,7 +20,7 @@ func (self *Hbase_rest) Scan_row (table_name string, batch string, begin_row str
 	for k,v := range columns {
 		columns[k] = base64.StdEncoding.EncodeToString ([]byte (v))
 	}
-	scan_obj.Column = columns
+	scan_obj.Columns = columns
 	scan_obj.Filter = filter_str
 
 	scan_byte, err := xml.Marshal(scan_obj)
@@ -30,7 +30,9 @@ func (self *Hbase_rest) Scan_row (table_name string, batch string, begin_row str
 	put_body := string(scan_byte)
 
 	fmt.Println(url)
+	fmt.Println("ceshi------------------------")
 	fmt.Println(put_body)
+	fmt.Println("ceshi------------------------")
 
 	_, resp, ok := self.Get_base ("PUT", url, put_body)
 	fmt.Println ("scan my data:", resp, ok)

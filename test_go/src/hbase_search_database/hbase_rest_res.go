@@ -70,6 +70,7 @@ type Hbase_scanner_json struct {
 	Batch string `json:"batch,omitempty"`
 	Begin_row string `json:"begin_row,omitempty"`
 	End_row string `json:"end_row,omitempty"`
+	Columns []string `json:"column,omitempty"`
 	Filter string `json:"filter,omitempty"`
 }
 
@@ -79,6 +80,7 @@ type Scanner_config struct {
 	Batch string `xml:"batch,attr"`
 	StartRow string `xml:"startRow,attr"`
 	EndRow string `xml:"endRow,attr"`
+	Column []string `xml:"column"`
 	Filter string `xml:"filter"`
 }
 

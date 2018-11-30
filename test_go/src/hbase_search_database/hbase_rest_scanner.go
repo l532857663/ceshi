@@ -38,6 +38,10 @@ func (self *Hbase_rest) Set_data_scanner (scanner_data *Hbase_scanner_json) (ok 
 	scan_obj.Batch = scanner_data.Batch
 	scan_obj.StartRow = base64.StdEncoding.EncodeToString ([]byte (scanner_data.Begin_row))
 	scan_obj.EndRow = base64.StdEncoding.EncodeToString ([]byte (scanner_data.End_row))
+	for _, val := range scanner_data.Columns {
+		column_base64 := base64.StdEncoding.EncodeToString ([]byte (val))
+		scan_obj.Column = append(scan_obj.Column, column_base64)
+	}
 	scan_obj.Filter = scanner_data.Filter
 
 	fmt.Println("all:", scan_obj)

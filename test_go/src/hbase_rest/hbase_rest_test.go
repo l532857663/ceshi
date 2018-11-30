@@ -57,7 +57,7 @@ func Scan_func (Hrest *Hbase_rest) {
 	test_json["Comparator_Value"] = "123"
 	test_json = map[string]string {
 		"Type" : "PrefixFilter",
-		"Value" : "users_qwe",
+		"Value" : "users_",
 	}
 
 	var filter_str string
@@ -68,9 +68,10 @@ func Scan_func (Hrest *Hbase_rest) {
 	fmt.Println("filter_str:",filter_str)
 
 	var columns_arr []string
-	columns_arr = append(columns_arr, "userinfo:user_username")
+	columns_arr = append(columns_arr, "userinfo:users_username")
+	columns_arr = append(columns_arr, "userinfo:users_password")
 
-	scan_url, ok := Hrest.Scan_row ("users_test", "3", "", "", columns_arr, filter_str)
+	scan_url, ok := Hrest.Scan_row ("users_test", "30", "", "", columns_arr, filter_str)
 	if !ok {
 		return
 	}
