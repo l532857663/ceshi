@@ -10,7 +10,7 @@ import (
 
 func Scan_rest_func(Hrest *hbase_search_database.Hbase_rest) {
 	var res bool
-	res = Hrest.Set_url_scanner ()
+	res = Hrest.Set_url_scan ()
 	if !res {
 		fmt.Println("scan url set error!")
 		return
@@ -38,9 +38,9 @@ func Scan_rest_func(Hrest *hbase_search_database.Hbase_rest) {
 	scanner_data.Filter = filter_str
 
 	fmt.Println("data obj:", scanner_data)
-	res = Hrest.Set_data_scanner(scanner_data)
+	res = Hrest.Set_data_scan(scanner_data)
 	if !res {
-		fmt.Println("scanner data set error!")
+		fmt.Println("scan data set error!")
 		return
 	}
 

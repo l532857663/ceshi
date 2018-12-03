@@ -11,9 +11,9 @@ import (
 	"encoding/json"
 )
 
-func (self *Hbase_rest) Scanner_data_api(scanner string, filter_json map[string]string, columns []string) (ok bool) {
+func (self *Hbase_rest) Scan_data_api(scanner string, filter_json map[string]string, columns []string) (ok bool) {
 	var res bool
-	res = self.Set_url_scanner ()
+	res = self.Set_url_scan ()
 	if !res {
 		fmt.Println("scan url set error!")
 		ok = false
@@ -40,7 +40,7 @@ func (self *Hbase_rest) Scanner_data_api(scanner string, filter_json map[string]
 	scanner_data.Filter = filter_str
 
 	fmt.Println("data obj:", scanner_data)
-	res = self.Set_data_scanner(scanner_data)
+	res = self.Set_data_scan(scanner_data)
 	if !res {
 		fmt.Println("scanner data set error!")
 		ok = false
