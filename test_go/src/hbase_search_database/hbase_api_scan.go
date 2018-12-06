@@ -11,7 +11,7 @@ import (
 	"encoding/json"
 )
 
-func (self *Hbase_rest) Scan_data_api(scanner string, filter_json map[string]string, columns []string) (ok bool) {
+func (self *Hbase_rest) Scan_data_api(scanner string, filter_json map[string]string, columns []string) (res_data *Hbase_resp_row, ok bool) {
 	var res bool
 	res = self.Set_url_scan ()
 	if !res {
@@ -48,7 +48,6 @@ func (self *Hbase_rest) Scan_data_api(scanner string, filter_json map[string]str
 	}
 
 	self.Ask_type = "Scanner"
-	res_data := new (Hbase_resp_row)
 	res_str := self.Start(res_data)
 	if strings.Compare(res_str, "error") == 0 {
 		fmt.Println("get database error")
@@ -66,7 +65,7 @@ func (self *Hbase_rest) Scan_data_api(scanner string, filter_json map[string]str
 		ok = false
 		return
 	}
-	fmt.Println("all res_data:", res_data)
+//	fmt.Println("all res_data:", res_data)
 	ok = true
 	return
 }

@@ -1,31 +1,36 @@
-package test_files
+/**
+ *	文件功能：获取指定数据
+ */
+
+package hbase_search_database
 
 import (
 	"fmt"
-
 	"strings"
-	"hbase_search_database"
 )
 
-func Get_rest_func(Hrest *hbase_search_database.Hbase_rest) {
+func (self *Hbase_rest) Get_data_api () (ok bool) {
 	var res bool
-	res = Hrest.Set_url_get ()
+	res = self.Set_url_get ()
 	if !res {
 		fmt.Println("get url set error!")
+		ok = false
 		return
 	}
-	fmt.Println("get url:", Hrest.Url)
+	fmt.Println("get url:", self.Url)
 
-	Hrest.Set_method_get()
-	fmt.Println("get method:", Hrest.Method)
+	self.Set_method_get()
+	fmt.Println("get method:", self.Method)
 
-	res_data := new (hbase_search_database.Hbase_resp_row)
-	res_str := Hrest.Start(res_data)
+	res_data := new (Hbase_resp_row)
+	res_str := self.Start(res_data)
 	if strings.Compare(res_str, "error") == 0 {
 		fmt.Println("get database error")
+		ok = false
 		return
 	}else if strings.Compare(res_str, "empty") == 0 {
 		fmt.Println("get database empty")
+		ok = true
 		return
 	}
 	fmt.Println(res_str)
@@ -33,5 +38,6 @@ func Get_rest_func(Hrest *hbase_search_database.Hbase_rest) {
 	fmt.Println("res_data:", res_data)
 	res_data.Xml_base642str()
 	fmt.Println("res_data str:", res_data)
+	ok = true
+	return
 }
-

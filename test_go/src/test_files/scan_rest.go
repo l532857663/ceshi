@@ -26,6 +26,9 @@ func Scan_rest_func(Hrest *hbase_search_database.Hbase_rest) {
 	}`
 	filter_str := hbase_search_database.Get_filter_str(Test_json)
 	fmt.Println("filter_str:", filter_str)
+	filter_str = `{"type": "FilterList","op": "MUST_PASS_ALL","filters": [{"type":"ValueFilter","op":"EQUAL","comparator":{"type":"BinaryComparator","value":"ZG9pbmc="}}]}`
+//	filter_str = `{"type":"FirstKeyOnlyFilter"}`
+	fmt.Println("----------------------------------------------------------------")
 
 	//string to obj
 	scanner_data := new (hbase_search_database.Hbase_scanner_json)
@@ -34,7 +37,7 @@ func Scan_rest_func(Hrest *hbase_search_database.Hbase_rest) {
 		fmt.Println("json Marshal error:", err)
 		return
 	}
-	scanner_data.Columns = Column_find
+//	scanner_data.Columns = Column_find
 	scanner_data.Filter = filter_str
 
 	fmt.Println("data obj:", scanner_data)

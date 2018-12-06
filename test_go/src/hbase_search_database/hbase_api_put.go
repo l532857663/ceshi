@@ -31,6 +31,7 @@ func (self *Hbase_rest) Put_data_api (data_str string) (ok bool) {
 		ok = false
 		return
 	}
+	fmt.Println("put data json:", put_data_json)
 	res = self.Set_data_put(put_data_json)
 	if !res {
 		fmt.Println("put data set error!")

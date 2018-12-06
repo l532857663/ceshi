@@ -88,6 +88,7 @@ type Scanner_config struct {
 type Filter_json struct {
 	Type string `json:"type,omitempty"`
 	Value string `json:"value,omitempty"`
+	LatestVersion string `json:"latestVersion,omitempty"`
 	Family string `json:"family,omitempty"`
 	Op string `json:"op,omitempty"`
 	Comparator *Comparator_json `json:"comparator,omitempty"`

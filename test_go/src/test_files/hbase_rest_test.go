@@ -30,10 +30,11 @@ func Test_get_data (t *testing.T) {
 
 //	Get_rest_func(Hrest)
 //	Put_rest_func(Hrest)
-//	Scan_rest_func(Hrest)
+	Scan_rest_func(Hrest)
 
+//	Get_api_func(Hrest)
 //	Put_api_func(Hrest)
-	Scan_api_func(Hrest)
+//	Scan_api_func(Hrest)
 }
 
 func Get_data() {
@@ -70,14 +71,14 @@ func Get_data() {
 	Scan_data = `{
 		"batch" : "6"
 	}`
-	/*
 	Test_json = map[string]string {
 		"Type" : "ValueFilter",
 		"Op" : "EQUAL",
+		"LatestVersion" : "true",
 		"Comparator_Type" : "BinaryComparator",
-		"Comparator_Value" : "admin",
+		"Comparator_Value" : "doing",
 	}
-
+/*
 	Test_json["Comparator_Type"] = "SubstringComparator"
 	Test_json["Comparator_Value"] = "666"
 	Test_json["Comparator_Type"] = "RegexStringComparator"
@@ -86,6 +87,6 @@ func Get_data() {
 		"Type" : "PrefixFilter",
 		"Value" : "users_qaz",
 	}
-	Column_find = append(Column_find, "userinfo:users_username")
-*/
+	*/
+	Column_find = append(Column_find, "userinfo")
 }

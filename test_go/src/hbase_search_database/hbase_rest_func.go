@@ -76,10 +76,13 @@ func Json2string (json_obj interface{}) (json_str string) {
 }
 
 func Get_filter_str (tmp_json map[string]string) (tmp_filter_str string) {
+	fmt.Println("---------------------------------------------")
+	fmt.Println("filter_str:", tmp_json)
 	filter_tmp := map[string]string {
 		"Type" : "",
 		"Value" : "",
 		"Op" : "",
+		"LatestVersion" : "",
 		"Comparator_Type" : "",
 		"Comparator_Value" : "",
 	}
@@ -100,6 +103,14 @@ func Get_filter_str (tmp_json map[string]string) (tmp_filter_str string) {
 	tmp_filter_json := new(Filter_json)
 	tmp_filter_json.Type = filter_tmp["Type"]
 	tmp_filter_json.Value = base64.StdEncoding.EncodeToString([]byte (filter_tmp["Value"]))
+	/*
+	if strings.Compare(filter_tmp["LatestVersion"], "true") == 0 {
+		tmp_filter_json.LatestVersion = true
+	}else{
+		tmp_filter_json.LatestVersion = false
+	}
+	*/
+	tmp_filter_json.LatestVersion = filter_tmp["LatestVersion"]
 	tmp_filter_json.Op = filter_tmp["Op"]
 
 	tmp_comparator_json := new(Comparator_json)
