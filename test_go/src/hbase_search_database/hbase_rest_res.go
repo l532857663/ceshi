@@ -63,6 +63,7 @@ type Hbase_url_config struct {
 	Family string `json:"family,omitempty"`
 	Column string `json:"column,omitempty"`
 	Value string `json:"value,omitempty"`
+	Limit string `json:"limit,omitempty"`
 }
 
 //scanner Json ----------------------------

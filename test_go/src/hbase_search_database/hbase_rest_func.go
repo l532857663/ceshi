@@ -76,13 +76,10 @@ func Json2string (json_obj interface{}) (json_str string) {
 }
 
 func Get_filter_str (tmp_json map[string]string) (tmp_filter_str string) {
-	fmt.Println("---------------------------------------------")
-	fmt.Println("filter_str:", tmp_json)
 	filter_tmp := map[string]string {
 		"Type" : "",
 		"Value" : "",
 		"Op" : "",
-		"LatestVersion" : "",
 		"Comparator_Type" : "",
 		"Comparator_Value" : "",
 	}

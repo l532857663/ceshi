@@ -26,6 +26,10 @@ func (self *Hbase_rest) Set_url_scan () (ok bool) {
 	}
 	url += url_config.Tablename + "/scanner"
 
+	if strings.Compare(url_config.Limit, "") != 0 {
+		url += "/*?limit=" + url_config.Limit
+	}
+
 	self.Url = url
 
 	ok = true

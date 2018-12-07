@@ -26,8 +26,10 @@ func Scan_rest_func(Hrest *hbase_search_database.Hbase_rest) {
 	}`
 	filter_str := hbase_search_database.Get_filter_str(Test_json)
 	fmt.Println("filter_str:", filter_str)
-	filter_str = `{"type": "FilterList","op": "MUST_PASS_ALL","filters": [{"type":"ValueFilter","op":"EQUAL","comparator":{"type":"BinaryComparator","value":"ZG9pbmc="}}]}`
+//	filter_str = `{"type": "FilterList","op": "MUST_PASS_ALL","filters": [{"type":"ValueFilter","op":"EQUAL","comparator":{"type":"BinaryComparator","value":"ZG9pbmc="}}]}`
 //	filter_str = `{"type":"FirstKeyOnlyFilter"}`
+//	filter_str = `{"type":"FilterList","op":"MUST_PASS_ALL","filters":[{"type":"FirstKeyOnlyFilter"},{"type":"ValueFilter","op":"EQUAL","comparator":{"type":"BinaryComparator","value":"c3RhcnQ="}}]}`
+	fmt.Println("filter_str:", filter_str)
 	fmt.Println("----------------------------------------------------------------")
 
 	//string to obj

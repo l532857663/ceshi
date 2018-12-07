@@ -20,7 +20,7 @@ func Test_get_data (t *testing.T) {
 	Hrest := hbase_search_database.New_hbase_rest ("http://192.168.201.112:9900", &mutex, &flag)
 	url_config := new (hbase_search_database.Hbase_url_config)
 //	url_config.Namespace = "default"
-	url_config.Tablename = "users_test"
+	url_config.Tablename = "data_analysis_task"
 	url_config.Row = "users_admin"
 //	url_config.Family = "userinfo"
 //	url_config.Column = "users_name"
@@ -74,9 +74,8 @@ func Get_data() {
 	Test_json = map[string]string {
 		"Type" : "ValueFilter",
 		"Op" : "EQUAL",
-		"LatestVersion" : "true",
 		"Comparator_Type" : "BinaryComparator",
-		"Comparator_Value" : "doing",
+		"Comparator_Value" : "start",
 	}
 /*
 	Test_json["Comparator_Type"] = "SubstringComparator"
