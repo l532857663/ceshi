@@ -17,8 +17,8 @@ from urllib import unquote
 
 
 def print_ts(message):
-    print ("[%s] %s" % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-                       message))
+    print "[%s] %s" % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
+                       message)
 
 
 # get task
@@ -54,11 +54,11 @@ class Task:
             request = urllib2.Request(url=sent_url, headers=self.headers)
             content = self.opener.open(request)
             twid = content.read()
-            print ('The Twitter ID for this task is' + twid)
+            print 'The Twitter ID for this task is' + twid
             return twid
         except Exception, e:
             traceback.print_exc()
-            print (e)
+            print e
             return '-1'
 
     # sent data
@@ -82,15 +82,15 @@ class Task:
             request = urllib2.Request(url=self.url, headers=headers, data=data)
             content = self.opener.open(request)
             html = content.read()
-            print (html)
+            print html
         except Exception, e:
             traceback.print_exc()
-            print (e)
+            print e
 
 
 class RedirectHandler(urllib2.HTTPRedirectHandler):
     def http_error_302(self, req, fp, code, msg, headers):
-        print ('############ GOT 302 ###############')
+        print '############ GOT 302 ###############'
         cookiemap = {}
         setcookie = str(headers["Set-Cookie"])
         cookieTokens = [
@@ -474,7 +474,7 @@ class Twitter:
                 formdata = {
                     'index': 'social_platform_content_data',
                     'type': 'twitter',
-                    'id': timestamp,
+                    'id': user_id + '_' + timestamp,
                     'user_id': user_id,
                     'username': screen_name,
                     'nickname': name,
@@ -485,12 +485,12 @@ class Twitter:
                 formdata = dict(formdata, **avatar)
                 self.task.send_data(formdata)
                 formdata = {
-                    'index': 'social_platform_relation',
+                    'index': 'social_platform_content_relation',
                     'type': 'twitter',
                     'id': self.id + '_' + timestamp,
                     'source': self.id,
-                    'target_content': timestamp,
-                    'content_relation': 'like',
+                    'target': user_id + '_' + timestamp,
+                    'relation': 'like',
                 }
                 self.task.send_data(formdata)
         print '---------------analysis user like end----------------'
@@ -554,7 +554,7 @@ class Twitter:
                 formdata = {
                     'index': 'social_platform_content_data',
                     'type': 'twitter',
-                    'id': timestamp,
+                    'id': user_id + '_' + timestamp,
                     'user_id': user_id,
                     'username': screen_name,
                     'nickname': name,
@@ -565,12 +565,12 @@ class Twitter:
                 formdata = dict(formdata, **avatar)
                 self.task.send_data(formdata)
                 formdata = {
-                    'index': 'social_platform_relation',
+                    'index': 'social_platform_content_relation',
                     'type': 'twitter',
-                    'id': self.id + '_' + screen_name,
+                    'id': self.id + '_' + timestamp,
                     'source': self.id,
-                    'target_content': screen_name,
-                    'content_relation': 'forward',
+                    'target': user_id + '_' + timestamp,
+                    'relation': 'forward',
                 }
                 self.task.send_data(formdata)
         print '---------------analysis user media end----------------'
@@ -632,7 +632,7 @@ class Twitter:
                 formdata = {
                     'index': 'social_platform_content_data',
                     'type': 'twitter',
-                    'id': timestamp,
+                    'id': user_id + '_' + timestamp,
                     'user_id': user_id,
                     'username': screen_name,
                     'nickname': name,
@@ -643,12 +643,12 @@ class Twitter:
                 formdata = dict(formdata, **avatar)
                 self.task.send_data(formdata)
                 formdata = {
-                    'index': 'social_platform_relation',
+                    'index': 'social_platform_content_relation',
                     'type': 'twitter',
                     'id': self.id + '_' + timestamp,
                     'source': self.id,
-                    'target_content': timestamp,
-                    'content_relation': 'forward',
+                    'target': user_id + '_' + timestamp,
+                    'relation': 'forward',
                 }
                 self.task.send_data(formdata)
         print '---------------analysis user tweets end----------------'
@@ -709,7 +709,7 @@ class Twitter:
                 formdata = {
                     'index': 'social_platform_content_data',
                     'type': 'twitter',
-                    'id': timestamp,
+                    'id': user_id + '_' + timestamp,
                     'user_id': user_id,
                     'username': screen_name,
                     'nickname': name,
@@ -720,12 +720,12 @@ class Twitter:
                 formdata = dict(formdata, **avatar)
                 self.task.send_data(formdata)
                 formdata = {
-                    'index': 'social_platform_relation',
+                    'index': 'social_platform_content_relation',
                     'type': 'twitter',
                     'id': self.id + '_' + timestamp,
                     'source': self.id,
-                    'target_content': timestamp,
-                    'content_relation': 'forward',
+                    'target': user_id + '_' + timestamp,
+                    'relation': 'forward',
                 }
                 self.task.send_data(formdata)
         print '---------------analysis user tweets_replies end----------------'

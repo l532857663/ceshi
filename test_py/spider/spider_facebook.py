@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -- coding: utf-8 --
 
 import os
@@ -810,12 +811,12 @@ class Facebook:
                 }
                 self.task.send_data(formdata)
                 formdata = {
-                    'index': 'social_platform_relation',
+                    'index': 'social_platform_content_relation',
                     'type': 'facebook',
                     'id': self.id + '_' + timestamp,
                     'source': self.id,
-                    'target_content': timestamp,
-                    'content_relation': 'send',
+                    'target': timestamp,
+                    'relation': 'send',
                 }
         print '---------------analysis user timelines end----------------'
 

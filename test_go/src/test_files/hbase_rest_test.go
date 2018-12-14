@@ -28,9 +28,9 @@ func Test_get_data (t *testing.T) {
 
 	Get_data()
 
-//	Get_rest_func(Hrest)
+	Get_rest_func(Hrest)
 //	Put_rest_func(Hrest)
-	Scan_rest_func(Hrest)
+//	Scan_rest_func(Hrest)
 
 //	Get_api_func(Hrest)
 //	Put_api_func(Hrest)
@@ -67,6 +67,32 @@ func Get_data() {
 			}
 		]
 	}`
+
+	Put_data = `{
+			"admin":{
+				"userinfo:users_username" : "admin",
+				"userinfo:users_password" : "123456",
+				"userinfo:users_name" : "Administartor"
+			},
+			"qazasdasd":{
+				"userinfo:users_username" : "qazasdasd",
+				"userinfo:users_password" : "123666",
+				"userinfo:users_name" : "张三"
+			},
+		}`
+
+	Put_data = `[
+			{
+				"userinfo:users_username" : "admin",
+				"userinfo:users_password" : "123456",
+				"userinfo:users_name" : "Administartor"
+			},
+			{
+				"userinfo:users_username" : "qazasdasd",
+				"userinfo:users_password" : "123666",
+				"userinfo:users_name" : "张三"
+			},
+		]`
 	//Scan_row
 	Scan_data = `{
 		"batch" : "6"

@@ -24,7 +24,8 @@ func (self *Hbase_rest) Put_data_api (data_str string) (ok bool) {
 	fmt.Println("put method:", self.Method)
 
 	//string to obj
-	put_data_json := new (Hbase_insert_json)
+	// put_data_json := new (Hbase_insert_json)
+	put_data_json := make (map[string]map[string]string)
 	err := json.Unmarshal([]byte(data_str), &put_data_json)
 	if err != nil {
 		fmt.Println("json Marshal error:", err)
