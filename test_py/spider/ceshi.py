@@ -7,7 +7,7 @@ import time
 def main(*arg):
 	print("START")
 	print("arg:", arg)
-	for i in range(10):
+	for i in arg:
 		print(i)
 		time.sleep(2)
 	print("END")

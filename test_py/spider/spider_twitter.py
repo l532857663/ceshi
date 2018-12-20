@@ -79,12 +79,18 @@ class Task:
                 'Keep-Alive'
             }
             data = urllib.urlencode(formdata)
+            #====================================================
+            _file = open('data_Twitter', 'ab')
+            _file.write(data)
+            _file.close()
+            #====================================================
             request = urllib2.Request(url=self.url, headers=headers, data=data)
             content = self.opener.open(request)
             html = content.read()
             print html
         except Exception, e:
             traceback.print_exc()
+            print "receive server err"
             print e
 
 
@@ -610,14 +616,13 @@ class Twitter:
             content = content.replace('\\u003c', '<').replace(
                 '\\u003e', '>').replace('\\n', '').replace('\\"', '"').replace(
                     '\\/', '/')
-            content = content.encode().decode('unicode_escape')
         pattern = re.compile(
-            '<li class="js-stream-item stream-item stream-item".*?<span class="u-hiddenVisually">Direct message</span>',
+            '<li class="js-stream-item stream-item stream-item".*?<span class="Icon Icon--medium Icon--reply"></span>',
             re.S)
         items = re.findall(pattern, content)
         for item in items:
             pattern = re.compile(
-                '.-screen-name="(.*?)".*?data-name="(.*?)".*?data-user-id="(.*?)".*?<img class="avatar js-action-profile-avatar" src="(.*?)".*?data-time="(.*?)".*?<p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text".*?>(.*?)<',
+                '.-screen-name="(.*?)".*?data-name="(.*?)".*?data-user-id="(.*?)".*?<img class="avatar js-action-profile-avatar" src="(.*?)".*?data-time="(.*?)".*?<p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text".*?>(.*?)</p>',
                 re.S)
             result = re.search(pattern, item)
             if result:
@@ -687,14 +692,13 @@ class Twitter:
             content = content.replace('\\u003c', '<').replace(
                 '\\u003e', '>').replace('\\n', '').replace('\\"', '"').replace(
                     '\\/', '/')
-            content = content.encode().decode('unicode_escape')
         pattern = re.compile(
-            '<li class="js-stream-item stream-item stream-item".*?<span class="u-hiddenVisually">Direct message</span>',
+            '<li class="js-stream-item stream-item stream-item".*?<span class="Icon Icon--medium Icon--reply"></span>',
             re.S)
         items = re.findall(pattern, content)
         for item in items:
             pattern = re.compile(
-                'data-screen-name="(.*?)".*?data-name="(.*?)".*?data-user-id="(.*?)".*?<img class="avatar js-action-profile-avatar" src="(.*?)".*?data-time="(.*?)".*?<p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text".*?>(.*?)<',
+                'data-screen-name="(.*?)".*?data-name="(.*?)".*?data-user-id="(.*?)".*?<img class="avatar js-action-profile-avatar" src="(.*?)".*?data-time="(.*?)".*?<p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text".*?>(.*?)</p>',
                 re.S)
             result = re.search(pattern, item)
             if result:
@@ -877,11 +881,11 @@ class Twitter:
             # get twitter data
             if self.id != '-1':
                 # get data
-                self.get_user_information()
-                self.get_user_followers()
-                self.get_user_following()
-                self.get_user_likes()
-                self.get_user_media()
+                #self.get_user_information()
+                #self.get_user_followers()
+                #self.get_user_following()
+                #self.get_user_likes()
+                #self.get_user_media()
                 self.get_user_tweets()
                 self.get_user_tweets_replies()
 
