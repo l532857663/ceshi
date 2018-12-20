@@ -10,7 +10,7 @@ func Test_golang_mssql_data (t *testing.T) {
 
 	My_db_data := new (Golang_mssql_data)
 	My_db_data.Conn = My_db.Conn
-	My_db_data.Query_sql = ""
+	My_db_data.Query_sql = "select top 100 * from OK31OK"
 
 	//tmp_filters := make(map[string]string)
 	//tmp_datas := make(map[string]string)
