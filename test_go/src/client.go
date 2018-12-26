@@ -12,6 +12,7 @@ import (
 	"bufio"
 	"io"
 	"os"
+	"syscall"
 )
 
 var Addr string
@@ -43,6 +44,7 @@ func run_py(task_data task_obj) (ok bool) {
 	parameter = append(parameter, task_data.Receive_url)
 //	fmt.Println("parameter:", parameter)
 	cmd := exec.Command(Spider_path + "/spider_" + task_data.Method + ".py", parameter...)
+//	cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
 	fmt.Println("cmd str:", cmd)
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
@@ -51,13 +53,31 @@ func run_py(task_data task_obj) (ok bool) {
 		return
 	}
 	cmd.Start()
+	//启动定时器，监控py是否超时无回复
+	timer := time.AfterFunc(time.Duration(5)*time.Minute, func () {
+		if cmd.Process != nil {
+			fmt.Println("py pid:", cmd.Process.Pid)
+		//	syscall.Kill(-cmd.Process.Pid, syscall.SIGKILL)
+			cmd.Process.Kill()
+		}
+	})
 	reader := bufio.NewReader(stdout)
 	for {
-		line, err2 := reader.ReadString('\n')
-		if err2 != nil || io.EOF == err2 {
+		line, err := reader.ReadString('\n')
+		if io.EOF == err || err != nil {
+			fmt.Println("py over or err:", err)
 			break
 		}
-		fmt.Println(line)
+		//判断py回复数据
+		res := judge_data(line)
+		if !res {
+			break
+		}
+		//重置定时装置
+		ok := timer.Reset(time.Duration(5)*time.Minute)
+		if !ok {
+			break
+		}
 	}
 	err = cmd.Wait()
 	if err != nil {
@@ -66,6 +86,12 @@ func run_py(task_data task_obj) (ok bool) {
 		return
 	}
 	ok = true
+	return
+}
+//判断py回复数据
+func judge_data (data_str string) (res bool){
+	fmt.Sprint(data_str)
+	res = true
 	return
 }
 

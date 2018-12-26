@@ -5,11 +5,16 @@ import os,sys
 import time
 
 def main(*arg):
-	print("START")
-	print("arg:", arg)
+	print("START\n")
+	sys.stdout.flush()
+	print("arg:", arg, "\n")
+	sys.stdout.flush()
 	for i in arg:
 		print(i)
-		time.sleep(2)
+		sys.stdout.flush()
+		time.sleep(10)
+	with open("./asdasd", "a") as f:
+		f.write(i)
 	print("END")
 
 if __name__ == "__main__":

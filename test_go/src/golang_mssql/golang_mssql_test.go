@@ -10,13 +10,17 @@ func Test_golang_mssql_data (t *testing.T) {
 
 	My_db_data := new (Golang_mssql_data)
 	My_db_data.Conn = My_db.Conn
-	My_db_data.Query_sql = "select top 100 * from OK31OK"
+	My_db_data.Query_sql = "select top 10 * from ?"
 
-	//tmp_filters := make(map[string]string)
-	//tmp_datas := make(map[string]string)
+	tmp_filters := []string {
+		"table_name",
+	}
+	tmp_datas := map[string]string {
+		"table_name" : "admin",
+	}
 
-	//My_db_data.Columns_filter = tmp_filters
-	//My_db_data.Columns_data = tmp_datas
+	My_db_data.Columns_filter = tmp_filters
+	My_db_data.Columns_data = tmp_datas
 
 	res, err := My_db_data.Do_select ()
 	if err != nil {

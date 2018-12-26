@@ -7,13 +7,16 @@ import (
 	"bufio"
 	"io"
 	"os"
+	"strings"
+	"time"
+	"syscall"
 )
 
 func run_py() {
 	userid := "awdawd"
-	email := "qseqse"
+	email := "error"
 	password := "qweqwe"
-	receive_url := "asdasd"
+	receive_url := "asdasdqwe\n"
 	var parameter []string
 	parameter = append(parameter, userid)
 	parameter = append(parameter, email)
@@ -21,6 +24,7 @@ func run_py() {
 	parameter = append(parameter, receive_url)
 	fmt.Println("asdasdsad", parameter)
 	cmd := exec.Command("/home/w123/git_my/mytest/test_py/spider/ceshi.py", parameter...)
+	cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
 	fmt.Println("cmd str:", cmd)
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
@@ -28,23 +32,50 @@ func run_py() {
 		return
 	}
 	cmd.Start()
+	fmt.Println("cmd pid:", cmd.Process.Pid)
+	fmt.Println("start time:", time.Now())
+
+	timer := time.AfterFunc(time.Duration(20)*time.Second, func () {
+		if cmd.Process != nil {
+			fmt.Println("py pid:", cmd.Process.Pid)
+			syscall.Kill(-cmd.Process.Pid, syscall.SIGKILL)
+//			cmd.Process.Kill()
+		}
+	})
+
+	fmt.Println("time2:", time.Now())
 	reader := bufio.NewReader(stdout)
 	for {
 		line, err2 := reader.ReadString('\n')
 		if err2 != nil || io.EOF == err2 {
+			fmt.Println ("aaa:", err2)
 			break
 		}
+		if strings.Compare(line, "error\n") == 0 {
+			fmt.Println("the py is error")
+			res := timer.Stop()
+			fmt.Println("Stop:", res)
+			break
+		}
+
+		ok := timer.Reset(time.Duration(20)*time.Second)
+		if !ok {
+			break
+		}
+
 		fmt.Println(line)
 	}
+	fmt.Println("cmd pid3:", cmd.Process.Pid)
+	fmt.Println("time3:", time.Now())
 	err = cmd.Wait()
 	if err != nil {
 		fmt.Println("cmd python Wait error",err)
 		return
 	}
+	fmt.Println("end time:", time.Now())
 
 	fmt.Println("End")
 }
-
 
 func main() {
 	fmt.Println("Start")
@@ -53,5 +84,5 @@ func main() {
 		return
 	}
 	fmt.Println("argv", os.Args[1])
-//	run_py()
+	run_py()
 }

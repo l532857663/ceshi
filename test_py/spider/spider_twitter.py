@@ -881,11 +881,11 @@ class Twitter:
             # get twitter data
             if self.id != '-1':
                 # get data
-                #self.get_user_information()
-                #self.get_user_followers()
-                #self.get_user_following()
-                #self.get_user_likes()
-                #self.get_user_media()
+                self.get_user_information()
+                self.get_user_followers()
+                self.get_user_following()
+                self.get_user_likes()
+                self.get_user_media()
                 self.get_user_tweets()
                 self.get_user_tweets_replies()
 

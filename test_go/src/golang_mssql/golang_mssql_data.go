@@ -13,12 +13,17 @@ type Golang_mssql_data struct {
 	//要查询的query
 	Query_sql string
 	//要输入的数据
-	Columns_filter map[string]string
+	Columns_filter []string
 	//实际输入的数据
-	COlumns_data map[string]string
+	Columns_data map[string]string
 }
 
-func (selg *Golang_mssql_data) data_filter () (filter_data_arr []interface{}) {
+func (self *Golang_mssql_data) data_filter () (filter_data_arr []interface{}) {
+	//数据整理，过滤
+	for _, key := range self.Columns_filter {
+		filter_data_arr = append(filter_data_arr, self.Columns_data[key])
+	}
+	fmt.Println("data_filter/filter_data_arr:", filter_data_arr)
 	return
 }
 
@@ -27,6 +32,8 @@ func (self *Golang_mssql_data) Do_select () (res []map[string]string, err error)
 	query_str := self.Query_sql
 	//sql语句对应占位符数据
 	parameters := self.data_filter ()
+
+	fmt.Println(query_str, parameters)
 
 	tx,_ := self.Conn.Begin()
 	defer tx.Commit()
