@@ -48,6 +48,9 @@
 201811:
 	zhengze.py: 正则测试代码
 
+201901:
+	get_type.py: 遍历目的目录，获取目的文件
+
 structure_test:
 	conf:	对应配置文件
 	data:	对应数据文件
@@ -56,3 +59,6 @@ structure_test:
 	ceshi.py:	测试文件
 	mysql_conn.py:	数据库操作
 	send_email.py:	邮件SMTP发送(QQ邮箱)
+
+spider:
+	爬虫文件

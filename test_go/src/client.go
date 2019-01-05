@@ -12,7 +12,7 @@ import (
 	"bufio"
 	"io"
 	"os"
-	"syscall"
+//	"syscall"
 )
 
 var Addr string

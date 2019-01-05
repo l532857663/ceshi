@@ -8,7 +8,8 @@ import (
 func main () {
 	fmt.Println("START")
 //	qiepian()
-	dingshi()
+//	dingshi()
+	byte2string()
 	fmt.Println("END")
 }
 
@@ -57,4 +58,11 @@ func dingshi() {
 		time.Sleep(time.Duration(20)*time.Second)
 	}
 	fmt.Println("time1:", time.Now())
+}
+
+/*
+byte跟string转换
+*/
+func byte2string() {
+	fmt.Println("byte2string")
 }
