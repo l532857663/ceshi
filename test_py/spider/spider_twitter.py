@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -- coding: utf-8 --
 
 import os
@@ -13,152 +13,66 @@ import sys
 import chardet
 import HTMLParser
 import traceback
+import logging
+import pycurl
+import StringIO
+import types
+
 from urllib import unquote
+from lxml import etree
+from logging import config
+from logging import handlers
+from types import *
 
-
-def print_ts(message):
-    print "[%s] %s" % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-                       message)
-
-
-# get task
-class Task:
-    # init
-    def __init__(self, url):
-        # url
-        self.url = url
-        self.headers = {
-            'Accept':
-            'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-            'User-Agent':
-            'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0',
-            'Upgrade-Insecure-Requests':
-            '1',
-            'Accept-Language':
-            'zh-CN,zh;q=0.8',
-            'Connection':
-            'Keep-Alive'
-        }
-        self.postData = ''
-        self.httpHandler = urllib2.HTTPHandler(debuglevel=0)
-        self.httpsHandler = urllib2.HTTPSHandler(debuglevel=0)
-        self.cookies = cookielib.CookieJar()
-        self.opener = urllib2.build_opener(
-            self.httpHandler, self.httpsHandler,
-            urllib2.HTTPCookieProcessor(self.cookies))
-
-    # get id
-    def get_id(self):
-        try:
-            sent_url = 'http://192.168.11.12:8080/get_task.php'
-            request = urllib2.Request(url=sent_url, headers=self.headers)
-            content = self.opener.open(request)
-            twid = content.read()
-            print 'The Twitter ID for this task is' + twid
-            return twid
-        except Exception, e:
-            traceback.print_exc()
-            print e
-            return '-1'
-
-    # sent data
-    def send_data(self, formdata):
-        try:
-            headers = {
-                'Accept':
-                'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-                'User-Agent':
-                'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0',
-                'Content-Type':
-                'application/x-www-form-urlencoded',
-                'Upgrade-Insecure-Requests':
-                '1',
-                'Accept-Language':
-                'zh-CN,zh;q=0.8',
-                'Connection':
-                'Keep-Alive'
-            }
-            data = urllib.urlencode(formdata)
-            #====================================================
-            _file = open('data_Twitter', 'ab')
-            _file.write(data)
-            _file.close()
-            #====================================================
-            request = urllib2.Request(url=self.url, headers=headers, data=data)
-            content = self.opener.open(request)
-            html = content.read()
-            print html
-        except Exception, e:
-            traceback.print_exc()
-            print "receive server err"
-            print e
-
-
-class RedirectHandler(urllib2.HTTPRedirectHandler):
-    def http_error_302(self, req, fp, code, msg, headers):
-        print '############ GOT 302 ###############'
-        cookiemap = {}
-        setcookie = str(headers["Set-Cookie"])
-        cookieTokens = [
-            "Domain", "Expires", "Path", "Max-Age", 'path', 'domain'
-        ]
-        tokens = setcookie.split(";")
-        for cookie in tokens:
-            cookie = cookie.strip()
-            if cookie.startswith("Expires="):
-                cookies = cookie.split(",", 2)
-                if len(cookies) > 2:
-                    cookie = cookies[2]
-                    cookie = cookie.strip()
-            else:
-                cookies = cookie.split(",", 1)
-                if len(cookies) > 1:
-                    cookie = cookies[1]
-                    cookie = cookie.strip()
-            namevalue = cookie.split("=", 1)
-            if len(namevalue) > 1:
-                name = namevalue[0]
-                value = namevalue[1]
-                if name not in cookieTokens:
-                    cookiemap[name] = value
-        str_cookie = ''
-        for key in cookiemap:
-            str_cookie = str_cookie + key + '=' + cookiemap[key] + '; '
-        str_cookie = str_cookie[:-2]
-        req.add_header("Cookie", str_cookie)
-        return urllib2.HTTPRedirectHandler.http_error_302(
-            self, req, fp, code, msg, headers)
+reload(sys)
+sys.setdefaultencoding("utf-8")
 
 
 # twitter spider
 class Twitter:
     # init
-    def __init__(self, url):
+    def __init__(self):
         # login url
         self.baseURL = 'https://twitter.com'
-        self.headers = {
-            'Host':
-            'twitter.com',
-            'Accept':
-            'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-            'User-Agent':
-            'Mozilla/5.0 (Windows NT 5.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36',
-            'Referer':
-            'https://twitter.com/',
-            'Content-Type':
-            'application/x-www-form-urlencoded',
-            'Origin':
-            'https://twitter.com',
-            'Upgrade-Insecure-Requests':
-            '1',
-            'Accept-Language':
-            'zh-CN,zh;q=0.8',
-            'Connection':
-            'Keep-Alive'
+        # self.headers = {
+        #     'Host':
+        #     'twitter.com',
+        #     'Accept':
+        #     'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        #     'User-Agent':
+        #     'Mozilla/5.0 (Windows NT 5.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36',
+        #     'Referer':
+        #     'https://twitter.com/',
+        #     'Content-Type':
+        #     'application/x-www-form-urlencoded',
+        #     'Origin':
+        #     'https://twitter.com',
+        #     'Upgrade-Insecure-Requests':
+        #     '1',
+        #     'Accept-Language':
+        #     'zh-CN,zh;q=0.8',
+        #     'Connection':
+        #     'Keep-Alive'
+        # }
+
+        self.headers = [
+            "Host:twitter.com",
+            "Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+            "User-Agent:Mozilla/5.0 (Windows NT 5.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36",
+            "Referer:https://twitter.com/",
+            "Content-Type:application/x-www-form-urlencoded",
+            "Origin:https://twitter.com", "Upgrade-Insecure-Requests:1",
+            "Accept-Language:zh-CN,zh;q=0.8", "Connection:Keep-Alive"
+        ]
+
+        self.myfunction = {
+            "get_id": self.get_id,
+            "get_value": self.get_value,
+            "catenate_id": self.catenate_id
         }
 
+        self.receiveurl = ''
         self.id = ''
-        self.task = Task(url)
 
         # username
         self.email = ''
@@ -170,44 +84,86 @@ class Twitter:
         self.c = ''
         self.d = ''
         self.s = ''
-        self.cookies = cookielib.CookieJar()
-        self.httpHandler = urllib2.HTTPHandler(debuglevel=0)
-        self.httpsHandler = urllib2.HTTPSHandler(debuglevel=0)
-        self.opener = urllib2.build_opener(
-            self.httpHandler, self.httpsHandler, RedirectHandler,
-            urllib2.HTTPCookieProcessor(self.cookies))
+
+        self.header_str = StringIO.StringIO()
+        self.response_str = StringIO.StringIO()
+
+        self.con = pycurl.Curl()
+        #设置cookie
+        self.con.setopt(pycurl.COOKIEFILE, "cookie")  #把cookie保存在该文件中
+        self.con.setopt(pycurl.COOKIEJAR, "cookie")  #从该文件中读取cookie
+        #设置跳转
+        self.con.setopt(pycurl.FOLLOWLOCATION, 1)  #遇到302时候是否进行自动跳转
+        self.con.setopt(pycurl.MAXREDIRS, 5)  #网页最多跳转的次数
+        #设置SSL
+        self.con.setopt(pycurl.SSL_VERIFYPEER, 0)
+        self.con.setopt(pycurl.SSL_VERIFYHOST, 0)
+        #设置超时
+        self.con.setopt(pycurl.CONNECTTIMEOUT, 10)  #设置链接超时
+        self.con.setopt(pycurl.TIMEOUT, 20)  #设置下载超时
+        #设置回写数据
+        self.con.setopt(pycurl.HEADERFUNCTION, self.header_str.write)
+        self.con.setopt(pycurl.WRITEFUNCTION, self.response_str.write)
+
+        # 读取日志配置文件内容
+        logging.config.fileConfig('logging.conf')
+
+        # 创建一个日志器logger
+        self.logger = logging.getLogger('spider')
+
+    def get_id(self, value, data):
+        return self.id
+
+    def get_value(self, value, data):
+        return data[value]
+
+    def catenate_id(self, value, data):
+        return self.id + "_" + data[value]
 
     # get first page
     def login_first_step(self):
-        print '---------------first step start---------------'
+        self.logger.info('### -first step start- ###')
         sent_url = 'https://twitter.com'
-        request = urllib2.Request(url=sent_url, headers=self.headers)
-        html = self.opener.open(request)
-        content = html.read()
+
+        self.header_str.truncate(0)
+        self.response_str.truncate(0)
+
+        self.con.setopt(pycurl.HTTPGET, 1)
+        self.con.setopt(pycurl.HTTPHEADER, self.headers)
+        self.con.setopt(pycurl.URL, sent_url)
+        self.con.perform()
+
+        response = self.response_str.getvalue()
+
         pattern = re.compile(
             '<input type="hidden" value="(.*?)" name="authenticity_token">',
             re.S)
-        result = re.search(pattern, content)
+        result = re.search(pattern, response)
         if result:
             self.authenticity_token = result.group(1)
         else:
             self.authenticity_token = '-1'
-        print self.authenticity_token
-        for key in self.cookies:
-            print key.name, ':', key.value
 
-        print '---------------first step end-------------------'
+        self.logger.info(self.authenticity_token)
+        self.logger.info('### -first step end- ###')
 
     # get second page
     def login_second_step(self):
-        print '---------------second step start----------------'
+        self.logger.info('### -second step start- ###')
         sent_url = 'https://twitter.com/i/js_inst?c_name=ui_metrics'
-        request = urllib2.Request(url=sent_url, headers=self.headers)
-        html = self.opener.open(request)
-        content = html.read()
+
+        self.header_str.truncate(0)
+        self.response_str.truncate(0)
+
+        self.con.setopt(pycurl.HTTPGET, 1)
+        self.con.setopt(pycurl.HTTPHEADER, self.headers)
+        self.con.setopt(pycurl.URL, sent_url)
+        self.con.perform()
+
+        response = self.response_str.getvalue()
 
         pattern = re.compile("'rf':(.*?);", re.S)
-        result = re.search(pattern, content)
+        result = re.search(pattern, response)
         rf = ''
         if result:
             rf = result.group(1)
@@ -220,26 +176,33 @@ class Twitter:
             self.c = result.group(3)
             self.d = result.group(4)
             self.s = result.group(5)
-            print self.a
-            print self.b
-            print self.c
-            print self.d
-            print self.s
-        print '---------------second step end------------------'
+            self.logger.info(self.a)
+            self.logger.info(self.b)
+            self.logger.info(self.c)
+            self.logger.info(self.d)
+            self.logger.info(self.s)
+        self.logger.info('### -second step end- ###')
 
     # get third page
     def login_third_step(self):
-        print '---------------thirt step start-----------------'
+        self.logger.info('### -thirt step start- ###')
         self.postData = 'session[username_or_email]=%s&session[password]=%s&return_to_ssl=true&scribe_log=&redirect_after_login=/&authenticity_token=%s&ui_metrics={"rf":{"%s":-129,"%s":-143,"%s":-33,"%s":-44},"s":"%s"}' % (
             self.email, self.password, self.authenticity_token, self.a, self.b,
             self.c, self.d, self.s)
+
         sent_url = 'https://twitter.com/sessions'
-        request = urllib2.Request(
-            url=sent_url, headers=self.headers, data=self.postData)
-        html = self.opener.open(request)
-        # content = html.read()
-        # print content
-        print '---------------thirt step end------------------'
+
+        self.header_str.truncate(0)
+        self.response_str.truncate(0)
+
+        self.con.setopt(pycurl.POST, 1)
+        self.con.setopt(pycurl.POSTFIELDS, self.postData)
+        self.con.setopt(pycurl.HTTPHEADER, self.headers)
+        self.con.setopt(pycurl.URL, sent_url)
+        self.con.perform()
+
+        response = self.response_str.getvalue()
+        self.logger.info('### -thirt step end- ###')
 
     # login api
     def login_twitter(self):
@@ -247,669 +210,296 @@ class Twitter:
         self.login_second_step()
         self.login_third_step()
 
-    # get min position
-    def get_min_position(self, html):
-        result = ''
-        html = html.replace('\\"', '"')
-        pattern = re.compile('data-min-position="(.*?)"', re.S)
-        result = re.search(pattern, html)
-        if result:
-            return result.group(1)
-        else:
-            pattern = re.compile('data-min-position=\\\\"(.*?)\\\\"', re.S)
-            result = re.search(pattern, html)
-            if result:
-                return result.group(1)
-            else:
-                if result:
-                    return result.group(1)
+    # sent data
+    def send_data(self, data):
+        try:
+            self.logger.info('### -sent data start- ###')
+            headers = [
+                'Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                'User-Agent:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0',
+                'Content-Type:application/x-www-form-urlencoded',
+                'Accept-Language:zh-CN,zh;q=0.8', 'Connection:Keep-Alive'
+            ]
+            formdata = urllib.urlencode(data)
+            #====================================================
+            # _file = open("result", 'ab')
+            # _file.write(formdata)
+            # _file.write(
+            #     "\n====================================================\n")
+            # _file.close()
+            #====================================================
+
+            time.sleep(1)
+
+            self.header_str.truncate(0)
+            self.response_str.truncate(0)
+            self.con.setopt(pycurl.POST, 1)
+            self.con.setopt(pycurl.HTTPHEADER, headers)
+            self.con.setopt(pycurl.POSTFIELDS, formdata)
+            self.con.setopt(pycurl.URL, self.receiveurl)
+            self.con.perform()
+            response = self.response_str.getvalue()
+            self.logger.info(response)
+
+        except Exception, e:
+            #traceback.print_exc()
+            self.logger.error("send data err")
+            self.logger.error(e)
+        finally:
+            self.logger.info('### -sent data end- ###')
+
+    # get image
+    def get_image(self, value, url):
+        self.logger.info('### -get image start- ###')
+        try:
+            data_dict = {}
+            sent_url = HTMLParser.HTMLParser().unescape(url)
+            headers = [
+                "Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+                "User-Agent:Mozilla/5.0 (Windows NT 5.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36",
+                "Referer:https://twitter.com/",
+                "Content-Type:application/x-www-form-urlencoded",
+                "Upgrade-Insecure-Requests:1",
+                "Accept-Language:zh-CN,zh;q=0.8", "Connection:Keep-Alive"
+            ]
+
+            self.logger.info(value)
+            self.logger.info(sent_url)
+
+            self.header_str.truncate(0)
+            self.response_str.truncate(0)
+
+            self.con.setopt(pycurl.HTTPGET, 1)
+            self.con.setopt(pycurl.HTTPHEADER, headers)
+            self.con.setopt(pycurl.URL, sent_url)
+            self.con.perform()
+
+            header = self.header_str.getvalue()
+            response = self.response_str.getvalue()
+
+            HttpCode = self.con.getinfo(self.con.HTTP_CODE)
+            ContentType = self.con.getinfo(self.con.CONTENT_TYPE)
+
+            if HttpCode != 200:
+                self.logger.error(("code:%d ") % (HttpCode))
+                self.logger.error(("response:%s ") % (response))
+                raise Exception, ("get image error! httpcode:%d ") % (HttpCode)
+
+            imgData = base64.b64encode(response)
+            data_dict[value + '_type'] = ContentType
+            data_dict[value] = imgData
+
+            return data_dict
+        except Exception, e:
+            #traceback.print_exc()
+            self.logger.error(e)
+            return {}
+        finally:
+            self.logger.info('### -get image end- ###')
+
+    # get response
+    def get_response(self, sent_url):
+        try:
+            self.logger.info('### -get response start- ###')
+
+            self.header_str.truncate(0)
+            self.response_str.truncate(0)
+
+            self.con.setopt(pycurl.HTTPHEADER, self.headers)
+            self.con.setopt(pycurl.URL, sent_url)
+            self.con.perform()
+
+            response = self.response_str.getvalue()
+
+            return response
+        except Exception, e:
+            #traceback.print_exc()
+            self.logger.error(e)
+        finally:
+            self.logger.info('### -get response end- ###')
+
+    # analysis
+    def analysis_parameter(self, html, rule):
+        try:
+            self.logger.info('### -analysis parameter start- ###')
+            data_dict = {}
+            for key, value in rule.items():
+                data = ''.join(html.xpath(value))
+                if data != "":
+                    data_dict[key] = data
+            return data_dict
+        except Exception, e:
+            #traceback.print_exc()
+            self.logger.error(e)
+        finally:
+            self.logger.info('### -analysis parameter end- ###')
+
+    # analysis
+    def analysis_data(self, html, rule):
+        try:
+            self.logger.info('### -analysis data start- ###')
+            data_dict = {}
+            Regular = rule.get("Regular")
+            for key in Regular.keys():
+                value = Regular.get(key)
+                if isinstance(value, dict):
+                    data = html.xpath(key)
+                    if isinstance(data, list):
+                        for array in data:
+                            temp_dict = self.analysis_data(array, value)
+                            if isinstance(temp_dict, dict):
+                                data_dict = dict(data_dict, **temp_dict)
                 else:
-                    pattern = re.compile('"min_position":"(.*?)",', re.S)
-                    result = re.search(pattern, html)
-                    if result:
-                        return result.group(1)
-                    else:
-                        pattern = re.compile('"max_position":"(.*?)",', re.S)
-                        result = re.search(pattern, html)
-                        if result:
-                            return result.group(1)
+                    data = ''.join(html.xpath(key))
+                    if data != "":
+                        if '_url' in value:
+                            avatar = self.get_image(
+                                value.replace('_url', ''), data)
+                            data_dict = dict(data_dict, **avatar)
                         else:
-                            return '0'
+                            data_dict[value] = data
 
-    # get pictrue image
-    def get_pictrue_imag(self, html):
-        sent_url = HTMLParser.HTMLParser().unescape(html)
-        headers = {
-            'Accept':
-            'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-            'User-Agent':
-            'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0',
-            'Content-Type':
-            'application/x-www-form-urlencoded',
-            'Accept-Language':
-            'zh-CN,zh;q=0.8',
-            'Connection':
-            'Keep-Alive'
-        }
-        print 'sent_url: ' + sent_url
-        request = urllib2.Request(url=sent_url, headers=headers)
-        content = self.opener.open(request)
-        ContentType = content.headers['Content-Type']
-        imgData = base64.b64encode(content.read())
-        data_dict = {}
-        data_dict['icon_type'] = ContentType
-        data_dict['icon'] = imgData
-        return data_dict
+            if rule.get("root"):
+                index = rule.get("index")
+                if index:
+                    temp_dict = {}
+                    for key, value in index.items():
+                        if isinstance(value, dict):
+                            temp_dict[key] = self.myfunction[value["method"]](
+                                value["value"], data_dict)
+                        else:
+                            temp_dict[key] = value
+                    data_dict = dict(data_dict, **temp_dict)
+                    self.send_data(data_dict)
 
-    # analysis user following
-    def analysis_user_following(self, html):
-        print '---------------analysis user following start----------------'
-        content = unquote(html).replace('&quot;', '"').replace('\n', '')
-        strtype = chardet.detect(html)
-        if strtype['encoding'] == 'ascii':
-            content = content.replace('\\u003c', '<').replace(
-                '\\u003e', '>').replace('\\n', '').replace('\\"', '"').replace(
-                    '\\/', '/')
-            content = content.encode().decode('unicode_escape')
-        pattern = re.compile(
-            '<div class="js-stream-item".*?</div>  </div></div></div>  </div>',
-            re.S)
-        items = re.findall(pattern, content)
-        for item in items:
-            pattern = re.compile(
-                'data-screen-name="(.*?)".*?data-user-id="(.*?)".*?class="ProfileCard-avatarImage js-action-profile-avatar" src="(.*?)".*?data-name="(.*?)".*? <p class="ProfileCard-bio u-dir js-ellipsis" dir="ltr" data-aria-label-part>(.*?)<',
-                re.S)
-            result = re.search(pattern, item)
-            if result:
-                screen_name = result.group(1)
-                user_id = result.group(2)
-                name = result.group(4)
-                avatar_url = result.group(3)
-                remark = result.group(5)
-                if remark == '':
-                    remark = 'none'
-                formdata = {
-                    'index': 'social_platform',
-                    'type': 'twitter',
-                    'id': screen_name,
-                    'user_id': user_id,
-                    'username': screen_name,
-                    'nickname': name,
-                    'summary': remark,
-                }
-                avatar = self.get_pictrue_imag(avatar_url)
-                formdata = dict(formdata, **avatar)
-                self.task.send_data(formdata)
-                formdata = {
-                    'index': 'social_platform_relation',
-                    'type': 'twitter',
-                    'id': self.id + '_' + screen_name,
-                    'source': self.id,
-                    'target': screen_name,
-                    'relation': 'following',
-                }
-                self.task.send_data(formdata)
-        print '---------------analysis user following end----------------'
+                relation = rule.get("relation")
+                if relation:
+                    formdata = {}
+                    for key, value in relation.items():
+                        if isinstance(value, dict):
+                            formdata[key] = self.myfunction[value["method"]](
+                                value["value"], data_dict)
+                        else:
+                            formdata[key] = value
+                    self.send_data(formdata)
 
-    # get user followers
-    def get_user_following(self):
-        try:
-            print '--------------get user following start---------------'
-            sent_url = 'https://twitter.com/%s/following' % (self.id)
-            request = urllib2.Request(url=sent_url, headers=self.headers)
-            content = self.opener.open(request)
-            html = content.read()
-            while True:
-                data_min_position = self.get_min_position(html)
-                self.analysis_user_following(html)
-                if data_min_position == '' or data_min_position == '0':
-                    break
-                sent_url = 'https://twitter.com/%s/following/users?include_available_features=1&include_entities=1&max_position=%s&reset_error_state=false' % (
-                    self.id, data_min_position)
-                request = urllib2.Request(url=sent_url, headers=self.headers)
-                content = self.opener.open(request)
-                html = content.read()
-            print '---------------get user following end----------------'
+                return ""
+            else:
+                return data_dict
         except Exception, e:
-            traceback.print_exc()
-            print e
+            #traceback.print_exc()
+            self.logger.error(e)
+        finally:
+            self.logger.info('### -analysis data end- ###')
 
-    # analysis user followers
-    def analysis_user_followers(self, html):
-        print '---------------analysis user followers start----------------'
-        content = unquote(html).replace('&quot;', '"').replace('\n', '')
-        strtype = chardet.detect(html)
-        if strtype['encoding'] == 'ascii':
-            content = content.replace('\\u003c', '<').replace(
-                '\\u003e', '>').replace('\\n', '').replace('\\"', '"').replace(
-                    '\\/', '/')
-            content = content.encode().decode('unicode_escape')
-        pattern = re.compile(
-            '<div class="js-stream-item".*?</div>  </div></div></div>  </div>',
-            re.S)
-        items = re.findall(pattern, content)
-        for item in items:
-            pattern = re.compile(
-                'data-screen-name="(.*?)".*?data-user-id="(.*?)".*?class="ProfileCard-avatarImage js-action-profile-avatar" src="(.*?)".*?data-name="(.*?)".*? <p class="ProfileCard-bio u-dir js-ellipsis" dir="ltr" data-aria-label-part>(.*?)<',
-                re.S)
-            result = re.search(pattern, item)
-            if result:
-                screen_name = result.group(1)
-                user_id = result.group(2)
-                name = result.group(4)
-                avatar_url = result.group(3)
-                remark = result.group(5)
-                if remark == '':
-                    remark = 'none'
-                formdata = {
-                    'index': 'social_platform',
-                    'type': 'twitter',
-                    'id': screen_name,
-                    'user_id': user_id,
-                    'username': screen_name,
-                    'nickname': name,
-                    'summary': remark,
-                }
-                avatar = self.get_pictrue_imag(avatar_url)
-                formdata = dict(formdata, **avatar)
-                self.task.send_data(formdata)
-                formdata = {
-                    'index': 'social_platform_relation',
-                    'type': 'twitter',
-                    'id': self.id + '_' + screen_name,
-                    'source': self.id,
-                    'target': screen_name,
-                    'relation': 'followers',
-                }
-                self.task.send_data(formdata)
-        print '---------------analysis user followers end----------------'
-
-    # get user followers
-    def get_user_followers(self):
+    # analysis
+    def analysis_rule(self, rule, parameter):
+        self.logger.info('### -analysis rule start- ###')
         try:
-            print '--------------get user followers start---------------'
-            sent_url = 'https://twitter.com/%s/followers' % (self.id)
-            print sent_url
-            request = urllib2.Request(url=sent_url, headers=self.headers)
-            content = self.opener.open(request)
-            html = content.read()
-            while True:
-                data_min_position = self.get_min_position(html)
-                print 'data_min_position is ' + data_min_position
-                self.analysis_user_followers(html)
-                if data_min_position == '' or data_min_position == '0':
-                    break
-                sent_url = 'https://twitter.com/%s/followers/users?include_available_features=1&include_entities=1&max_position=%s&reset_error_state=false' % (
-                    self.id, data_min_position)
-                request = urllib2.Request(url=sent_url, headers=self.headers)
-                content = self.opener.open(request)
-                html = content.read()
-            print '---------------get user followers end----------------'
+            if not (isinstance(rule, dict) and rule):
+                raise Exception, "Rule error!"
+
+            parameter_rule = rule.get("parameter")
+            data_rule = rule.get("data")
+            data_type = rule.get("type")
+            url = rule.get("url")
+            node_next = rule.get("next")
+            new_parameter = {}
+
+            if isinstance(parameter, dict) and parameter:
+                url = url.replace('<min_position>', parameter["min_position"])
+
+            url = url.replace('<userid>', self.id)
+
+            response = self.get_response(url)
+
+            if response == "":
+                raise Exception, "Failed to get response data!"
+
+            if data_type == "json":
+                jsondata = json.loads(response)
+                response = jsondata["items_html"]
+                html_data = etree.HTML(
+                    response.replace('\\n', '').replace('\n', ''))
+                new_parameter["min_position"] = jsondata["min_position"]
+                if parameter and (new_parameter["min_position"] ==
+                                  parameter["min_position"]):
+                    new_parameter = ""
+
+            elif data_type == "html":
+                html_data = etree.HTML(
+                    response.replace('\\n', '').replace('\n', ''))
+                new_parameter = self.analysis_parameter(
+                    html_data, parameter_rule)
+
+            if type(html_data) is not NoneType:
+                self.analysis_data(html_data, data_rule)
+
+            if node_next:
+                node_rule = rule.get("node")
+                if not (isinstance(node_rule, dict) and node_rule):
+                    raise Exception, "node Rule error!"
+                while ((isinstance(new_parameter, dict))
+                       and (new_parameter.get("min_position"))
+                       and (new_parameter["min_position"] != "0")):
+                    new_parameter = self.analysis_rule(node_rule,
+                                                       new_parameter)
+            else:
+                return new_parameter
+
         except Exception, e:
-            traceback.print_exc()
-            print e
+            #traceback.print_exc()
+            self.logger.error(e)
+        finally:
+            self.logger.info('### -analysis rule end- ###')
 
-    # analysis user like
-    def analysis_user_likes(self, html):
-        print '---------------analysis user like start----------------'
-        content = unquote(html).replace('&quot;', '"').replace('\n', '')
-        strtype = chardet.detect(html)
-        if strtype['encoding'] == 'ascii':
-            content = content.replace('\\u003c', '<').replace(
-                '\\u003e', '>').replace('\\n', '').replace('\\"', '"').replace(
-                    '\\/', '/')
-            content = content.encode().decode('unicode_escape')
-        pattern = re.compile(
-            '<li class="js-stream-item stream-item stream-item".*?<span class="u-hiddenVisually">.*?stream-item-footer">',
-            re.S)
-        items = re.findall(pattern, content)
-        for item in items:
-            pattern = re.compile(
-                'data-screen-name="(.*?)".*?data-name="(.*?)".*?data-user-id="(.*?)".*?class="avatar js-action-profile-avatar" src="(.*?)".*?data-time="(.*?)".*?<p class="TweetTextSize TweetTextSize--normal.*?>(.*?)<',
-                re.S)
-            result = re.search(pattern, item)
-            if result:
-                screen_name = result.group(1)
-                name = result.group(2)
-                user_id = result.group(3)
-                avatar_url = result.group(4)
-                timestamp = result.group(5)
-                remark = result.group(6)
-                if remark == '':
-                    remark = 'none'
-                formdata = {
-                    'index': 'social_platform_content_data',
-                    'type': 'twitter',
-                    'id': user_id + '_' + timestamp,
-                    'user_id': user_id,
-                    'username': screen_name,
-                    'nickname': name,
-                    'timestamp': timestamp,
-                    'content': remark,
-                }
-                avatar = self.get_pictrue_imag(avatar_url)
-                formdata = dict(formdata, **avatar)
-                self.task.send_data(formdata)
-                formdata = {
-                    'index': 'social_platform_content_relation',
-                    'type': 'twitter',
-                    'id': self.id + '_' + timestamp,
-                    'source': self.id,
-                    'target': user_id + '_' + timestamp,
-                    'relation': 'like',
-                }
-                self.task.send_data(formdata)
-        print '---------------analysis user like end----------------'
-
-    # get user likes
-    def get_user_likes(self):
+    def run(self, interval, target, module, email, password, receiveurl):
         try:
-            print '--------------get user likes start---------------'
-            sent_url = 'https://twitter.com/%s/likes' % (self.id)
-            print sent_url
-            request = urllib2.Request(url=sent_url, headers=self.headers)
-            content = self.opener.open(request)
-            html = content.read()
-            data_min_position = ''
-            while True:
-                data_min_position_bak = data_min_position
-                data_min_position = self.get_min_position(html)
-                self.analysis_user_likes(html)
-                print 'data_min_position : '
-                print data_min_position
-                if data_min_position == '' or data_min_position == '0' or data_min_position == data_min_position_bak:
-                    break
-                sent_url = 'https://twitter.com/%s/likes/timeline?include_available_features=1&include_entities=1&max_position=%s&reset_error_state=false' % (
-                    self.id, data_min_position)
-                request = urllib2.Request(url=sent_url, headers=self.headers)
-                content = self.opener.open(request)
-                html = content.read()
-            print '---------------get user likes end----------------'
-        except Exception, e:
-            traceback.print_exc()
-            print e
+            self.logger.info("Crawl start(%s),Crawl module is twitter %s" %
+                             (time.ctime(time.time()), module))
 
-    # analysis user media
-    def analysis_user_media(self, html):
-        print '---------------analysis user media start----------------'
-        content = unquote(html).replace('&quot;', '"').replace('\n', '')
-        strtype = chardet.detect(html)
-        if strtype['encoding'] == 'ascii':
-            content = content.replace('\\u003c', '<').replace(
-                '\\u003e', '>').replace('\\n', '').replace('\\"', '"').replace(
-                    '\\/', '/')
-            content = content.encode().decode('unicode_escape')
-        pattern = re.compile(
-            '<li class="js-stream-item stream-item stream-item".*?<span class="u-hiddenVisually">Direct message</span>',
-            re.S)
-        items = re.findall(pattern, content)
-        for item in items:
-            pattern = re.compile(
-                'data-screen-name="(.*?)".*?data-name="(.*?)".*?data-user-id="(.*?)".*?<img class="avatar js-action-profile-avatar" src="(.*?)".*?data-time="(.*?)".*?<p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text".*?>(.*?)<',
-                re.S)
-            result = re.search(pattern, item)
-            if result:
-                screen_name = result.group(1)
-                name = result.group(2)
-                user_id = result.group(3)
-                avatar_url = result.group(4)
-                timestamp = result.group(5)
-                remark = result.group(6)
-                if remark == '':
-                    remark = 'none'
-                formdata = {
-                    'index': 'social_platform_content_data',
-                    'type': 'twitter',
-                    'id': user_id + '_' + timestamp,
-                    'user_id': user_id,
-                    'username': screen_name,
-                    'nickname': name,
-                    'timestamp': timestamp,
-                    'content': remark,
-                }
-                avatar = self.get_pictrue_imag(avatar_url)
-                formdata = dict(formdata, **avatar)
-                self.task.send_data(formdata)
-                formdata = {
-                    'index': 'social_platform_content_relation',
-                    'type': 'twitter',
-                    'id': self.id + '_' + timestamp,
-                    'source': self.id,
-                    'target': user_id + '_' + timestamp,
-                    'relation': 'forward',
-                }
-                self.task.send_data(formdata)
-        print '---------------analysis user media end----------------'
-
-    # get user media
-    def get_user_media(self):
-        try:
-            print '--------------get user likes start---------------'
-            sent_url = 'https://twitter.com/%s/media' % (self.id)
-            print sent_url
-            request = urllib2.Request(url=sent_url, headers=self.headers)
-            content = self.opener.open(request)
-            html = content.read()
-            while True:
-                data_min_position = self.get_min_position(html)
-                self.analysis_user_media(html)
-                print 'data_min_position : '
-                print data_min_position
-                if data_min_position == '' or data_min_position == '0':
-                    break
-                sent_url = 'https://twitter.com/i/profiles/show/%s/media_timeline?include_available_features=1&include_entities=1&max_position=%s&reset_error_state=false' % (
-                    self.id, data_min_position)
-                request = urllib2.Request(url=sent_url, headers=self.headers)
-                content = self.opener.open(request)
-                html = content.read()
-            print '---------------get user likes end----------------'
-        except Exception, e:
-            traceback.print_exc()
-            print e
-
-    # analysis user tweets
-    def analysis_user_tweets(self, html):
-        print '---------------analysis user tweets start----------------'
-        content = unquote(html).replace('&quot;', '"').replace('\n', '')
-        strtype = chardet.detect(html)
-        if strtype['encoding'] == 'ascii':
-            content = content.replace('\\u003c', '<').replace(
-                '\\u003e', '>').replace('\\n', '').replace('\\"', '"').replace(
-                    '\\/', '/')
-        pattern = re.compile(
-            '<li class="js-stream-item stream-item stream-item".*?<span class="Icon Icon--medium Icon--reply"></span>',
-            re.S)
-        items = re.findall(pattern, content)
-        for item in items:
-            pattern = re.compile(
-                '.-screen-name="(.*?)".*?data-name="(.*?)".*?data-user-id="(.*?)".*?<img class="avatar js-action-profile-avatar" src="(.*?)".*?data-time="(.*?)".*?<p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text".*?>(.*?)</p>',
-                re.S)
-            result = re.search(pattern, item)
-            if result:
-                screen_name = result.group(1)
-                name = result.group(2)
-                user_id = result.group(3)
-                avatar_url = result.group(4)
-                timestamp = result.group(5)
-                remark = result.group(6)
-                if remark == '':
-                    remark = 'none'
-                formdata = {
-                    'index': 'social_platform_content_data',
-                    'type': 'twitter',
-                    'id': user_id + '_' + timestamp,
-                    'user_id': user_id,
-                    'username': screen_name,
-                    'nickname': name,
-                    'timestamp': timestamp,
-                    'content': remark,
-                }
-                avatar = self.get_pictrue_imag(avatar_url)
-                formdata = dict(formdata, **avatar)
-                self.task.send_data(formdata)
-                formdata = {
-                    'index': 'social_platform_content_relation',
-                    'type': 'twitter',
-                    'id': self.id + '_' + timestamp,
-                    'source': self.id,
-                    'target': user_id + '_' + timestamp,
-                    'relation': 'forward',
-                }
-                self.task.send_data(formdata)
-        print '---------------analysis user tweets end----------------'
-
-    # get user tweets
-    def get_user_tweets(self):
-        try:
-            print '--------------get user tweets start---------------'
-            sent_url = 'https://twitter.com/i/profiles/show/%s/timeline/tweets' % (
-                self.id)
-            print sent_url
-            request = urllib2.Request(url=sent_url, headers=self.headers)
-            content = self.opener.open(request)
-            html = content.read()
-            while True:
-                data_min_position = self.get_min_position(html)
-                self.analysis_user_tweets(html)
-                if data_min_position == '' or data_min_position == '0':
-                    break
-                sent_url = 'https://twitter.com/i/profiles/show/%s/timeline/tweets?include_available_features=1&include_entities=1&max_position=%s&reset_error_state=false' % (
-                    self.id, data_min_position)
-                request = urllib2.Request(url=sent_url, headers=self.headers)
-                content = self.opener.open(request)
-                html = content.read()
-            print '---------------get user tweets end----------------'
-        except Exception, e:
-            traceback.print_exc()
-            print e
-
-    # analysis user tweets_replies
-    def analysis_user_tweets_replies(self, html):
-        print '---------------analysis user tweets_replies start----------------'
-        content = unquote(html).replace('&quot;', '"').replace('\n', '')
-        strtype = chardet.detect(html)
-        if strtype['encoding'] == 'ascii':
-            content = content.replace('\\u003c', '<').replace(
-                '\\u003e', '>').replace('\\n', '').replace('\\"', '"').replace(
-                    '\\/', '/')
-        pattern = re.compile(
-            '<li class="js-stream-item stream-item stream-item".*?<span class="Icon Icon--medium Icon--reply"></span>',
-            re.S)
-        items = re.findall(pattern, content)
-        for item in items:
-            pattern = re.compile(
-                'data-screen-name="(.*?)".*?data-name="(.*?)".*?data-user-id="(.*?)".*?<img class="avatar js-action-profile-avatar" src="(.*?)".*?data-time="(.*?)".*?<p class="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text".*?>(.*?)</p>',
-                re.S)
-            result = re.search(pattern, item)
-            if result:
-                screen_name = result.group(1)
-                name = result.group(2)
-                user_id = result.group(3)
-                avatar_url = result.group(4)
-                timestamp = result.group(5)
-                remark = result.group(6)
-                if remark == '':
-                    remark = 'none'
-                formdata = {
-                    'index': 'social_platform_content_data',
-                    'type': 'twitter',
-                    'id': user_id + '_' + timestamp,
-                    'user_id': user_id,
-                    'username': screen_name,
-                    'nickname': name,
-                    'timestamp': timestamp,
-                    'content': remark,
-                }
-                avatar = self.get_pictrue_imag(avatar_url)
-                formdata = dict(formdata, **avatar)
-                self.task.send_data(formdata)
-                formdata = {
-                    'index': 'social_platform_content_relation',
-                    'type': 'twitter',
-                    'id': self.id + '_' + timestamp,
-                    'source': self.id,
-                    'target': user_id + '_' + timestamp,
-                    'relation': 'forward',
-                }
-                self.task.send_data(formdata)
-        print '---------------analysis user tweets_replies end----------------'
-
-    # get user tweets
-    def get_user_tweets_replies(self):
-        try:
-            print '--------------get user replies start---------------'
-            sent_url = 'https://twitter.com/%s/with_replies' % (self.id)
-            print sent_url
-            request = urllib2.Request(url=sent_url, headers=self.headers)
-            content = self.opener.open(request)
-            html = content.read()
-            while True:
-                data_min_position = self.get_min_position(html)
-                self.analysis_user_tweets_replies(html)
-                if data_min_position == '' or data_min_position == '0':
-                    break
-                sent_url = 'https://twitter.com/i/profiles/show/%s/timeline/with_replies?include_available_features=1&include_entities=1&max_position=%s&reset_error_state=false' % (
-                    self.id, data_min_position)
-                request = urllib2.Request(url=sent_url, headers=self.headers)
-                content = self.opener.open(request)
-                html = content.read()
-            print '---------------get user replies end----------------'
-        except Exception, e:
-            traceback.print_exc()
-            print e
-
-    # analysis user information
-    def analysis_user_information(self, html):
-        print '---------------analysis user information start----------------'
-        content = unquote(html).replace('&quot;', '"').replace('\n', '')
-        pattern = re.compile(
-            '<img class="ProfileAvatar-image " src="(.*?)" alt="(.*?)">', re.S)
-        result = re.search(pattern, content)
-        if result:
-            avatar_url = result.group(1)
-            name = result.group(2)
-            print 'avatar_url is ' + avatar_url
-            print 'name is ' + name
-        else:
-            avatar_url = ''
-            name = ''
-            print 'avatar_url is empty'
-            print 'name is empty'
-
-        pattern = re.compile(
-            '    <div class="user-actions btn-group not-following not-muting " data-user-id="(.*?)".*?data-screen-name="(.*?)" data-name=".*?" data-protected="false">',
-            re.S)
-        result = re.search(pattern, content)
-        if result:
-            user_id = result.group(1)
-            screen_name = result.group(2)
-            print 'user_id is ' + user_id
-            print 'screen_name is ' + screen_name
-        else:
-            user_id = ''
-            screen_name = ''
-            print 'user_id is empty'
-            print 'screen_name is empty'
-
-        pattern = re.compile(
-            '<span class="ProfileNav-label" aria-hidden="true">Tweets</span>.*?data-count=(.*?) data-is-compact="true">',
-            re.S)
-        result = re.search(pattern, content)
-        if result:
-            tweets_count = result.group(1)
-            print 'tweets_count is ' + tweets_count
-        else:
-            tweets_count = ''
-            print 'tweets_count is empty'
-
-        pattern = re.compile(
-            '<span class="ProfileNav-label" aria-hidden="true">Following</span>.*?data-count=(.*?) data-is-compact="false">',
-            re.S)
-        result = re.search(pattern, content)
-        if result:
-            following_count = result.group(1)
-            print 'following_count is ' + following_count
-        else:
-            following_count = ''
-            print 'following_count is empty'
-
-        pattern = re.compile(
-            '<span class="ProfileNav-label" aria-hidden="true">Followers</span>.*?data-count=(.*?) data-is-compact="true">',
-            re.S)
-        result = re.search(pattern, content)
-        if result:
-            followers_count = result.group(1)
-            print 'followers_count is ' + followers_count
-        else:
-            followers_count = ''
-            print 'followers_count is empty'
-
-        pattern = re.compile(
-            '<span class="ProfileNav-label" aria-hidden="true">Likes</span>.*?data-count=(.*?) data-is-compact="false">',
-            re.S)
-        result = re.search(pattern, content)
-        if result:
-            likes_count = result.group(1)
-            print 'likes_count is ' + likes_count
-        else:
-            likes_count = ''
-            print 'likes_count is empty'
-        formdata = {
-            'index': 'social_platform',
-            'type': 'twitter',
-            'id': screen_name,
-            'nickname': name,
-            'username': screen_name,
-            'user_id': user_id,
-            'article_count': tweets_count,
-            'following_count': following_count,
-            'followers_count': followers_count,
-            'likes_count': likes_count,
-        }
-        avatar = self.get_pictrue_imag(avatar_url)
-        formdata = dict(formdata, **avatar)
-        self.task.send_data(formdata)
-        print '---------------analysis user information end----------------'
-
-    # get user information
-    def get_user_information(self):
-        try:
-            print '--------------get user information start---------------'
-            sent_url = 'https://twitter.com/%s' % (self.id)
-            print sent_url
-            request = urllib2.Request(url=sent_url, headers=self.headers)
-            content = self.opener.open(request)
-            html = content.read()
-            self.analysis_user_information(html)
-            print '---------------get user information end----------------'
-        except Exception, e:
-            traceback.print_exc()
-            print e
-
-    def run(self, interval, userid, email, password):
-        try:
-            self.id = userid
+            self.id = target
             self.email = email
             self.password = password
+            self.receiveurl = receiveurl
             self.login_twitter()
 
-            # sleep for the remaining seconds of interval
-            time_remaining = interval - time.time() % interval
-            print("Sleeping until %s (%s seconds)..." % (
-                (time.ctime(time.time() + time_remaining)), time_remaining))
-            time.sleep(time_remaining)
-            # get twitter data
-            if self.id != '-1':
-                # get data
-                self.get_user_information()
-                self.get_user_followers()
-                self.get_user_following()
-                self.get_user_likes()
-                self.get_user_media()
-                self.get_user_tweets()
-                self.get_user_tweets_replies()
+            all_rule = json.load(open("rule.json", 'r'))
+            module_rule = all_rule.get(module)
+            self.analysis_rule(module_rule, "")
 
         except Exception, e:
-            traceback.print_exc()
-            print e
+            #traceback.print_exc()
+            self.logger.error(e)
+        finally:
+            self.logger.info("End of crawl(%s)" % (time.ctime(time.time())))
 
 
 if __name__ == "__main__":
 
-    if len(sys.argv) != 5:
-        print 'The parameters are incorrect, please check the parameters.'
+    if len(sys.argv) != 6:
+        print('The parameters are incorrect, please check the parameters.')
         exit()
 
-    # userid = 目标ID
-    # email = 爬虫配置账号
-    # password = 爬虫配置密码
-    # receive_url = 服务器回连地址
+    # target 目标ID
+    # module 目标模块
+    # email 爬虫配置账号
+    # password 爬虫配置密码
+    # receive_url 服务器回连地址
+
+    target = sys.argv[1]
+    module = sys.argv[2]
+    email = sys.argv[3]
+    password = sys.argv[4]
+    receiveurl = sys.argv[5]
 
     interval = 60
-    userid = sys.argv[1]
-    email = sys.argv[2]
-    password = sys.argv[3]
-    receive_url = sys.argv[4]
+    # target = 'PDChina'
+    # module = "information"
+    # email = 'qazxsw31154@gmail.com'
+    # password = '1qaz@WSX'
+    # receiveurl = 'http://192.168.201.110:4444/receive'
 
-    twitter = Twitter(receive_url)
-    twitter.run(interval, userid, email, password)
+    twitter = Twitter()
+    twitter.run(interval, target, module, email, password, receiveurl)
+

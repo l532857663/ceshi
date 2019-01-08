@@ -1,0 +1,679 @@
+{
+    "information": {
+        "next": false,
+        "type": "html",
+        "url": "https://twitter.com/<userid>",
+        "path": "analysis/analysis_user_information",
+        "parameter": {},
+        "data": {
+            "root": true,
+            "index": {
+                "index": "social_platform",
+                "type": "twitter",
+                "id": {
+                    "method": "get_value",
+                    "value": "username"
+                }
+            },
+            "Regular": {
+                ".//img[contains(@class,'ProfileAvatar-image')]/@src": "icon_url",
+                ".//ul[@class='ProfileNav-list']": {
+                    "root": false,
+                    "Regular": {
+                        ".//li[contains(@class,'ProfileNav-item--tweets')]//span[@class='ProfileNav-value']/@data-count": "tweets_count",
+                        ".//li[contains(@class,'ProfileNav-item--following')]//span[@class='ProfileNav-value']/@data-count": "following_count",
+                        ".//li[contains(@class,'ProfileNav-item--followers')]//span[@class='ProfileNav-value']/@data-count": "followers_count",
+                        ".//li[contains(@class,'ProfileNav-item--favorites')]//span[@class='ProfileNav-value']/@data-count": "likes_count"
+                    }
+                },
+                ".//div[@class='ProfileHeaderCard']": {
+                    "root": false,
+                    "Regular": {
+                        ".//h1[contains(@class,'ProfileHeaderCard-name')]/a/text()": "nickname",
+                        ".//h2[contains(@class,'ProfileHeaderCard-screenname')]/a/span/b/text()": "username",
+                        ".//p[contains(@class,'ProfileHeaderCard-bio')]/text()": "summary",
+                        ".//span[contains(@class,'ProfileHeaderCard-locationText')]/text()": "location",
+                        ".//span[contains(@class,'ProfileHeaderCard-urlText')]/text()": "url",
+                        ".//span[contains(@class,'ProfileHeaderCard-joinDateText')]/text()": "create_time",
+                        ".//span[contains(@class,'ProfileHeaderCard-birthdateText')]/text()": "birthday"
+                    }
+                }
+            }
+        },
+        "node": {}
+    },
+    "following": {
+        "next": true,
+        "type": "html",
+        "url": "https://twitter.com/<userid>/following",
+        "path": "analysis/analysis_user_following",
+        "parameter": {
+            "max_position": ".//div[contains(@class,'GridTimeline-items')]/@data-max-position",
+            "min_position": ".//div[contains(@class,'GridTimeline-items')]/@data-min-position"
+        },
+        "data": {
+            "root": false,
+            "Regular": {
+                ".//div[@class='ProfileCard-content']": {
+                    "root": true,
+                    "index": {
+                        "index": "social_platform",
+                        "type": "twitter",
+                        "id": {
+                            "method": "get_value",
+                            "value": "username"
+                        }
+                    },
+                    "relation": {
+                        "index": "social_platform_relation",
+                        "type": "twitter",
+                        "id": {
+                            "method": "catenate_id",
+                            "value": "id"
+                        },
+                        "source": {
+                            "method": "get_id",
+                            "value": "self.id"
+                        },
+                        "target": {
+                            "method": "get_value",
+                            "value": "id"
+                        },
+                        "relation": "following"
+                    },
+                    "Regular": {
+                        ".//img[contains(@class,'ProfileCard-avatarImage')]/@src": "icon_url",
+                        ".//div[contains(@class,'user-actions')]/@data-user-id": "user_id",
+                        ".//div[contains(@class,'ProfileCard-userFields')]/div/div/a/text()": "nickname",
+                        ".//span[contains(@class,'ProfileCard-screenname')]/a/span/b/text()": "username",
+                        ".//p[contains(@class,'ProfileCard-bio')]/text()": "summary"
+                    }
+                }
+            }
+        },
+        "node": {
+            "next": false,
+            "type": "json",
+            "url": "https://twitter.com/<userid>/following/users?include_available_features=1&include_entities=1&max_position=<min_position>&reset_error_state=false",
+            "path": "analysis/analysis_user_following<min_position>",
+            "parameter": {
+                "max_position": ".//div[contains(@class,'GridTimeline-items')]/@data-max-position",
+                "min_position": ".//div[contains(@class,'GridTimeline-items')]/@data-min-position"
+            },
+            "data": {
+                "root": false,
+                "Regular": {
+                    ".//div[@class='ProfileCard-content']": {
+                        "root": true,
+                        "index": {
+                            "index": "social_platform",
+                            "type": "twitter",
+                            "id": {
+                                "method": "get_value",
+                                "value": "username"
+                            }
+                        },
+                        "relation": {
+                            "index": "social_platform_relation",
+                            "type": "twitter",
+                            "id": {
+                                "method": "catenate_id",
+                                "value": "id"
+                            },
+                            "source": {
+                                "method": "get_id",
+                                "value": "self.id"
+                            },
+                            "target": {
+                                "method": "get_value",
+                                "value": "id"
+                            },
+                            "relation": "following"
+                        },
+                        "Regular": {
+                            ".//img[contains(@class,'ProfileCard-avatarImage')]/@src": "icon_url",
+                            ".//div[contains(@class,'user-actions')]/@data-user-id": "user_id",
+                            ".//div[contains(@class,'ProfileCard-userFields')]/div/div/a/text()": "nickname",
+                            ".//span[contains(@class,'ProfileCard-screenname')]/a/span/b/text()": "username",
+                            ".//p[contains(@class,'ProfileCard-bio')]/text()": "summary"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "followers": {
+        "next": true,
+        "type": "html",
+        "url": "https://twitter.com/<userid>/followers",
+        "path": "analysis/analysis_user_followers",
+        "parameter": {
+            "max_position": ".//div[contains(@class,'GridTimeline-items')]/@data-max-position",
+            "min_position": ".//div[contains(@class,'GridTimeline-items')]/@data-min-position"
+        },
+        "data": {
+            "root": false,
+            "Regular": {
+                ".//div[@class='ProfileCard-content']": {
+                    "root": true,
+                    "index": {
+                        "index": "social_platform",
+                        "type": "twitter",
+                        "id": {
+                            "method": "get_value",
+                            "value": "username"
+                        }
+                    },
+                    "relation": {
+                        "index": "social_platform_relation",
+                        "type": "twitter",
+                        "id": {
+                            "method": "catenate_id",
+                            "value": "id"
+                        },
+                        "source": {
+                            "method": "get_id",
+                            "value": "self.id"
+                        },
+                        "target": {
+                            "method": "get_value",
+                            "value": "id"
+                        },
+                        "relation": "followers"
+                    },
+                    "Regular": {
+                        ".//img[contains(@class,'ProfileCard-avatarImage')]/@src": "icon_url",
+                        ".//div[contains(@class,'user-actions')]/@data-user-id": "user_id",
+                        ".//div[contains(@class,'ProfileCard-userFields')]/div/div/a/text()": "nickname",
+                        ".//span[contains(@class,'ProfileCard-screenname')]/a/span/b/text()": "username",
+                        ".//p[contains(@class,'ProfileCard-bio')]/text()": "summary"
+                    }
+                }
+            }
+        },
+        "node": {
+            "next": false,
+            "type": "json",
+            "url": "https://twitter.com/<userid>/followers/users?include_available_features=1&include_entities=1&max_position=<min_position>&reset_error_state=false",
+            "path": "analysis/analysis_user_followers<min_position>",
+            "parameter": {
+                "max_position": ".//div[contains(@class,'GridTimeline-items')]/@data-max-position",
+                "min_position": ".//div[contains(@class,'GridTimeline-items')]/@data-min-position"
+            },
+            "data": {
+                "root": false,
+                "Regular": {
+                    ".//div[@class='ProfileCard-content']": {
+                        "root": true,
+                        "index": {
+                            "index": "social_platform",
+                            "type": "twitter",
+                            "id": {
+                                "method": "get_value",
+                                "value": "username"
+                            }
+                        },
+                        "relation": {
+                            "index": "social_platform_relation",
+                            "type": "twitter",
+                            "id": {
+                                "method": "catenate_id",
+                                "value": "id"
+                            },
+                            "source": {
+                                "method": "get_id",
+                                "value": "self.id"
+                            },
+                            "target": {
+                                "method": "get_value",
+                                "value": "id"
+                            },
+                            "relation": "followers"
+                        },
+                        "Regular": {
+                            ".//img[contains(@class,'ProfileCard-avatarImage')]/@src": "icon_url",
+                            ".//div[contains(@class,'user-actions')]/@data-user-id": "user_id",
+                            ".//div[contains(@class,'ProfileCard-userFields')]/div/div/a/text()": "nickname",
+                            ".//span[contains(@class,'ProfileCard-screenname')]/a/span/b/text()": "username",
+                            ".//p[contains(@class,'ProfileCard-bio')]/text()": "summary"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "likes": {
+        "next": true,
+        "type": "html",
+        "url": "https://twitter.com/<userid>/likes",
+        "path": "analysis/analysis_user_likes",
+        "parameter": {
+            "max_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-max-position",
+            "min_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-min-position"
+        },
+        "data": {
+            "root": false,
+            "Regular": {
+                ".//li[@data-item-type='tweet']": {
+                    "root": true,
+                    "index": {
+                        "index": "social_platform_content_data",
+                        "type": "twitter",
+                        "id": {
+                            "method": "get_value",
+                            "value": "timestamp"
+                        }
+                    },
+                    "relation": {
+                        "index": "social_platform_content_relation",
+                        "type": "twitter",
+                        "id": {
+                            "method": "catenate_id",
+                            "value": "timestamp"
+                        },
+                        "source": {
+                            "method": "get_id",
+                            "value": "self.id"
+                        },
+                        "target_content": {
+                            "method": "get_value",
+                            "value": "timestamp"
+                        },
+                        "relation": "like"
+                    },
+                    "Regular": {
+                        ".//img[contains(@class,'avatar')]/@src": "icon_url",
+                        ".//div[contains(@class,'tweet')]/@data-user-id": "user_id",
+                        ".//div[contains(@class,'tweet')]/@data-name": "nickname",
+                        ".//div[contains(@class,'tweet')]/@data-screen-name": "username",
+                        ".//span[contains(@class,'_timestamp')]/@data-time": "timestamp",
+                        ".//p[contains(@class,'TweetTextSize')]/text()": "content",
+                        ".//a[contains(@class,'QuoteTweet-link')]/@href": "content_share_link"
+                    }
+                }
+            }
+        },
+        "node": {
+            "next": false,
+            "type": "json",
+            "url": "https://twitter.com/<userid>/likes/timeline?include_available_features=1&include_entities=1&max_position=<min_position>&reset_error_state=false",
+            "path": "analysis/analysis_user_likes<min_position>",
+            "parameter": {
+                "max_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-max-position",
+                "min_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-min-position"
+            },
+            "data": {
+                "root": false,
+                "Regular": {
+                    ".//li[@data-item-type='tweet']": {
+                        "root": true,
+                        "index": {
+                            "index": "social_platform_content_data",
+                            "type": "twitter",
+                            "id": {
+                                "method": "get_value",
+                                "value": "timestamp"
+                            }
+                        },
+                        "relation": {
+                            "index": "social_platform_content_relation",
+                            "type": "twitter",
+                            "id": {
+                                "method": "catenate_id",
+                                "value": "timestamp"
+                            },
+                            "source": {
+                                "method": "get_id",
+                                "value": "self.id"
+                            },
+                            "target_content": {
+                                "method": "get_value",
+                                "value": "timestamp"
+                            },
+                            "relation": "like"
+                        },
+                        "Regular": {
+                            ".//img[contains(@class,'avatar')]/@src": "icon_url",
+                            ".//div[contains(@class,'tweet')]/@data-user-id": "user_id",
+                            ".//div[contains(@class,'tweet')]/@data-name": "nickname",
+                            ".//div[contains(@class,'tweet')]/@data-screen-name": "username",
+                            ".//span[contains(@class,'_timestamp')]/@data-time": "timestamp",
+                            ".//p[contains(@class,'TweetTextSize')]/text()": "content",
+                            ".//a[contains(@class,'QuoteTweet-link')]/@href": "content_share_link"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "media": {
+        "next": true,
+        "type": "html",
+        "url": "https://twitter.com/<userid>/media",
+        "path": "analysis/analysis_user_media",
+        "parameter": {
+            "max_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-max-position",
+            "min_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-min-position"
+        },
+        "data": {
+            "root": false,
+            "Regular": {
+                ".//li[@data-item-type='tweet']": {
+                    "root": true,
+                    "index": {
+                        "index": "social_platform_content_data",
+                        "type": "twitter",
+                        "id": {
+                            "method": "get_value",
+                            "value": "timestamp"
+                        }
+                    },
+                    "relation": {
+                        "index": "social_platform_content_relation",
+                        "type": "twitter",
+                        "id": {
+                            "method": "catenate_id",
+                            "value": "timestamp"
+                        },
+                        "source": {
+                            "method": "get_id",
+                            "value": "self.id"
+                        },
+                        "target_content": {
+                            "method": "get_value",
+                            "value": "timestamp"
+                        },
+                        "relation": "media"
+                    },
+                    "Regular": {
+                        ".//img[contains(@class,'avatar')]/@src": "icon_url",
+                        ".//div[contains(@class,'tweet')]/@data-user-id": "user_id",
+                        ".//div[contains(@class,'tweet')]/@data-name": "nickname",
+                        ".//div[contains(@class,'tweet')]/@data-screen-name": "username",
+                        ".//span[contains(@class,'_timestamp')]/@data-time": "timestamp",
+                        ".//p[contains(@class,'TweetTextSize')]/text()": "content",
+                        ".//a[contains(@class,'QuoteTweet-link')]/@href": "content_share_link",
+                        ".//div[@class='AdaptiveMediaOuterContainer']//div[contains(@class,'AdaptiveMedia-photoContainer')]/@data-image-url": "content_img_url",
+                        ".//div[@class='AdaptiveMediaOuterContainer']//div[contains(@class,'PlayableMedia-player')]/@style": "content_video_img",
+                        ".//div[@class='AdaptiveMediaOuterContainer']//video/@src": "content_video"
+                    }
+                }
+            }
+        },
+        "node": {
+            "next": false,
+            "type": "json",
+            "url": "https://twitter.com/i/profiles/show/<userid>/media_timeline?include_available_features=1&include_entities=1&max_position=<min_position>&reset_error_state=false",
+            "path": "analysis/analysis_user_media<min_position>",
+            "parameter": {
+                "max_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-max-position",
+                "min_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-min-position"
+            },
+            "data": {
+                "root": false,
+                "Regular": {
+                    ".//li[@data-item-type='tweet']": {
+                        "root": true,
+                        "index": {
+                            "index": "social_platform_content_data",
+                            "type": "twitter",
+                            "id": {
+                                "method": "get_value",
+                                "value": "timestamp"
+                            }
+                        },
+                        "relation": {
+                            "index": "social_platform_content_relation",
+                            "type": "twitter",
+                            "id": {
+                                "method": "catenate_id",
+                                "value": "timestamp"
+                            },
+                            "source": {
+                                "method": "get_id",
+                                "value": "self.id"
+                            },
+                            "target_content": {
+                                "method": "get_value",
+                                "value": "timestamp"
+                            },
+                            "relation": "media"
+                        },
+                        "Regular": {
+                            ".//img[contains(@class,'avatar')]/@src": "icon_url",
+                            ".//div[contains(@class,'tweet')]/@data-user-id": "user_id",
+                            ".//div[contains(@class,'tweet')]/@data-name": "nickname",
+                            ".//div[contains(@class,'tweet')]/@data-screen-name": "username",
+                            ".//span[contains(@class,'_timestamp')]/@data-time": "timestamp",
+                            ".//p[contains(@class,'TweetTextSize')]/text()": "content",
+                            ".//a[contains(@class,'QuoteTweet-link')]/@href": "content_share_link",
+                            ".//div[@class='AdaptiveMediaOuterContainer']//div[contains(@class,'AdaptiveMedia-photoContainer')]/@data-image-url": "content_img_url",
+                            ".//div[@class='AdaptiveMediaOuterContainer']//div[contains(@class,'PlayableMedia-player')]/@style": "content_video_img",
+                            ".//div[@class='AdaptiveMediaOuterContainer']//video/@src": "content_video"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tweets": {
+        "next": true,
+        "type": "json",
+        "url": "https://twitter.com/i/profiles/show/<userid>/timeline/tweets",
+        "path": "analysis/analysis_user_tweets",
+        "parameter": {
+            "max_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-max-position",
+            "min_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-min-position"
+        },
+        "data": {
+            "root": false,
+            "Regular": {
+                ".//li[@data-item-type='tweet']": {
+                    "root": true,
+                    "index": {
+                        "index": "social_platform_content_data",
+                        "type": "twitter",
+                        "id": {
+                            "method": "get_value",
+                            "value": "timestamp"
+                        }
+                    },
+                    "relation": {
+                        "index": "social_platform_content_relation",
+                        "type": "twitter",
+                        "id": {
+                            "method": "catenate_id",
+                            "value": "timestamp"
+                        },
+                        "source": {
+                            "method": "get_id",
+                            "value": "self.id"
+                        },
+                        "target_content": {
+                            "method": "get_value",
+                            "value": "timestamp"
+                        },
+                        "relation": "media"
+                    },
+                    "Regular": {
+                        ".//img[contains(@class,'avatar')]/@src": "icon_url",
+                        ".//div[contains(@class,'tweet')]/@data-user-id": "user_id",
+                        ".//div[contains(@class,'tweet')]/@data-name": "nickname",
+                        ".//div[contains(@class,'tweet')]/@data-screen-name": "username",
+                        ".//span[contains(@class,'_timestamp')]/@data-time": "timestamp",
+                        ".//p[contains(@class,'TweetTextSize')]/text()": "content",
+                        ".//a[contains(@class,'QuoteTweet-link')]/@href": "content_share_link",
+                        ".//div[@class='AdaptiveMediaOuterContainer']//div[contains(@class,'AdaptiveMedia-photoContainer')]/@data-image-url": "content_img_url",
+                        ".//div[@class='AdaptiveMediaOuterContainer']//div[contains(@class,'PlayableMedia-player')]/@style": "content_video_img",
+                        ".//div[@class='AdaptiveMediaOuterContainer']//video/@src": "content_video"
+                    }
+                }
+            }
+        },
+        "node": {
+            "next": false,
+            "type": "json",
+            "url": "https://twitter.com/i/profiles/show/<userid>/timeline/tweets?include_available_features=1&include_entities=1&max_position=<min_position>&reset_error_state=false",
+            "path": "analysis/analysis_user_tweets<min_position>",
+            "parameter": {
+                "max_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-max-position",
+                "min_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-min-position"
+            },
+            "data": {
+                "root": false,
+                "Regular": {
+                    ".//li[@data-item-type='tweet']": {
+                        "root": true,
+                        "index": {
+                            "index": "social_platform_content_data",
+                            "type": "twitter",
+                            "id": {
+                                "method": "get_value",
+                                "value": "timestamp"
+                            }
+                        },
+                        "relation": {
+                            "index": "social_platform_content_relation",
+                            "type": "twitter",
+                            "id": {
+                                "method": "catenate_id",
+                                "value": "timestamp"
+                            },
+                            "source": {
+                                "method": "get_id",
+                                "value": "self.id"
+                            },
+                            "target_content": {
+                                "method": "get_value",
+                                "value": "timestamp"
+                            },
+                            "relation": "media"
+                        },
+                        "Regular": {
+                            ".//img[contains(@class,'avatar')]/@src": "icon_url",
+                            ".//div[contains(@class,'tweet')]/@data-user-id": "user_id",
+                            ".//div[contains(@class,'tweet')]/@data-name": "nickname",
+                            ".//div[contains(@class,'tweet')]/@data-screen-name": "username",
+                            ".//span[contains(@class,'_timestamp')]/@data-time": "timestamp",
+                            ".//p[contains(@class,'TweetTextSize')]/text()": "content",
+                            ".//a[contains(@class,'QuoteTweet-link')]/@href": "content_share_link",
+                            ".//div[@class='AdaptiveMediaOuterContainer']//div[contains(@class,'AdaptiveMedia-photoContainer')]/@data-image-url": "content_img_url",
+                            ".//div[@class='AdaptiveMediaOuterContainer']//div[contains(@class,'PlayableMedia-player')]/@style": "content_video_img",
+                            ".//div[@class='AdaptiveMediaOuterContainer']//video/@src": "content_video"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tweets_replies": {
+        "next": true,
+        "type": "html",
+        "url": "https://twitter.com/<userid>/with_replies",
+        "path": "analysis/analysis_user_tweets_replies",
+        "parameter": {
+            "max_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-max-position",
+            "min_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-min-position"
+        },
+        "data": {
+            "root": false,
+            "Regular": {
+                ".//li[@data-item-type='tweet']": {
+                    "root": true,
+                    "index": {
+                        "index": "social_platform_content_data",
+                        "type": "twitter",
+                        "id": {
+                            "method": "get_value",
+                            "value": "timestamp"
+                        }
+                    },
+                    "relation": {
+                        "index": "social_platform_content_relation",
+                        "type": "twitter",
+                        "id": {
+                            "method": "catenate_id",
+                            "value": "timestamp"
+                        },
+                        "source": {
+                            "method": "get_id",
+                            "value": "self.id"
+                        },
+                        "target_content": {
+                            "method": "get_value",
+                            "value": "timestamp"
+                        },
+                        "relation": "media"
+                    },
+                    "Regular": {
+                        ".//img[contains(@class,'avatar')]/@src": "icon_url",
+                        ".//div[contains(@class,'tweet')]/@data-user-id": "user_id",
+                        ".//div[contains(@class,'tweet')]/@data-name": "nickname",
+                        ".//div[contains(@class,'tweet')]/@data-screen-name": "username",
+                        ".//span[contains(@class,'_timestamp')]/@data-time": "timestamp",
+                        ".//p[contains(@class,'TweetTextSize')]/text()": "content",
+                        ".//a[contains(@class,'QuoteTweet-link')]/@href": "content_share_link",
+                        ".//div[@class='AdaptiveMediaOuterContainer']//div[contains(@class,'AdaptiveMedia-photoContainer')]/@data-image-url": "content_img_url",
+                        ".//div[@class='AdaptiveMediaOuterContainer']//div[contains(@class,'PlayableMedia-player')]/@style": "content_video_img",
+                        ".//div[@class='AdaptiveMediaOuterContainer']//video/@src": "content_video"
+                    }
+                }
+            }
+        },
+        "node": {
+            "next": false,
+            "type": "json",
+            "url": "https://twitter.com/i/profiles/show/<userid>/timeline/with_replies?include_available_features=1&include_entities=1&max_position=<min_position>&reset_error_state=false",
+            "path": "analysis/analysis_user_tweets_replies<min_position>",
+            "parameter": {
+                "max_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-max-position",
+                "min_position": ".//div[contains(@class,'ProfileTimeline')]/div[contains(@class,'stream-container')]/@data-min-position"
+            },
+            "data": {
+                "root": false,
+                "Regular": {
+                    ".//li[@data-item-type='tweet']": {
+                        "root": true,
+                        "index": {
+                            "index": "social_platform_content_data",
+                            "type": "twitter",
+                            "id": {
+                                "method": "get_value",
+                                "value": "timestamp"
+                            }
+                        },
+                        "relation": {
+                            "index": "social_platform_content_relation",
+                            "type": "twitter",
+                            "id": {
+                                "method": "catenate_id",
+                                "value": "timestamp"
+                            },
+                            "source": {
+                                "method": "get_id",
+                                "value": "self.id"
+                            },
+                            "target_content": {
+                                "method": "get_value",
+                                "value": "timestamp"
+                            },
+                            "relation": "media"
+                        },
+                        "Regular": {
+                            ".//img[contains(@class,'avatar')]/@src": "icon_url",
+                            ".//div[contains(@class,'tweet')]/@data-user-id": "user_id",
+                            ".//div[contains(@class,'tweet')]/@data-name": "nickname",
+                            ".//div[contains(@class,'tweet')]/@data-screen-name": "username",
+                            ".//span[contains(@class,'_timestamp')]/@data-time": "timestamp",
+                            ".//p[contains(@class,'TweetTextSize')]/text()": "content",
+                            ".//a[contains(@class,'QuoteTweet-link')]/@href": "content_share_link",
+                            ".//div[@class='AdaptiveMediaOuterContainer']//div[contains(@class,'AdaptiveMedia-photoContainer')]/@data-image-url": "content_img_url",
+                            ".//div[@class='AdaptiveMediaOuterContainer']//div[contains(@class,'PlayableMedia-player')]/@style": "content_video_img",
+                            ".//div[@class='AdaptiveMediaOuterContainer']//video/@src": "content_video"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
