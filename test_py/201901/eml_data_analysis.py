@@ -46,54 +46,38 @@ def send_data_es(the_file, data):
 		res = request.urlopen(req).read().decode('utf-8')
 		#jsonData = json.loads(res)
 		os.system("rm ./attachment_file/* attachment_file.tar.xz attachment_file.tar -rf")
-		logger.info("aks es data:"+res)
+		logger.info("ask es data:"+res)
 	except Exception as e:
-		logger.warning("ask es have error:"+the_file)
 		logger.warning("ask es is error:"+str(e))
 
 def analysis_eml_data(the_data):
 	eml_data_dict = {}
 	try:
-		with open("./attachment_file.tar.xz", "rb") as f:
-			content_file = f.read()
 		#the_data_attachment = the_data["attachment"]
 		#the_data_body = the_data["body"]
-		eml_data_dict["content_file"] = str(base64.b64encode(content_file))
+		eml_data_dict["index"] = "email_parse"
 
 		the_data_header = the_data["header"]
 		timestamp = the_data_header["date"].timestamp()
-		eml_data_dict["timestamp"] = str(int(timestamp))
+		timestamp_str = str(int(timestamp))
+		eml_data_dict["timestamp"] = timestamp_str
 		eml_data_dict["email"] = the_data_header["from"]
+		type_str = the_data_header["from"].split("@")[1]
+		eml_data_dict["type"] = type_str
+		eml_data_dict["id"] = the_data_header["from"]+"_"+timestamp_str
 		eml_data_dict["title"] = the_data_header["subject"]
-		eml_data_dict["receive_ip"] = the_data_header["received_ip"][0]
+		eml_data_dict["host_ip"] = the_data_header["received_ip"][0]
 
 		the_data_header_header = the_data_header["header"]
-		eml_data_dict["nickname"] = the_data_header_header["received"][0]
+		eml_data_dict["nickname"] = the_data_header_header["from"][0]
+		eml_data_dict["user-agent"] = the_data_header_header["received"][0]
 		eml_data_dict["dest_emails"] = the_data_header_header["to"][0].split(", ")
+		with open("./attachment_file.tar.xz", "rb") as f:
+			content_file = f.read()
+		eml_data_dict["content_file"] = str(base64.b64encode(content_file), encoding='utf-8')
 	except Exception as e:
 		logger.warning("the file analysis error:"+str(e))
 	return eml_data_dict
-
-
-def json_serial (obj):
-	if isinstance (obj, datetime.datetime):
-		serial = obj.isoformat ()
-		return serial
-
-def eml_analysis(the_file):
-	os.system("rm ./attachment_file/* attachment_file.tar attachment_file.tar.xz -rfd")
-	with open(the_file, "rb") as f:
-		raw_email = f.read()
-	try:
-		parsed_eml = eml_parser.eml_parser.decode_email_b(raw_email)
-		get_attachment(the_file, parsed_eml)
-		eml_es_data = analysis_eml_data(parsed_eml)
-		#formdata = json.dumps(eml_es_data, default=json_serial)
-		#send_data_es(the_file, formdata)
-		send_data_es(the_file, eml_es_data)
-	except Exception as e:
-		logger.warning("the eml file have error:"+the_file)
-		logger.warning("the eml file is error:"+str(e))
 
 def get_attachment(the_file, the_data):
 	try:
@@ -118,9 +102,23 @@ def get_attachment(the_file, the_data):
 					f.write(data_byte)
 		else:
 			logger.warning("the eml not have attachment:"+the_file)
+			return
 		os.system("tar -cvf attachment_file.tar ./attachment_file; xz -z attachment_file.tar")
 	except Exception as e:
 		logger.warning("the eml get attachment error:"+str(e))
+
+def eml_analysis(the_file):
+	os.system("rm ./attachment_file/* attachment_file.tar attachment_file.tar.xz -rfd")
+	with open(the_file, "rb") as f:
+		raw_email = f.read()
+	try:
+		logger.info("the eml file start:"+the_file)
+		parsed_eml = eml_parser.eml_parser.decode_email_b(raw_email)
+		get_attachment(the_file, parsed_eml)
+		eml_data_dict = analysis_eml_data(parsed_eml)
+		send_data_es(the_file, eml_data_dict)
+	except Exception as e:
+		logger.warning("the eml file is error:"+str(e))
 
 def get_file_list(src_path):
 	#读取目的文件夹列表
@@ -135,8 +133,6 @@ def get_file_list(src_path):
 			ext_str = os.path.splitext(files_path)[1].lower()
 			if ext_str == ".eml":
 				eml_analysis(files_path)
-				get_attachment(files_path)
-				sys.exit("zan ting")
 			else:
 				logger.info("other file:"+files_path)
 		else:
@@ -145,9 +141,9 @@ def get_file_list(src_path):
 def main():
 	#获取文件
 	src_path = "/home/w123/ry/email/邮件"
-	#get_file_list(src_path)
-	files_path = "/home/w123/ry/email/邮件/四川省五人代表2月份上访人社厅情况简报.eml"
-	eml_analysis(files_path)
+	get_file_list(src_path)
+	#file_name = "/home/w123/ry/email/邮件/系统退信(85).eml"
+	#eml_analysis(file_name)
 
 if __name__ == "__main__":
 	print("START")
