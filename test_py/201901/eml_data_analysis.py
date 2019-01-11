@@ -9,6 +9,8 @@ import re
 import time
 import base64
 import hashlib
+import quopri
+import email
 import eml_parser
 import logging
 logger = logging.getLogger("eml_file_analysis")
@@ -50,34 +52,86 @@ def send_data_es(the_file, data):
 	except Exception as e:
 		logger.warning("ask es is error:"+str(e))
 
-def analysis_eml_data(the_data):
+def analysis_eml_data(the_data, content_data):
 	eml_data_dict = {}
 	try:
-		#the_data_attachment = the_data["attachment"]
-		#the_data_body = the_data["body"]
+		#index
 		eml_data_dict["index"] = "email_parse"
 
 		the_data_header = the_data["header"]
 		timestamp = the_data_header["date"].timestamp()
 		timestamp_str = str(int(timestamp))
+		#timestamp
 		eml_data_dict["timestamp"] = timestamp_str
+		#email
 		eml_data_dict["email"] = the_data_header["from"]
 		type_str = the_data_header["from"].split("@")[1]
+		#type
 		eml_data_dict["type"] = type_str
+		#id
 		eml_data_dict["id"] = the_data_header["from"]+"_"+timestamp_str
+		#title
 		eml_data_dict["title"] = the_data_header["subject"]
+		#host_ip
 		eml_data_dict["host_ip"] = the_data_header["received_ip"][0]
 
 		the_data_header_header = the_data_header["header"]
+		#nickname
 		eml_data_dict["nickname"] = the_data_header_header["from"][0]
-		eml_data_dict["user-agent"] = the_data_header_header["received"][0]
-		eml_data_dict["dest_emails"] = the_data_header_header["to"][0].split(", ")
+		#user_agent
+		eml_data_dict["user_agent"] = the_data_header_header["received"][0]
+		#dest_emails
+		eml_data_dict["dest_emails"] = json.dumps(the_data_header_header["to"][0].split(", "))
+		#content
+		eml_data_dict["content"] = content_data
+
+		filename_list = []
+		the_data_attachment = the_data["attachment"]
+		for file_obj in the_data_attachment:
+			filename_list.append(file_obj["filename"])
+		#content_filename_list
+		eml_data_dict["content_filename_list"] = filename_list
 		with open("./attachment_file.tar.xz", "rb") as f:
 			content_file = f.read()
+		#content_file
 		eml_data_dict["content_file"] = str(base64.b64encode(content_file), encoding='utf-8')
+		#content_type
+		eml_data_dict["content_type"] = "application/x-xz-compressed-tar"
 	except Exception as e:
 		logger.warning("the file analysis error:"+str(e))
 	return eml_data_dict
+
+def data_encode(data):
+	data_str = ""
+	try:
+		type_str = data[0]
+		if type_str == b" base64":
+			data_bytes = base64.b64decode(data[1])
+			data_str = data_bytes.decode("gbk")
+		elif type_str == b"quoted-printable":
+			str_data = data[1].decode("utf-8")
+			data_bytes = quopri.decodestring(str_data)
+			data_str = data_bytes.decode("gbk")
+	except Exception as e:
+		logger.warning("the content encode error:"+str(e))
+	return data_str
+	
+
+def get_content(the_file):
+	content_list = []
+	try:
+		with open(the_file, "r") as f:
+			msg = email.message_from_file(f)
+		for par in msg.walk():
+			if not par.is_multipart():
+				name = par.get_param("name")
+				if not name:
+					content_bytes = par.get_payload(decode=True)
+					content_list.append(content_bytes.decode("gbk", "ignore"))
+		content_str = '\n\n'.join(content_list)
+	except Exception as e:
+		logger.warning("the eml get content_data error:"+str(e))
+	return content_str
 
 def get_attachment(the_file, the_data):
 	try:
@@ -88,7 +142,7 @@ def get_attachment(the_file, the_data):
 		with open(the_file, "rb") as f:
 			content_data = f.read()
 		patter = r'Content-Disposition: attachment.*?\r\n\r\n(.*?)\r\n------=_Part'
-		patter_bytes = bytes(patter, encoding = "utf8")
+		patter_bytes = bytes(patter, encoding = "utf-8")
 		res = re.findall(patter_bytes, content_data, re.S|re.I)
 		if len(res) > 0:
 			for data_base64 in res:
@@ -114,8 +168,9 @@ def eml_analysis(the_file):
 	try:
 		logger.info("the eml file start:"+the_file)
 		parsed_eml = eml_parser.eml_parser.decode_email_b(raw_email)
+		content_data = get_content(the_file)
 		get_attachment(the_file, parsed_eml)
-		eml_data_dict = analysis_eml_data(parsed_eml)
+		eml_data_dict = analysis_eml_data(parsed_eml, content_data)
 		send_data_es(the_file, eml_data_dict)
 	except Exception as e:
 		logger.warning("the eml file is error:"+str(e))
@@ -142,8 +197,7 @@ def main():
 	#获取文件
 	src_path = "/home/w123/ry/email/邮件"
 	get_file_list(src_path)
-	#file_name = "/home/w123/ry/email/邮件/系统退信(85).eml"
-	#eml_analysis(file_name)
+	#eml_analysis("/home/w123/ry/email/邮件/活动(2).eml")
 
 if __name__ == "__main__":
 	print("START")

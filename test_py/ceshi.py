@@ -3,6 +3,7 @@
 
 import os,sys
 import base64
+from urllib import parse, request
 import logging
 logger = logging.getLogger("simple_example")
 logger.setLevel(logging.DEBUG)
@@ -48,15 +49,27 @@ def file_operation():
 		res_dict[split_str] = len(content.split(split_byte))
 	print(res_dict)
 
+def str_byte():
+	str_a = b"afcsaaswffv12"
+	print("str_a type:", type(str_a))
+	print("str_a:", str_a)
+	print("str_a str:", str(str_a, encoding="utf-8"))
+	for data_alone in str_a:
+		print("data_alone str:", chr(data_alone))
+	str_aa = {"asd":"请求党和国家为分配到"}
+	sss = parse.urlencode(str_aa).encode('utf-8')
+	print(sss)
+	sss1 = parse.urlencode(str_aa)
+	print(sss1)
+	print(str_a.decode("utf-8"))
+
 def main():
 	print("main start")
 	#文件操作
 #	file_operation()
-	logger.debug("debug message")
-	logger.info("info message")
-	logger.warning("warning message")
-	logging_test()
-	mk_path()
+	#logging_test()
+	#mk_path()
+	str_byte()
 	print("main end")
 
 
