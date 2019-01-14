@@ -5,8 +5,8 @@ import (
 	"hbase_search_database"
 )
 
-func Put_api_func(Hrest *hbase_search_database.Hbase_rest) {
-	res := Hrest.Put_data_api(Put_data)
+func (self *hbase_search_database.Hbase_rest) Put_api_func (table_name string, put_data map[string]map[string]string) {
+	res := Hrest.Put_data_api(table_name, put_data)
 	if !res {
 		fmt.Println("put api insert error")
 	}

@@ -24,4 +24,4 @@ if __name__ == "__main__":
 	b = sys.argv[2]
 	c = sys.argv[3]
 	d = sys.argv[4]
-	main(a, b, c, d)
+	main(a,b,c,d)

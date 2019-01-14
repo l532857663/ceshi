@@ -9,7 +9,6 @@ import (
 	"hbase_search_database"
 )
 
-var Put_data string
 var Scan_data string
 var Test_json map[string]string
 var Column_find []string
@@ -33,41 +32,12 @@ func Test_get_data (t *testing.T) {
 //	Scan_rest_func(Hrest)
 
 //	Get_api_func(Hrest)
-//	Put_api_func(Hrest)
+//	Hrest.Put_api_func("data_analysis_task", Put_data)
 //	Scan_api_func(Hrest)
 }
 
 func Get_data() {
 	//插入数据
-	Put_data = `{
-		"configs" : [
-			{"direct":"users"},
-			{"indirect":"userinfo:users_username"}
-		],
-		"datas" : [
-			{
-				"userinfo:users_username" : "admin",
-				"userinfo:users_password" : "123456",
-				"userinfo:users_name" : "Administartor"
-			},
-			{
-				"userinfo:users_username" : "qazasdasd",
-				"userinfo:users_password" : "123666",
-				"userinfo:users_name" : "张三"
-			},
-			{
-				"userinfo:users_username" : "qweasdasd",
-				"userinfo:users_password" : "123888",
-				"userinfo:users_name" : "李四"
-			},
-			{
-				"userinfo:users_username" : "qazqweqwe",
-				"userinfo:users_password" : "666888",
-				"userinfo:users_name" : "赵五"
-			}
-		]
-	}`
-
 	Put_data = `{
 			"admin":{
 				"userinfo:users_username" : "admin",
@@ -81,18 +51,6 @@ func Get_data() {
 			},
 		}`
 
-	Put_data = `[
-			{
-				"userinfo:users_username" : "admin",
-				"userinfo:users_password" : "123456",
-				"userinfo:users_name" : "Administartor"
-			},
-			{
-				"userinfo:users_username" : "qazasdasd",
-				"userinfo:users_password" : "123666",
-				"userinfo:users_name" : "张三"
-			},
-		]`
 	//Scan_row
 	Scan_data = `{
 		"batch" : "6"

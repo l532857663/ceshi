@@ -7,7 +7,7 @@ import (
 	"bufio"
 	"io"
 	"os"
-	"strings"
+//	"strings"
 	"time"
 	"syscall"
 )
@@ -49,12 +49,6 @@ func run_py() {
 		line, err2 := reader.ReadString('\n')
 		if err2 != nil || io.EOF == err2 {
 			fmt.Println ("aaa:", err2)
-			break
-		}
-		if strings.Compare(line, "error\n") == 0 {
-			fmt.Println("the py is error")
-			res := timer.Stop()
-			fmt.Println("Stop:", res)
 			break
 		}
 

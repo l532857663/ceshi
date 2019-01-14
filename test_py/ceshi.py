@@ -63,13 +63,21 @@ def str_byte():
 	print(sss1)
 	print(str_a.decode("utf-8"))
 
+def join_split():
+	content_list = []
+	content_str = "\n\n".join(split_list)
+	content_str1 = "\n\n".join(content_list)
+	print("'"+content_str+"'")
+	print("'"+content_str1+"'")
+
 def main():
 	print("main start")
 	#文件操作
 #	file_operation()
 	#logging_test()
 	#mk_path()
-	str_byte()
+	#str_byte()
+	join_split()
 	print("main end")
 
 

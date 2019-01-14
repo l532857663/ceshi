@@ -81,41 +81,31 @@ def analysis_eml_data(the_data, content_data):
 		#user_agent
 		eml_data_dict["user_agent"] = the_data_header_header["received"][0]
 		#dest_emails
-		eml_data_dict["dest_emails"] = json.dumps(the_data_header_header["to"][0].split(", "))
+		dest_emails = the_data_header_header["to"][0].split(", ")
+		dest_emails_str = json.dumps(dest_emails)
+		if not dest_emails_str == "":
+			eml_data_dict["dest_emails"] = dest_emails_str
 		#content
-		eml_data_dict["content"] = content_data
+		if not content_data == "":
+			eml_data_dict["content"] = content_data
 
 		filename_list = []
 		the_data_attachment = the_data["attachment"]
 		for file_obj in the_data_attachment:
 			filename_list.append(file_obj["filename"])
 		#content_filename_list
-		eml_data_dict["content_filename_list"] = filename_list
+		filename_list_str = json.dumps(filename_list)
+		if not filename_list == "":
+			eml_data_dict["content_filename_list"] = filename_list_str
 		with open("./attachment_file.tar.xz", "rb") as f:
 			content_file = f.read()
 		#content_file
 		eml_data_dict["content_file"] = str(base64.b64encode(content_file), encoding='utf-8')
 		#content_type
-		eml_data_dict["content_type"] = "application/x-xz-compressed-tar"
+		eml_data_dict["content_file_type"] = "application/x-xz-compressed-tar"
 	except Exception as e:
 		logger.warning("the file analysis error:"+str(e))
 	return eml_data_dict
-
-def data_encode(data):
-	data_str = ""
-	try:
-		type_str = data[0]
-		if type_str == b" base64":
-			data_bytes = base64.b64decode(data[1])
-			data_str = data_bytes.decode("gbk")
-		elif type_str == b"quoted-printable":
-			str_data = data[1].decode("utf-8")
-			data_bytes = quopri.decodestring(str_data)
-			data_str = data_bytes.decode("gbk")
-	except Exception as e:
-		logger.warning("the content encode error:"+str(e))
-	return data_str
-	
 
 def get_content(the_file):
 	content_list = []

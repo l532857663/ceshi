@@ -10,7 +10,7 @@ import (
 	"encoding/json"
 )
 
-func (self *Hbase_rest) Put_data_api (data_str string) (ok bool) {
+func (self *Hbase_rest) Put_data_api (table_name string, put_data map[string]map[string]string) (ok bool) {
 	var res bool
 	res = self.Set_url_put ()
 	if !res {

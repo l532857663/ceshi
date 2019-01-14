@@ -9,7 +9,8 @@ func main () {
 	fmt.Println("START")
 //	qiepian()
 //	dingshi()
-	byte2string()
+//	byte2string()
+	map_func()
 	fmt.Println("END")
 }
 
@@ -65,4 +66,17 @@ byte跟string转换
 */
 func byte2string() {
 	fmt.Println("byte2string")
+}
+
+/**
+ * map的相关
+ */
+func map_func() {
+	var xxx map[string]string
+	sss := map[string]string {
+		"asdad":"asd",
+	}
+	//xxx = sss
+	fmt.Println(sss)
+	fmt.Println(len(xxx))
 }

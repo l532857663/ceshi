@@ -25,9 +25,11 @@ type conntent_obj struct {
 }
 
 type task_obj struct {
-	Rowkey string `json:"rowkey,omitempty"`
-	Status string `json:"info:status,omitempty"`
+	Task_rowkey string `json:"task_rowkey,omitempty"`
+	User_rowkey string `json:"user_rowkey,omitempty"`
 	Userid string `json:"info:userid,omitempty"`
+	Module string `json:"module,omitempty"`
+	Spider_module string `json:"spider_method,omitempty"`
 	Email string `json:"info:email,omitempty"`
 	Password string `json:"info:password,omitempty"`
 	Receive_url string `json:"info:receive_url,omitempty"`
@@ -39,6 +41,7 @@ func run_py(task_data task_obj) (ok bool) {
 //	fmt.Println("the task data:", task_data)
 	var parameter []string
 	parameter = append(parameter, task_data.Userid)
+	parameter = append(parameter, task_data.Spider_module)
 	parameter = append(parameter, task_data.Email)
 	parameter = append(parameter, task_data.Password)
 	parameter = append(parameter, task_data.Receive_url)
@@ -54,7 +57,7 @@ func run_py(task_data task_obj) (ok bool) {
 	}
 	cmd.Start()
 	//启动定时器，监控py是否超时无回复
-	timer := time.AfterFunc(time.Duration(5)*time.Minute, func () {
+	timer := time.AfterFunc(time.Duration(30)*time.Minute, func () {
 		if cmd.Process != nil {
 			fmt.Println("py pid:", cmd.Process.Pid)
 		//	syscall.Kill(-cmd.Process.Pid, syscall.SIGKILL)
@@ -68,13 +71,12 @@ func run_py(task_data task_obj) (ok bool) {
 			fmt.Println("py over or err:", err)
 			break
 		}
-		//判断py回复数据
-		res := judge_data(line)
-		if !res {
-			break
+		if strings.Compare(line, "") == 0 {
+			fmt.Println("python line:", line)
+			continue
 		}
 		//重置定时装置
-		ok := timer.Reset(time.Duration(5)*time.Minute)
+		ok := timer.Reset(time.Duration(30)*time.Minute)
 		if !ok {
 			break
 		}
@@ -86,12 +88,6 @@ func run_py(task_data task_obj) (ok bool) {
 		return
 	}
 	ok = true
-	return
-}
-//判断py回复数据
-func judge_data (data_str string) (res bool){
-	fmt.Sprint(data_str)
-	res = true
 	return
 }
 
@@ -110,17 +106,20 @@ func analysis_data(body []byte){
 	}
 	//调用py程序
 	var ok bool
+	var post_str string
 	var method string
 	res := run_py(data_obj.Task_obj)
 	if !res {
 		time.Sleep(time.Duration (10) * time.Second)
-		method = "/reduction_task?row_key=" + data_obj.Task_obj.Rowkey
+		post_str = `?task_rowkey=` + data_obj.Task_obj.Task_rowkey + `&user_rowkey=` + data_obj.Task_obj.User_rowkey + `&module=` + data_obj.Task_obj.Module + `&method=` + data_obj.Task_obj.Method
+		method = `/reduction_task` + post_str
 		body, ok = conncet_go(Addr, Port, method)
 		if !ok {
 			return
 		}
 	}else{
-		method = `/success_task?row_key=` + data_obj.Task_obj.Rowkey
+		post_str = `?task_rowkey=` + data_obj.Task_obj.Task_rowkey + `&user_rowkey=` + data_obj.Task_obj.User_rowkey + `&module=` + data_obj.Task_obj.Module + `&method=` + data_obj.Task_obj.Method
+		method = `/success_task` + post_str
 		body, ok = conncet_go(Addr, Port, method)
 		if !ok {
 			return

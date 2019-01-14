@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -- coding: utf-8 --
 
 import os
@@ -462,9 +462,15 @@ class Twitter:
             self.email = email
             self.password = password
             self.receiveurl = receiveurl
+            print self.id
+            print self.email
+            print self.password
+            print self.receiveurl
+            print module
             self.login_twitter()
 
             all_rule = json.load(open("rule.json", 'r'))
+            print module
             module_rule = all_rule.get(module)
             self.analysis_rule(module_rule, "")
 
