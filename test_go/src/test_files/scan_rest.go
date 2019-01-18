@@ -5,7 +5,7 @@ import (
 
 	"strings"
 	"hbase_search_database"
-	"encoding/json"
+//	"encoding/json"
 )
 
 func Scan_rest_func(Hrest *hbase_search_database.Hbase_rest) {
@@ -21,9 +21,6 @@ func Scan_rest_func(Hrest *hbase_search_database.Hbase_rest) {
 	fmt.Println("scan method:", Hrest.Method)
 
 	//扫描条件
-	scanner := `{
-		"batch" : "6"
-	}`
 	filter_str := hbase_search_database.Get_filter_str(Test_json)
 	fmt.Println("filter_str:", filter_str)
 //	filter_str = `{"type": "FilterList","op": "MUST_PASS_ALL","filters": [{"type":"ValueFilter","op":"EQUAL","comparator":{"type":"BinaryComparator","value":"ZG9pbmc="}}]}`
@@ -34,11 +31,7 @@ func Scan_rest_func(Hrest *hbase_search_database.Hbase_rest) {
 
 	//string to obj
 	scanner_data := new (hbase_search_database.Hbase_scanner_json)
-	err := json.Unmarshal([]byte(scanner), &scanner_data)
-	if err != nil {
-		fmt.Println("json Marshal error:", err)
-		return
-	}
+	scanner_data.Batch = "6"
 //	scanner_data.Columns = Column_find
 	scanner_data.Filter = filter_str
 

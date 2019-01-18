@@ -7,15 +7,18 @@ import (
 
 func main () {
 	fmt.Println("START")
+	say_hi()
 //	qiepian()
 //	dingshi()
 //	byte2string()
-	map_func()
+//	map_func()
 	fmt.Println("END")
 }
 
 func say_hi () {
 	fmt.Println("Hello")
+	fmt.Println("time:", time.Now())
+	time.Sleep(5000000000)
 	fmt.Println("time:", time.Now())
 }
 

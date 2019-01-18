@@ -46,8 +46,16 @@ bin/hbase-daemon.sh stop rest
 hdfs dfs -du -h hdfs://DXY:9000/hbase_db/data/default/[表名]
 查看表数据
 hdfs dfs -ls -h hdfs://DXY:9000/hbase_db/data/default/[表名]
+上传数据
+file:///  test1 -> hdfs://  test
+hdfs dfs -put test1 test
+hdfs:// in -> file:/// getin
+hdfs dfs -get in getin
 
-数据检测
-hbase hbck
+
 数据修复
-hbase hbck -fix
+hbase hbck 只做检查
+hbase hbck -fix 数据修复
+hbase hbck -fixMeta 根据region目录中的.regioninfo，生成meta表`
+hbase hbck -fixAssignments 把meta表中记录的region分配给regionserver
+hbase hbck -fixHdfsOrphans 修复.regioninfo文件

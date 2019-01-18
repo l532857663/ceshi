@@ -21,12 +21,21 @@ func Put_rest_func(Hrest *hbase_search_database.Hbase_rest) {
 	Hrest.Set_method_put()
 	fmt.Println("put method:", Hrest.Method)
 
-	put_data_json := new (hbase_search_database.Hbase_insert_json)
-	err := json.Unmarshal([]byte(Put_data), &put_data_json)
-	if err != nil {
-		fmt.Println("json Marshal error:", err)
-		return
+	//插入数据
+	put_data_json := make(map[string]map[string]string)
+	tmp_data := map[string]string {
+		"userinfo:users_username" : "admin",
+		"userinfo:users_password" : "123456",
+		"userinfo:users_name" : "Administartor",
 	}
+	tmp_data1 := map[string]string {
+	   "userinfo:users_username" : "qazasdasd",
+	   "userinfo:users_password" : "123666",
+	   "userinfo:users_name" : "张三",
+	}
+	put_data_json["admin"] = tmp_data
+	put_data_json["qazasdasd"] = tmp_data1
+
 	res = Hrest.Set_data_put(put_data_json)
 	if !res {
 		fmt.Println("put data set error!")
