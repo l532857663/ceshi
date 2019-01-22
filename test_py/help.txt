@@ -50,6 +50,11 @@
 
 201901:
 	get_type.py: 遍历目的目录，获取目的文件
+	eml_data_analysis: 解析eml文件，获取各种内容，发送至es数据库
+		eml_data_analysis.py: 主程序
+		get_eml_data.py: 依赖库解析eml文件
+		attachment_file: eml附件放置文件夹，方便打包
+	file_data_analysis:
 
 structure_test:
 	conf:	对应配置文件

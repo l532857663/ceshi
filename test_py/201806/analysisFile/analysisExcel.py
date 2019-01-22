@@ -12,7 +12,7 @@ bk.nsheets                  文件sheet页总数
 bk.sheet_by_name('页名')    根据页名获取内容
 bk.sheet_by_index(x)        根据定位获取内容
 cell_value(x,y)             定位函数，所给位置的值；
-row_value(x)                行定位，所给行的全部列的值(列表)；
+row_values(x)                行定位，所给行的全部列的值(列表)；
 '''
 def excelAnalysis(fname):
     bk = xlrd.open_workbook(fname)

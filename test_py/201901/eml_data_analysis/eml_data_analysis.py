@@ -9,7 +9,7 @@ import re
 import time
 import base64
 import hashlib
-import quopri
+#import quopri
 import email
 import eml_parser
 import logging
