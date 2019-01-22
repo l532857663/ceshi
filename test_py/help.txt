@@ -55,6 +55,14 @@
 		get_eml_data.py: 依赖库解析eml文件
 		attachment_file: eml附件放置文件夹，方便打包
 	file_data_analysis:
+		xml_881903com_analysis.py
+		xml_nccu_edu_tw_analysis.py
+		xml_tw_shop_analysis.py
+		txt_data_analysis.py
+		txt_data1_analysis.py
+		html_data_analysis.py
+	xls_data_analysis:
+		xml_data_analysis.py
 
 structure_test:
 	conf:	对应配置文件
