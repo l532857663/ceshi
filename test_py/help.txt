@@ -63,6 +63,7 @@
 		html_data_analysis.py
 	xls_data_analysis:
 		xml_data_analysis.py
+	class_test: python类，测试代码
 
 structure_test:
 	conf:	对应配置文件
