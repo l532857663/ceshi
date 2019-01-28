@@ -57,6 +57,7 @@ def analysis_eml_data(the_data, content_data):
 	try:
 		#index
 		eml_data_dict["index"] = "email_parse"
+		eml_data_dict["hbase_rowkey"] = "email_test_data"
 
 		the_data_header = the_data["header"]
 		timestamp = the_data_header["date"].timestamp()

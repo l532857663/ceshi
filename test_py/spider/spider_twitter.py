@@ -34,27 +34,6 @@ class Twitter:
     def __init__(self):
         # login url
         self.baseURL = 'https://twitter.com'
-        # self.headers = {
-        #     'Host':
-        #     'twitter.com',
-        #     'Accept':
-        #     'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-        #     'User-Agent':
-        #     'Mozilla/5.0 (Windows NT 5.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36',
-        #     'Referer':
-        #     'https://twitter.com/',
-        #     'Content-Type':
-        #     'application/x-www-form-urlencoded',
-        #     'Origin':
-        #     'https://twitter.com',
-        #     'Upgrade-Insecure-Requests':
-        #     '1',
-        #     'Accept-Language':
-        #     'zh-CN,zh;q=0.8',
-        #     'Connection':
-        #     'Keep-Alive'
-        # }
-
         self.headers = [
             "Host:twitter.com",
             "Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
@@ -242,9 +221,7 @@ class Twitter:
             self.logger.info(response)
 
         except Exception, e:
-            #traceback.print_exc()
-            self.logger.error("send data err")
-            self.logger.error(e)
+            self.logger.error(traceback.format_exc())
         finally:
             self.logger.info('### -sent data end- ###')
 
@@ -291,8 +268,7 @@ class Twitter:
 
             return data_dict
         except Exception, e:
-            #traceback.print_exc()
-            self.logger.error(e)
+            self.logger.error(traceback.format_exc())
             return {}
         finally:
             self.logger.info('### -get image end- ###')
@@ -313,8 +289,7 @@ class Twitter:
 
             return response
         except Exception, e:
-            #traceback.print_exc()
-            self.logger.error(e)
+            self.logger.error(traceback.format_exc())
         finally:
             self.logger.info('### -get response end- ###')
 
@@ -329,8 +304,7 @@ class Twitter:
                     data_dict[key] = data
             return data_dict
         except Exception, e:
-            #traceback.print_exc()
-            self.logger.error(e)
+            self.logger.error(traceback.format_exc())
         finally:
             self.logger.info('### -analysis parameter end- ###')
 
@@ -387,8 +361,7 @@ class Twitter:
             else:
                 return data_dict
         except Exception, e:
-            #traceback.print_exc()
-            self.logger.error(e)
+            self.logger.error(traceback.format_exc())
         finally:
             self.logger.info('### -analysis data end- ###')
 
@@ -419,21 +392,19 @@ class Twitter:
             if data_type == "json":
                 jsondata = json.loads(response)
                 response = jsondata["items_html"]
-                html_data = etree.HTML(
+                html = etree.HTML(
                     response.replace('\\n', '').replace('\n', ''))
                 new_parameter["min_position"] = jsondata["min_position"]
                 if parameter and (new_parameter["min_position"] ==
                                   parameter["min_position"]):
                     new_parameter = ""
-
             elif data_type == "html":
-                html_data = etree.HTML(
-                    response.replace('\\n', '').replace('\n', ''))
-                new_parameter = self.analysis_parameter(
-                    html_data, parameter_rule)
+                html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+                new_parameter = self.analysis_parameter(html, parameter_rule)
 
-            if type(html_data) is not NoneType:
-                self.analysis_data(html_data, data_rule)
+            if html is not None:
+            #if type(html) is not NoneType:
+                self.analysis_data(html, data_rule)
 
             if node_next:
                 node_rule = rule.get("node")
@@ -448,12 +419,11 @@ class Twitter:
                 return new_parameter
 
         except Exception, e:
-            #traceback.print_exc()
-            self.logger.error(e)
+            self.logger.error(traceback.format_exc())
         finally:
             self.logger.info('### -analysis rule end- ###')
 
-    def run(self, interval, target, module, email, password, receiveurl):
+    def run(self, target, module, email, password, receiveurl):
         try:
             self.logger.info("Crawl start(%s),Crawl module is twitter %s" %
                              (time.ctime(time.time()), module))
@@ -462,21 +432,18 @@ class Twitter:
             self.email = email
             self.password = password
             self.receiveurl = receiveurl
-            print self.id
-            print self.email
-            print self.password
-            print self.receiveurl
-            print module
-            self.login_twitter()
+            # if self.login_twitter():
+            #       raise Exception,"Invalid level!"
 
-            all_rule = json.load(open("rule.json", 'r'))
-            print module
+            all_rule = json.load(open("rule_twitter.json", 'r'))
             module_rule = all_rule.get(module)
-            self.analysis_rule(module_rule, "")
+            if module_rule:
+                self.analysis_rule(module_rule, "")
+            else:
+                raise Exception, ("Target module does not exist,The incoming module is %s" % module)
 
         except Exception, e:
-            #traceback.print_exc()
-            self.logger.error(e)
+            self.logger.error(traceback.format_exc())
         finally:
             self.logger.info("End of crawl(%s)" % (time.ctime(time.time())))
 
@@ -499,13 +466,5 @@ if __name__ == "__main__":
     password = sys.argv[4]
     receiveurl = sys.argv[5]
 
-    interval = 60
-    # target = 'PDChina'
-    # module = "information"
-    # email = 'qazxsw31154@gmail.com'
-    # password = '1qaz@WSX'
-    # receiveurl = 'http://192.168.201.110:4444/receive'
-
     twitter = Twitter()
-    twitter.run(interval, target, module, email, password, receiveurl)
-
+    twitter.run(target, module, email, password, receiveurl)

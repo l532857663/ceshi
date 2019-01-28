@@ -4,8 +4,10 @@
 import os,sys
 import time
 
-userid_list = ["KatzeGato1","A404411","bless_miles","ak47dealer","WilderMohn","baotong1932","papa_pahoo","hrw_chinese","ChenYun","Kenn_Zou","CaoChangqing","datomen","Yehuosi","xzs233"]
-module_list = ["followers","following","information","likes","media","tweets","tweets_replies"]
+#userid_list = ["KatzeGato1","A404411","bless_miles","ak47dealer","WilderMohn","baotong1932","papa_pahoo","hrw_chinese","ChenYun","Kenn_Zou","CaoChangqing","datomen","Yehuosi","xzs233"]
+#module_list = ["followers","following","information","likes","media","tweets","tweets_replies"]
+userid_list = ["KatzeGato1"]
+module_list = ["followers"]
 
 def main():
 	print("START\n")

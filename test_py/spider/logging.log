@@ -1,0 +1,1829 @@
+[2019-01-28 14:27:33] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 14:27:33 2019),Crawl module is twitter followers
+[2019-01-28 14:27:33] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 14:27:33] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 14:27:34] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 14:27:34] INFO [analysis_parameter: spider_twitter.py, 299] ### -analysis parameter start- ###
+[2019-01-28 14:27:34] INFO [analysis_parameter: spider_twitter.py, 309] ### -analysis parameter end- ###
+[2019-01-28 14:27:34] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:27:34] INFO [analysis_data: spider_twitter.py, 366] ### -analysis data end- ###
+[2019-01-28 14:27:34] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 14:27:34] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 14:27:34 2019)
+[2019-01-28 14:27:34] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 14:27:34 2019),Crawl module is twitter following
+[2019-01-28 14:27:34] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 14:27:34] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 14:27:36] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 14:27:36] INFO [analysis_parameter: spider_twitter.py, 299] ### -analysis parameter start- ###
+[2019-01-28 14:27:36] INFO [analysis_parameter: spider_twitter.py, 309] ### -analysis parameter end- ###
+[2019-01-28 14:27:36] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:27:36] INFO [analysis_data: spider_twitter.py, 366] ### -analysis data end- ###
+[2019-01-28 14:27:36] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 14:27:36] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 14:27:36 2019)
+[2019-01-28 14:27:36] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 14:27:36 2019),Crawl module is twitter information
+[2019-01-28 14:27:36] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 14:27:36] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 14:27:37] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 14:27:37] INFO [analysis_parameter: spider_twitter.py, 299] ### -analysis parameter start- ###
+[2019-01-28 14:27:37] INFO [analysis_parameter: spider_twitter.py, 309] ### -analysis parameter end- ###
+[2019-01-28 14:27:37] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:27:37] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:27:37] INFO [analysis_data: spider_twitter.py, 366] ### -analysis data end- ###
+[2019-01-28 14:27:37] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:27:37] INFO [analysis_data: spider_twitter.py, 366] ### -analysis data end- ###
+[2019-01-28 14:27:37] INFO [get_image: spider_twitter.py, 230] ### -get image start- ###
+[2019-01-28 14:27:37] INFO [get_image: spider_twitter.py, 243] icon
+[2019-01-28 14:27:37] INFO [get_image: spider_twitter.py, 244] https://pbs.twimg.com/profile_images/1062384812600840194/hCEDCpH6_400x400.jpg
+[2019-01-28 14:27:37] ERROR [get_image: spider_twitter.py, 271] Traceback (most recent call last):
+  File "./spider_twitter.py", line 252, in get_image
+    self.con.perform()
+error: (23, 'Failed writing header')
+
+[2019-01-28 14:27:37] INFO [get_image: spider_twitter.py, 274] ### -get image end- ###
+[2019-01-28 14:27:37] INFO [send_data: spider_twitter.py, 195] ### -sent data start- ###
+[2019-01-28 14:27:38] INFO [send_data: spider_twitter.py, 221] ok
+
+[2019-01-28 14:27:38] INFO [send_data: spider_twitter.py, 226] ### -sent data end- ###
+[2019-01-28 14:27:38] INFO [analysis_data: spider_twitter.py, 366] ### -analysis data end- ###
+[2019-01-28 14:27:38] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 14:27:38] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 14:27:38 2019)
+[2019-01-28 14:27:39] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 14:27:39 2019),Crawl module is twitter likes
+[2019-01-28 14:27:39] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 14:27:39] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 14:27:40] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 14:27:40] INFO [analysis_parameter: spider_twitter.py, 299] ### -analysis parameter start- ###
+[2019-01-28 14:27:40] INFO [analysis_parameter: spider_twitter.py, 309] ### -analysis parameter end- ###
+[2019-01-28 14:27:40] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:27:40] INFO [analysis_data: spider_twitter.py, 366] ### -analysis data end- ###
+[2019-01-28 14:27:40] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 14:27:40] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 14:27:40 2019)
+[2019-01-28 14:27:41] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 14:27:41 2019),Crawl module is twitter tweets
+[2019-01-28 14:27:41] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 14:27:41] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 14:27:41] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (23, 'Failed writing header')
+
+[2019-01-28 14:27:41] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 14:27:41] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 14:27:41] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 14:27:41] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 14:27:41 2019)
+[2019-01-28 14:27:41] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 14:27:41 2019),Crawl module is twitter tweets_replies
+[2019-01-28 14:27:42] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 14:27:42] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 14:27:43] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (23, 'Failed writing header')
+
+[2019-01-28 14:27:43] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 14:27:43] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 14:27:43] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 14:27:43] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 14:27:43 2019)
+[2019-01-28 14:27:43] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 14:27:43 2019),Crawl module is twitter followers
+[2019-01-28 14:27:43] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 14:27:43] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 14:27:44] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 14:27:44] INFO [analysis_parameter: spider_twitter.py, 299] ### -analysis parameter start- ###
+[2019-01-28 14:27:44] INFO [analysis_parameter: spider_twitter.py, 309] ### -analysis parameter end- ###
+[2019-01-28 14:27:44] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:27:44] INFO [analysis_data: spider_twitter.py, 366] ### -analysis data end- ###
+[2019-01-28 14:27:44] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 14:27:44] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 14:27:44 2019)
+[2019-01-28 14:27:44] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 14:27:44 2019),Crawl module is twitter following
+[2019-01-28 14:27:44] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 14:27:44] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 14:27:46] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 14:27:46] INFO [analysis_parameter: spider_twitter.py, 299] ### -analysis parameter start- ###
+[2019-01-28 14:27:46] INFO [analysis_parameter: spider_twitter.py, 309] ### -analysis parameter end- ###
+[2019-01-28 14:27:46] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:27:46] INFO [analysis_data: spider_twitter.py, 366] ### -analysis data end- ###
+[2019-01-28 14:27:46] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 14:27:46] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 14:27:46 2019)
+[2019-01-28 14:27:46] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 14:27:46 2019),Crawl module is twitter information
+[2019-01-28 14:27:46] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 14:27:46] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 14:27:48] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 14:27:48] INFO [analysis_parameter: spider_twitter.py, 299] ### -analysis parameter start- ###
+[2019-01-28 14:27:48] INFO [analysis_parameter: spider_twitter.py, 309] ### -analysis parameter end- ###
+[2019-01-28 14:27:48] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:27:48] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:27:48] INFO [analysis_data: spider_twitter.py, 366] ### -analysis data end- ###
+[2019-01-28 14:27:48] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:27:48] INFO [analysis_data: spider_twitter.py, 366] ### -analysis data end- ###
+[2019-01-28 14:27:48] INFO [get_image: spider_twitter.py, 230] ### -get image start- ###
+[2019-01-28 14:27:48] INFO [get_image: spider_twitter.py, 243] icon
+[2019-01-28 14:27:48] INFO [get_image: spider_twitter.py, 244] https://pbs.twimg.com/profile_images/1088120780444000256/oUX2VvQ__400x400.jpg
+[2019-01-28 14:27:49] INFO [get_image: spider_twitter.py, 274] ### -get image end- ###
+[2019-01-28 14:27:49] INFO [send_data: spider_twitter.py, 195] ### -sent data start- ###
+[2019-01-28 14:27:51] INFO [send_data: spider_twitter.py, 221] ok
+
+[2019-01-28 14:27:51] INFO [send_data: spider_twitter.py, 226] ### -sent data end- ###
+[2019-01-28 14:27:51] INFO [analysis_data: spider_twitter.py, 366] ### -analysis data end- ###
+[2019-01-28 14:27:51] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 14:27:51] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 14:27:51 2019)
+[2019-01-28 14:27:51] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 14:27:51 2019),Crawl module is twitter likes
+[2019-01-28 14:27:51] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 14:27:51] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 14:27:53] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 14:27:53] INFO [analysis_parameter: spider_twitter.py, 299] ### -analysis parameter start- ###
+[2019-01-28 14:27:53] INFO [analysis_parameter: spider_twitter.py, 309] ### -analysis parameter end- ###
+[2019-01-28 14:27:53] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:27:53] INFO [analysis_data: spider_twitter.py, 366] ### -analysis data end- ###
+[2019-01-28 14:27:53] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 14:27:53] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 14:27:53 2019)
+[2019-01-28 14:27:53] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 14:27:53 2019),Crawl module is twitter media
+[2019-01-28 14:27:53] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 14:27:53] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 14:27:55] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 14:27:55] INFO [analysis_parameter: spider_twitter.py, 299] ### -analysis parameter start- ###
+[2019-01-28 14:27:55] INFO [analysis_parameter: spider_twitter.py, 309] ### -analysis parameter end- ###
+[2019-01-28 14:27:55] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:27:55] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:27:55] INFO [get_image: spider_twitter.py, 230] ### -get image start- ###
+[2019-01-28 14:27:55] INFO [get_image: spider_twitter.py, 243] icon
+[2019-01-28 14:27:55] INFO [get_image: spider_twitter.py, 244] https://pbs.twimg.com/profile_images/1088120780444000256/oUX2VvQ__bigger.jpg
+[2019-01-28 14:27:56] INFO [get_image: spider_twitter.py, 274] ### -get image end- ###
+[2019-01-28 14:27:56] INFO [get_image: spider_twitter.py, 230] ### -get image start- ###
+[2019-01-28 14:27:56] INFO [get_image: spider_twitter.py, 243] content_img
+[2019-01-28 14:27:56] INFO [get_image: spider_twitter.py, 244] https://pbs.twimg.com/media/Dx-dplHUYAAiJTx.jpg
+[2019-01-28 14:27:57] INFO [get_image: spider_twitter.py, 274] ### -get image end- ###
+[2019-01-28 14:27:57] INFO [send_data: spider_twitter.py, 195] ### -sent data start- ###
+[2019-01-28 14:28:00] INFO [send_data: spider_twitter.py, 221] ok
+
+[2019-01-28 14:28:00] INFO [send_data: spider_twitter.py, 226] ### -sent data end- ###
+[2019-01-28 14:28:00] INFO [send_data: spider_twitter.py, 195] ### -sent data start- ###
+[2019-01-28 14:28:01] INFO [send_data: spider_twitter.py, 221] ok
+
+[2019-01-28 14:28:01] INFO [send_data: spider_twitter.py, 226] ### -sent data end- ###
+[2019-01-28 14:28:01] INFO [analysis_data: spider_twitter.py, 366] ### -analysis data end- ###
+[2019-01-28 14:28:01] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:28:01] INFO [get_image: spider_twitter.py, 230] ### -get image start- ###
+[2019-01-28 14:28:01] INFO [get_image: spider_twitter.py, 243] icon
+[2019-01-28 14:28:01] INFO [get_image: spider_twitter.py, 244] https://pbs.twimg.com/profile_images/1088120780444000256/oUX2VvQ__bigger.jpg
+[2019-01-28 14:28:01] INFO [get_image: spider_twitter.py, 274] ### -get image end- ###
+[2019-01-28 14:28:01] INFO [get_image: spider_twitter.py, 230] ### -get image start- ###
+[2019-01-28 14:28:01] INFO [get_image: spider_twitter.py, 243] content_img
+[2019-01-28 14:28:01] INFO [get_image: spider_twitter.py, 244] https://pbs.twimg.com/media/Dx-BnR4V4AApC6g.jpg
+[2019-01-28 14:28:02] INFO [get_image: spider_twitter.py, 274] ### -get image end- ###
+[2019-01-28 14:28:02] INFO [send_data: spider_twitter.py, 195] ### -sent data start- ###
+[2019-01-28 14:28:04] INFO [send_data: spider_twitter.py, 221] ok
+
+[2019-01-28 14:28:04] INFO [send_data: spider_twitter.py, 226] ### -sent data end- ###
+[2019-01-28 14:28:04] INFO [send_data: spider_twitter.py, 195] ### -sent data start- ###
+[2019-01-28 14:28:05] INFO [send_data: spider_twitter.py, 221] ok
+
+[2019-01-28 14:28:05] INFO [send_data: spider_twitter.py, 226] ### -sent data end- ###
+[2019-01-28 14:28:05] INFO [analysis_data: spider_twitter.py, 366] ### -analysis data end- ###
+[2019-01-28 14:28:05] INFO [analysis_data: spider_twitter.py, 314] ### -analysis data start- ###
+[2019-01-28 14:28:05] INFO [get_image: spider_twitter.py, 230] ### -get image start- ###
+[2019-01-28 14:28:05] INFO [get_image: spider_twitter.py, 243] icon
+[2019-01-28 14:28:05] INFO [get_image: spider_twitter.py, 244] https://pbs.twimg.com/profile_images/1088120780444000256/oUX2VvQ__bigger.jpg
+[2019-01-28 14:28:05] INFO [get_image: spider_twitter.py, 274] ### -get image end- ###
+[2019-01-28 14:28:05] INFO [get_image: spider_twitter.py, 230] ### -get image start- ###
+[2019-01-28 14:28:05] INFO [get_image: spider_twitter.py, 243] content_img
+[2019-01-28 14:28:05] INFO [get_image: spider_twitter.py, 244] https://pbs.twimg.com/media/Dx9d1mLVYAAf8tX.jpghttps://pbs.twimg.com/media/Dx9d2oxUcAAkmag.jpghttps://pbs.twimg.com/media/Dx9d3xpVsAE-2B9.jpghttps://pbs.twimg.com/media/Dx9d4utU8AEQUBr.jpg
+[2019-01-28 14:28:05] ERROR [get_image: spider_twitter.py, 261] code:404 
+[2019-01-28 14:28:05] ERROR [get_image: spider_twitter.py, 262] response: 
+[2019-01-28 14:28:05] ERROR [get_image: spider_twitter.py, 271] Traceback (most recent call last):
+  File "./spider_twitter.py", line 263, in get_image
+    raise Exception, ("get image error! httpcode:%d ") % (HttpCode)
+Exception: get image error! httpcode:404 
+
+[2019-01-28 14:28:05] INFO [get_image: spider_twitter.py, 274] ### -get image end- ###
+[2019-01-28 14:28:05] INFO [send_data: spider_twitter.py, 195] ### -sent data start- ###
+[2019-01-28 15:06:05] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:05 2019),Crawl module is twitter followers
+[2019-01-28 15:06:05] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:05] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:05] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:05] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:05] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:05] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:05] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:05 2019)
+[2019-01-28 15:06:05] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:05 2019),Crawl module is twitter following
+[2019-01-28 15:06:05] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:05] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:05] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:05] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:05] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:05] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:05] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:05 2019)
+[2019-01-28 15:06:05] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:05 2019),Crawl module is twitter information
+[2019-01-28 15:06:05] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:05] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:05] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:05] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:05] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:05] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:05] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:05 2019)
+[2019-01-28 15:06:05] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:05 2019),Crawl module is twitter likes
+[2019-01-28 15:06:05] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:05] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:05] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:05] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:05] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:05] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:05] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:05 2019)
+[2019-01-28 15:06:05] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:05 2019),Crawl module is twitter media
+[2019-01-28 15:06:05] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:05] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:05] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:05] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:05] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:05] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:05] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:05 2019)
+[2019-01-28 15:06:05] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:05 2019),Crawl module is twitter tweets
+[2019-01-28 15:06:05] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:05] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:05] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:05] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:05] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 15:06:05] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:05] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:05 2019)
+[2019-01-28 15:06:05] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:05 2019),Crawl module is twitter tweets_replies
+[2019-01-28 15:06:05] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:05] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:05] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:05] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:05] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:05] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:05] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:05 2019)
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:06 2019),Crawl module is twitter followers
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:06] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:06] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:06 2019)
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:06 2019),Crawl module is twitter following
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:06] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:06] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:06 2019)
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:06 2019),Crawl module is twitter information
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:06] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:06] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:06 2019)
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:06 2019),Crawl module is twitter likes
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:06] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:06] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:06 2019)
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:06 2019),Crawl module is twitter media
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:06] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:06] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:06 2019)
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:06 2019),Crawl module is twitter tweets
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:06] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:06] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:06 2019)
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:06 2019),Crawl module is twitter tweets_replies
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:06] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:06] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:06 2019)
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:06 2019),Crawl module is twitter followers
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:06] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:06] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:06 2019)
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:06 2019),Crawl module is twitter following
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:06] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:06] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:06 2019)
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:06 2019),Crawl module is twitter information
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:06] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:06] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:06 2019)
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:06 2019),Crawl module is twitter likes
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:06] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:06] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:06] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:06] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:06 2019)
+[2019-01-28 15:06:06] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:06 2019),Crawl module is twitter media
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:07] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:07] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:07 2019)
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:07 2019),Crawl module is twitter tweets
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:07] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:07] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:07 2019)
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:07 2019),Crawl module is twitter tweets_replies
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:07] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:07] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:07 2019)
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:07 2019),Crawl module is twitter followers
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:07] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:07] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:07 2019)
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:07 2019),Crawl module is twitter following
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:07] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:07] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:07 2019)
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:07 2019),Crawl module is twitter information
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:07] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:07] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:07 2019)
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:07 2019),Crawl module is twitter likes
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:07] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:07] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:07 2019)
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:07 2019),Crawl module is twitter media
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:07] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:07] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:07 2019)
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:07 2019),Crawl module is twitter tweets
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:07] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:07] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:07 2019)
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:07 2019),Crawl module is twitter tweets_replies
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:07] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:07] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:07 2019)
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:07 2019),Crawl module is twitter followers
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:07] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:07] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:07 2019)
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:07 2019),Crawl module is twitter following
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:07] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:07] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:07] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:07] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:07] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:07 2019)
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:08 2019),Crawl module is twitter information
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:08] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:08] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:08 2019)
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:08 2019),Crawl module is twitter likes
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:08] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:08] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:08 2019)
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:08 2019),Crawl module is twitter media
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:08] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:08] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:08 2019)
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:08 2019),Crawl module is twitter tweets
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:08] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:08] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:08 2019)
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:08 2019),Crawl module is twitter tweets_replies
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:08] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:08] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:08 2019)
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:08 2019),Crawl module is twitter followers
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:08] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:08] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:08 2019)
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:08 2019),Crawl module is twitter following
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:08] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:08] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:08 2019)
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:08 2019),Crawl module is twitter information
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:08] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:08] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:08 2019)
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:08 2019),Crawl module is twitter likes
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:08] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:08] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:08 2019)
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:08 2019),Crawl module is twitter media
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:08] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:08] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:08 2019)
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:08 2019),Crawl module is twitter tweets
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:08] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:08] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:08] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 15:06:08] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:08] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:08 2019)
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:09 2019),Crawl module is twitter tweets_replies
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:09] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:09] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:09 2019)
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:09 2019),Crawl module is twitter followers
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:09] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:09] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:09 2019)
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:09 2019),Crawl module is twitter following
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:09] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:09] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:09 2019)
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:09 2019),Crawl module is twitter information
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:09] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:09] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:09 2019)
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:09 2019),Crawl module is twitter likes
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:09] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:09] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:09 2019)
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:09 2019),Crawl module is twitter tweets
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:09] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:09] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:09 2019)
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:09 2019),Crawl module is twitter tweets_replies
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:09] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:09] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:09 2019)
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:09 2019),Crawl module is twitter followers
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:09] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:09] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:09 2019)
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:09 2019),Crawl module is twitter following
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:09] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:09] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:09 2019)
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:09 2019),Crawl module is twitter information
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:09] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:09] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:09 2019)
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:09 2019),Crawl module is twitter likes
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:09] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:09] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:09] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:09] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:09] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:09 2019)
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:10 2019),Crawl module is twitter media
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:10] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:10] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:10 2019)
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:10 2019),Crawl module is twitter tweets
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:10] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:10] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:10 2019)
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:10 2019),Crawl module is twitter tweets_replies
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:10] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:10] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:10 2019)
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:10 2019),Crawl module is twitter followers
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:10] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:10] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:10 2019)
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:10 2019),Crawl module is twitter following
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:10] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:10] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:10 2019)
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:10 2019),Crawl module is twitter information
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:10] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:10] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:10 2019)
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:10 2019),Crawl module is twitter likes
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:10] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:10] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:10 2019)
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:10 2019),Crawl module is twitter media
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:10] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:10] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:10 2019)
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:10 2019),Crawl module is twitter tweets
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:10] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:10] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:10 2019)
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:10 2019),Crawl module is twitter tweets_replies
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:10] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:10] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:10 2019)
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:10 2019),Crawl module is twitter followers
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:10] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:10] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:10 2019)
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:10 2019),Crawl module is twitter following
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:10] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:10] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:10] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:10] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:10] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:10 2019)
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:11 2019),Crawl module is twitter information
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:11] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:11] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:11 2019)
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:11 2019),Crawl module is twitter likes
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:11] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:11] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:11 2019)
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:11 2019),Crawl module is twitter media
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:11] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:11] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:11 2019)
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:11 2019),Crawl module is twitter tweets
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:11] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:11] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:11 2019)
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:11 2019),Crawl module is twitter tweets_replies
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:11] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:11] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:11 2019)
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:11 2019),Crawl module is twitter followers
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:11] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:11] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:11 2019)
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:11 2019),Crawl module is twitter following
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:11] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:11] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:11 2019)
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:11 2019),Crawl module is twitter information
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:11] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:11] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:11 2019)
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:11 2019),Crawl module is twitter likes
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:11] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:11] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:11 2019)
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:11 2019),Crawl module is twitter media
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:11] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:11] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:11 2019)
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:11 2019),Crawl module is twitter tweets
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:11] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:11] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:11] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 15:06:11] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:11] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:11 2019)
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:12 2019),Crawl module is twitter tweets_replies
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:12] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:12] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:12 2019)
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:12 2019),Crawl module is twitter followers
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:12] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:12] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:12 2019)
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:12 2019),Crawl module is twitter following
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:12] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:12] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:12 2019)
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:12 2019),Crawl module is twitter information
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:12] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:12] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:12 2019)
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:12 2019),Crawl module is twitter likes
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:12] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:12] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:12 2019)
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:12 2019),Crawl module is twitter media
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:12] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:12] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:12 2019)
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:12 2019),Crawl module is twitter tweets
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:12] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:12] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:12 2019)
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:12 2019),Crawl module is twitter tweets_replies
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:12] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:12] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:12 2019)
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:12 2019),Crawl module is twitter followers
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:12] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:12] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:12 2019)
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:12 2019),Crawl module is twitter following
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:12] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:12] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:12 2019)
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:12 2019),Crawl module is twitter information
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:12] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:12] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:12 2019)
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:12 2019),Crawl module is twitter likes
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:12] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:12] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:12] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:12] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:12] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:12 2019)
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:13 2019),Crawl module is twitter media
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:13] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:13] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:13 2019)
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:13 2019),Crawl module is twitter tweets
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:13] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:13] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:13 2019)
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:13 2019),Crawl module is twitter tweets_replies
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:13] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:13] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:13 2019)
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:13 2019),Crawl module is twitter followers
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:13] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:13] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:13 2019)
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:13 2019),Crawl module is twitter following
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:13] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:13] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:13 2019)
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:13 2019),Crawl module is twitter information
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:13] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:13] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:13 2019)
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:13 2019),Crawl module is twitter likes
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:13] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:13] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:13 2019)
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:13 2019),Crawl module is twitter media
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:13] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:13] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:13 2019)
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:13 2019),Crawl module is twitter tweets
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:13] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:13] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 393, in analysis_rule
+    jsondata = json.loads(response)
+  File "/usr/lib/python2.7/json/__init__.py", line 339, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 364, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+TypeError: expected string or buffer
+
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:13 2019)
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:06:13 2019),Crawl module is twitter tweets_replies
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:06:13] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:06:13] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:06:13] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:06:13] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:06:13] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:06:13 2019)
+[2019-01-28 15:07:14] INFO [run: spider_twitter.py, 429] Crawl start(Mon Jan 28 15:07:14 2019),Crawl module is twitter followers
+[2019-01-28 15:07:14] INFO [analysis_rule: spider_twitter.py, 370] ### -analysis rule start- ###
+[2019-01-28 15:07:14] INFO [get_response: spider_twitter.py, 279] ### -get response start- ###
+[2019-01-28 15:07:14] ERROR [get_response: spider_twitter.py, 292] Traceback (most recent call last):
+  File "./spider_twitter.py", line 286, in get_response
+    self.con.perform()
+error: (7, 'Failed to connect to 127.0.0.1 port 38491: Connection refused')
+
+[2019-01-28 15:07:14] INFO [get_response: spider_twitter.py, 294] ### -get response end- ###
+[2019-01-28 15:07:14] ERROR [analysis_rule: spider_twitter.py, 422] Traceback (most recent call last):
+  File "./spider_twitter.py", line 402, in analysis_rule
+    html = etree.HTML(response.replace('\\n', '').replace('\n', ''))
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+[2019-01-28 15:07:14] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
+[2019-01-28 15:07:14] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:07:14 2019)
