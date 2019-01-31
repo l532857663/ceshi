@@ -190,7 +190,7 @@ NOT_EQUAL        不等于
 
 BinaryComparator        匹配完整字节数组 //二进制  转base64使用
 BinaryPrefixComparator  匹配字节数组前缀 
-BitComparator
+BitComparator // byte
 NullComparator
 RegexStringComparator   正则表达式匹配
 SubstringComparator     子串匹配
