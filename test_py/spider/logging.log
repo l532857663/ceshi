@@ -1827,3 +1827,5 @@ AttributeError: 'NoneType' object has no attribute 'replace'
 
 [2019-01-28 15:07:14] INFO [analysis_rule: spider_twitter.py, 424] ### -analysis rule end- ###
 [2019-01-28 15:07:14] INFO [run: spider_twitter.py, 448] End of crawl(Mon Jan 28 15:07:14 2019)
+[2019-02-13 13:33:36] INFO [run: spider_facebook.py, 837] Crawl start(Wed Feb 13 13:33:36 2019),Crawl module is facebook information
+[2019-02-13 13:33:46] INFO [run: spider_facebook.py, 868] End of crawl(Wed Feb 13 13:33:46 2019)

@@ -1,0 +1,25 @@
+hbase用户权限设计:	user_info
+--->rowkey:
+	1550037599
+	时间戳
+
+--->账号信息：
+	account:username			用户名/手机号/邮箱
+	account:password			密码(加密方式)
+	account:status				账号状态
+--->用户信息：
+	info:name
+	info:age
+	info:sex
+	info:address
+	info:email
+	info:phonenumber
+	info:role					用户角色
+
+--->权限(等级):
+	power:level	(00000000-11111111 | 权限表的row_key)
+
+hbase权限表设计:	power_info
+--->00000000-11111111
+	info:name					权限信息
+	power:eg_module	(0,1)		模块权限

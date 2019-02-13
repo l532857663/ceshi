@@ -63,6 +63,8 @@
 		html_data_analysis.py
 	xls_data_analysis:
 		xml_data_analysis.py
+	big_file_txt_analysis:
+		big_file_txt_analysis.py
 	class_test: python类，测试代码
 
 structure_test:

@@ -70,14 +70,41 @@ def join_split():
 	print("'"+content_str+"'")
 	print("'"+content_str1+"'")
 
+def get_ram_addr():
+	print("keys():", locals().keys())
+	a = "asdasd"
+	b = "asdasd"
+	c = "asdas"
+	print(a, b, c)
+	print("keys_1():", locals().keys())
+	print(id(a), id(b), id(c))
+	d = {}
+	print(d, type(d), id(d))
+	if not d:
+		print("d is true")
+
+def file_get_test():
+	with open("./help.txt", "r") as f:
+		line = f.readline()
+		print(line, type(line), id(line))
+		line = f.readline()
+		print(line, type(line), id(line))
+
 def main():
 	print("main start")
 	#文件操作
 #	file_operation()
+	#日志测试
 	#logging_test()
 	#mk_path()
+	#字符串和比特
 	#str_byte()
-	join_split()
+	#字符串分割、合并
+	#join_split()
+	#获取变量内存地址
+	#get_ram_addr()
+	#文件操作
+	file_get_test()
 	print("main end")
 
 
