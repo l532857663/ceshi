@@ -1,0 +1,53 @@
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+export HADOOP_HOME=/usr/local/hadoop
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_PREFIX/lib:$HADOOP_PREFIX/lib/native"
+export PATH=$PATH:$HADOOP_HOME/bin
+export PATH=$PATH:$HADOOP_HOME/sbin
+
+export HBASE_HOME=/usr/local/hbase
+export PATH=$PATH:$HBASE_HOME/bin
+
+
+第一次启动：
+./bin/hdfs namenode -format
+./sbin/start-all.sh || ./sbin/start-dfs.sh、./sbin/start-yarn.sh
+./sbin/mr-jobhistory-daemon.sh start historyserver
+master上 jps， 看到ResourceManager、NameNode、SecondaryNameNode、JobHistoryServer进程
+slave上 jps， 看到DataNode、NodeManager进程 
+
+这5个进程就表示Hadoop启动成功
+./sbin/stop-all.sh
+./sbin/mr-jobhistory-daemon.sh stop historyserver
+
+./bin/start-hbase.sh
+
+./bin/stop-hbase.sh
+
+master上 jps， 看到HMaster、HQuorumPeer、HRegionServer进程
+slave上 jps， 看到HQuorumPeer、HRegionServer进程
+
+安全模式：
+hadoop dfsadmin -safemode get
+hadoop dfsadmin -safemode leave
+
+前台启动hbase rest服务
+bin/hbase rest start -p <port>
+
+后台启动hbase服务
+bin/hbase-daemon.sh start rest -p <port>
+
+停止服务
+bin/hbase-daemon.sh stop rest
+不加端口的情况下，端口默认为8080
+
+查看表大小
+hdfs dfs -du -h hdfs://DXY:9000/hbase_db/data/default/[表名]
+
+数据修复  hbase 1.X
+hbase hbck 只做检查
+hbase hbck -fix 数据修复
+hbase hbck -fixMeta 根据region目录中的.regioninfo，生成meta表`
+hbase hbck -fixAssignments 把meta表中记录的region分配给regionserver
+hbase hbck -fixHdfsOrphans 修复.regioninfo文件
